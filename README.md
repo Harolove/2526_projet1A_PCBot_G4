@@ -2,7 +2,7 @@
 PCBot fait par le groupe de 4
 
 ## Rappels git
-on se renseigne avant la semaine prochaine
+
 ### Clé SSH
 
 Dans git bash, lancez la commande suivante :
