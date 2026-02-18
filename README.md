@@ -45,3 +45,9 @@ A faire à chaque fois qu'on commence à travailler
 ```bash
 git pull
 ```
+
+05/02/2026
+Début du projet: présentation des différents projets; découvrir git et github; recherche de datasheet sur les différents composants et sur le PCBot, lister les différentes fonctionnalités du PCBot
+
+12/02/2026
+Schéma architectural sur draw.io; début de schematic sur Kicad et modification des symboles déjà existant sur Kicad pour avoir des composants qui se rapprochent de la réalité
