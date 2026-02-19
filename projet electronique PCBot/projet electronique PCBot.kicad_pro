@@ -247,7 +247,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "projet électronique PCBot.kicad_pro",
+    "filename": "projet electronique PCBot.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -326,6 +326,22 @@
     [
       "210be09d-86cd-4faa-bb91-cc54c5972517",
       ""
+    ],
+    [
+      "12710ea4-c2d3-4e50-951d-2a4a0058690c",
+      "STM32"
+    ],
+    [
+      "d457b8fa-dc83-43ee-b672-fc417651a09a",
+      "Gestion d'energie"
+    ],
+    [
+      "8074907f-d1dc-4b1d-805f-91e9bac82bf7",
+      "Driver"
+    ],
+    [
+      "93c3b10c-af7a-4302-b763-bec1b6a7b44e",
+      "capteur"
     ]
   ],
   "text_variables": {}
