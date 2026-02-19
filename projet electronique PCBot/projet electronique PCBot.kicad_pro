@@ -341,7 +341,11 @@
     ],
     [
       "93c3b10c-af7a-4302-b763-bec1b6a7b44e",
-      "capteur"
+      "Capteur"
+    ],
+    [
+      "6b07a274-8755-4f83-afb7-28bb5f5099df",
+      "Moteurs"
     ]
   ],
   "text_variables": {}

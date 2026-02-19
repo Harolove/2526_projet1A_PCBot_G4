@@ -374,6 +374,11 @@
     (uuid ee7b4ce7-4ba1-4b51-9739-3be64ead7340)
   )
 
+  (text "Centrale inertielle\n" (at 83.82 96.52 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid fdf169fc-e7c7-4c6d-bb40-4d68b362def1)
+  )
+
   (global_label "IRQ" (shape input) (at 121.92 80.01 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left))
     (uuid 06526293-d841-4e57-8dad-b0b55ece517a)

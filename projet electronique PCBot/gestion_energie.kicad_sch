@@ -427,6 +427,10 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid 9e9e2600-827b-471e-ab7c-7b909f603d07)
   )
+  (text "Batterie" (at 96.52 59.69 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid b84b40a1-4248-448e-aff3-c2bd612b700f)
+  )
 
   (global_label "SDA" (shape input) (at 101.6 90.17 180) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify right))
