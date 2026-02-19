@@ -15,6 +15,16 @@
 		(comment 4 "Sara KABBANI")
 	)
 	(lib_symbols)
+	(wire
+		(pts
+			(xy 52.07 129.54) (xy 69.85 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ab3bff2-cd23-4ac7-813a-642c03335f2f")
+	)
 	(hierarchical_label "PF1"
 		(shape input)
 		(at 115.57 152.4 0)
@@ -59,9 +69,20 @@
 		)
 		(uuid "13088f60-1f4f-435f-8264-172bb92feca5")
 	)
+	(hierarchical_label "VBUS"
+		(shape input)
+		(at 52.07 129.54 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "14e383e0-8653-4d4d-83c6-09ece797cc6a")
+	)
 	(hierarchical_label "TS"
 		(shape input)
-		(at 52.07 143.51 180)
+		(at 93.98 162.56 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -72,7 +93,7 @@
 	)
 	(hierarchical_label "OTG"
 		(shape input)
-		(at 27.94 138.43 0)
+		(at 69.85 157.48 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -83,7 +104,7 @@
 	)
 	(hierarchical_label "SCL"
 		(shape input)
-		(at 27.94 133.35 0)
+		(at 69.85 152.4 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -92,9 +113,20 @@
 		)
 		(uuid "1aae72f6-c3be-4e1b-910c-00c6a041018c")
 	)
+	(hierarchical_label "D-"
+		(shape input)
+		(at 52.07 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1b3e4c5d-b55f-4868-9714-63a8990ecef6")
+	)
 	(hierarchical_label "SDA"
 		(shape input)
-		(at 27.94 130.81 0)
+		(at 69.85 149.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -105,7 +137,7 @@
 	)
 	(hierarchical_label "STAT"
 		(shape input)
-		(at 27.94 125.73 0)
+		(at 69.85 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -116,7 +148,7 @@
 	)
 	(hierarchical_label "~{CE}"
 		(shape input)
-		(at 27.94 140.97 0)
+		(at 69.85 160.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -182,7 +214,7 @@
 	)
 	(hierarchical_label "~{QON}"
 		(shape input)
-		(at 27.94 143.51 0)
+		(at 69.85 162.56 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -226,7 +258,7 @@
 	)
 	(hierarchical_label "PGND"
 		(shape input)
-		(at 40.64 146.05 90)
+		(at 82.55 165.1 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -237,7 +269,7 @@
 	)
 	(hierarchical_label "INT"
 		(shape input)
-		(at 27.94 135.89 0)
+		(at 69.85 154.94 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -259,7 +291,7 @@
 	)
 	(hierarchical_label "SW"
 		(shape input)
-		(at 52.07 113.03 180)
+		(at 93.98 132.08 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -267,6 +299,17 @@
 			(justify right)
 		)
 		(uuid "6b8ce70c-37da-418b-9682-db8b1aa6499f")
+	)
+	(hierarchical_label "D+"
+		(shape input)
+		(at 52.07 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6dd59c9d-bf59-49d4-a5eb-5559621705c3")
 	)
 	(hierarchical_label "PA9"
 		(shape input)
@@ -281,7 +324,7 @@
 	)
 	(hierarchical_label "~{PG}"
 		(shape input)
-		(at 27.94 115.57 0)
+		(at 69.85 134.62 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -292,7 +335,7 @@
 	)
 	(hierarchical_label "BAT"
 		(shape input)
-		(at 52.07 125.73 180)
+		(at 93.98 144.78 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -314,7 +357,7 @@
 	)
 	(hierarchical_label "REGN"
 		(shape input)
-		(at 52.07 138.43 180)
+		(at 93.98 157.48 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -325,7 +368,7 @@
 	)
 	(hierarchical_label "BTST"
 		(shape input)
-		(at 52.07 120.65 180)
+		(at 93.98 139.7 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -347,7 +390,7 @@
 	)
 	(hierarchical_label "PWID"
 		(shape input)
-		(at 52.07 107.95 180)
+		(at 93.98 127 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -369,7 +412,7 @@
 	)
 	(hierarchical_label "PSEL"
 		(shape input)
-		(at 27.94 113.03 0)
+		(at 69.85 132.08 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -435,7 +478,7 @@
 	)
 	(hierarchical_label "ILIM"
 		(shape input)
-		(at 27.94 120.65 0)
+		(at 69.85 139.7 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -479,7 +522,7 @@
 	)
 	(hierarchical_label "SYS"
 		(shape input)
-		(at 52.07 123.19 180)
+		(at 93.98 142.24 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -490,7 +533,7 @@
 	)
 	(hierarchical_label "VBUS"
 		(shape input)
-		(at 27.94 110.49 0)
+		(at 69.85 129.54 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -668,7 +711,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
-				(hide yes)
 			)
 		)
 		(instances
@@ -722,7 +764,7 @@
 		)
 	)
 	(sheet
-		(at 27.94 104.14)
+		(at 69.85 123.19)
 		(size 24.13 41.91)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -738,7 +780,7 @@
 		)
 		(uuid "d457b8fa-dc83-43ee-b672-fc417651a09a")
 		(property "Sheetname" "Gestion d'energie"
-			(at 27.94 103.4284 0)
+			(at 69.85 122.4784 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -747,7 +789,7 @@
 			)
 		)
 		(property "Sheetfile" "gestion_energie.kicad_sch"
-			(at 27.94 146.6346 0)
+			(at 69.85 165.6846 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -764,8 +806,8 @@
 		)
 	)
 	(sheet
-		(at 87.63 27.94)
-		(size 40.64 22.86)
+		(at 39.37 124.46)
+		(size 12.7 22.86)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -780,7 +822,7 @@
 		)
 		(uuid "ec7ab1be-c578-4fca-aa6b-dcfd18d510ea")
 		(property "Sheetname" "USB"
-			(at 87.63 27.2284 0)
+			(at 39.37 123.7484 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -789,7 +831,7 @@
 			)
 		)
 		(property "Sheetfile" "usb.kicad_sch"
-			(at 87.63 51.3846 0)
+			(at 39.37 147.9046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
