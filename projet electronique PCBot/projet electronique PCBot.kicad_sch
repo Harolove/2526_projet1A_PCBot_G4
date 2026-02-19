@@ -763,6 +763,48 @@
 			)
 		)
 	)
+	(sheet
+		(at 87.63 27.94)
+		(size 40.64 22.86)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ec7ab1be-c578-4fca-aa6b-dcfd18d510ea")
+		(property "Sheetname" "USB"
+			(at 87.63 27.2284 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "usb.kicad_sch"
+			(at 87.63 51.3846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517"
+					(page "8")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

@@ -451,6 +451,10 @@
     [
       "ceacf653-ca51-496c-8a7f-54f4646feaa8",
       "Connecteurs"
+    ],
+    [
+      "ec7ab1be-c578-4fca-aa6b-dcfd18d510ea",
+      "USB"
     ]
   ],
   "text_variables": {}
