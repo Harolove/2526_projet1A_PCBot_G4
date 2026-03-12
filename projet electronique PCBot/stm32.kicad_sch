@@ -2116,6 +2116,16 @@
 	)
 	(wire
 		(pts
+			(xy 116.84 86.36) (xy 132.08 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e40b63a3-1f15-4e3d-928f-1c3d53ad908b")
+	)
+	(wire
+		(pts
 			(xy 153.67 66.04) (xy 162.56 66.04)
 		)
 		(stroke
@@ -2331,7 +2341,7 @@
 	)
 	(hierarchical_label "PG10"
 		(shape input)
-		(at 132.08 86.36 180)
+		(at 116.84 86.36 180)
 		(effects
 			(font
 				(size 1.27 1.27)
