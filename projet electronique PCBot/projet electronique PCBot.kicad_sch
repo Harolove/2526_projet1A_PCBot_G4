@@ -113,17 +113,6 @@
 		)
 		(uuid "1aae72f6-c3be-4e1b-910c-00c6a041018c")
 	)
-	(hierarchical_label "D-"
-		(shape input)
-		(at 52.07 137.16 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1b3e4c5d-b55f-4868-9714-63a8990ecef6")
-	)
 	(hierarchical_label "SDA"
 		(shape input)
 		(at 69.85 149.86 0)
@@ -299,17 +288,6 @@
 			(justify right)
 		)
 		(uuid "6b8ce70c-37da-418b-9682-db8b1aa6499f")
-	)
-	(hierarchical_label "D+"
-		(shape input)
-		(at 52.07 134.62 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6dd59c9d-bf59-49d4-a5eb-5559621705c3")
 	)
 	(hierarchical_label "PA9"
 		(shape input)
