@@ -1951,6 +1951,17 @@
 		)
 		(uuid "27b80e37-f68d-426d-b2e9-88a9b8544b39")
 	)
+	(hierarchical_label "~{RST}"
+		(shape input)
+		(at 132.08 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2fe07d90-427c-4d1d-8dea-fc73eadd777d")
+	)
 	(hierarchical_label "PA14"
 		(shape input)
 		(at 157.48 121.92 0)
@@ -2050,17 +2061,6 @@
 		)
 		(uuid "6110c624-d49b-4f22-a5da-c186abb103d3")
 	)
-	(hierarchical_label "SWO"
-		(shape input)
-		(at 80.01 100.33 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "6264a73c-2c59-4ac9-b4a6-9451d18ec6e9")
-	)
 	(hierarchical_label "SWDIO"
 		(shape input)
 		(at 80.01 97.79 0)
@@ -2093,17 +2093,6 @@
 			(justify left)
 		)
 		(uuid "9293e392-3bde-4e69-8b02-2d6980942540")
-	)
-	(hierarchical_label "PG10"
-		(shape input)
-		(at 132.08 86.36 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9717c1a7-51ff-49eb-9f36-92e95303f4d8")
 	)
 	(hierarchical_label "PB6"
 		(shape input)
