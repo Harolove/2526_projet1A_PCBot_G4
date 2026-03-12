@@ -113,17 +113,6 @@
 		)
 		(uuid "1aae72f6-c3be-4e1b-910c-00c6a041018c")
 	)
-	(hierarchical_label "D-"
-		(shape input)
-		(at 52.07 137.16 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1b3e4c5d-b55f-4868-9714-63a8990ecef6")
-	)
 	(hierarchical_label "SDA"
 		(shape input)
 		(at 69.85 149.86 0)
@@ -156,17 +145,6 @@
 			(justify left)
 		)
 		(uuid "2222f25a-6980-438d-8218-8a398096ebb1")
-	)
-	(hierarchical_label "PA3"
-		(shape input)
-		(at 102.87 114.3 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "25fa7d18-d798-4d0e-9066-37ba57f820ad")
 	)
 	(hierarchical_label "PB3"
 		(shape input)
@@ -222,28 +200,6 @@
 			(justify right)
 		)
 		(uuid "4a71c407-a675-474f-8636-203b33f0539c")
-	)
-	(hierarchical_label "PA1"
-		(shape input)
-		(at 102.87 109.22 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4db9c9e3-c4c8-42cc-9449-cb32e010244d")
-	)
-	(hierarchical_label "PA2"
-		(shape input)
-		(at 102.87 111.76 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4f3c18b1-9312-416c-ba2b-3c02a175af5c")
 	)
 	(hierarchical_label "~{QON}"
 		(shape input)
@@ -332,28 +288,6 @@
 			(justify right)
 		)
 		(uuid "6b8ce70c-37da-418b-9682-db8b1aa6499f")
-	)
-	(hierarchical_label "D+"
-		(shape input)
-		(at 52.07 134.62 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6dd59c9d-bf59-49d4-a5eb-5559621705c3")
-	)
-	(hierarchical_label "SYS"
-		(shape input)
-		(at 137.16 90.17 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6f64f002-33fb-49e0-abea-9751e5a4c46e")
 	)
 	(hierarchical_label "PA9"
 		(shape input)
@@ -509,17 +443,6 @@
 		)
 		(uuid "be8bfded-403d-4b33-b741-ac0caf5f2bf3")
 	)
-	(hierarchical_label "PA0"
-		(shape input)
-		(at 102.87 106.68 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c1831ee3-4d68-42fc-b904-507c6e0c4e8c")
-	)
 	(hierarchical_label "PF0"
 		(shape input)
 		(at 115.57 149.86 0)
@@ -574,17 +497,6 @@
 			(justify right)
 		)
 		(uuid "e82424b9-d115-4b03-85d6-daf9e4250772")
-	)
-	(hierarchical_label "PA0"
-		(shape input)
-		(at 129.54 90.17 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "ef122f7f-a9a7-4736-a57d-508dc61f2a4c")
 	)
 	(hierarchical_label "SYS"
 		(shape input)
