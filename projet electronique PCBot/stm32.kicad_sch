@@ -484,6 +484,131 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:R_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.016 1.016)
+					)
+				)
+			)
+			(property "Value" "R_Small"
+				(at 1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor, small symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_Small_0_1"
+				(rectangle
+					(start -0.762 1.778)
+					(end 0.762 -1.778)
+					(stroke
+						(width 0.2032)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_Small_1_1"
+				(pin passive line
+					(at 0 2.54 270)
+					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -2.54 90)
+					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "MCU_ST_STM32G4:STM32G431KBTx"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1672,6 +1797,18 @@
 		(uuid "a8cf01cd-0c83-4724-9dab-e140f2d812a2")
 	)
 	(junction
+		(at 116.84 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b46dc041-5ea2-4338-aaa4-94bcc424a488")
+	)
+	(junction
+		(at 124.46 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bc14946b-e204-4073-b189-925fad9847c8")
+	)
+	(junction
 		(at 121.92 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1689,6 +1826,14 @@
 		(color 0 0 0 0)
 		(uuid "fff15e99-45ea-41e8-bc75-305bc9af6f38")
 	)
+	(no_connect
+		(at 80.01 102.87)
+		(uuid "22832d14-6c00-429a-ab61-50ed301dcef7")
+	)
+	(no_connect
+		(at 80.01 107.95)
+		(uuid "56e53fc3-5135-4fc3-8fbd-2fb9fe8424c6")
+	)
 	(wire
 		(pts
 			(xy 147.32 63.5) (xy 153.67 63.5)
@@ -1698,6 +1843,36 @@
 			(type default)
 		)
 		(uuid "0083c190-94e7-4e0a-9e08-52ae51310a0d")
+	)
+	(wire
+		(pts
+			(xy 110.49 111.76) (xy 124.46 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "022a1519-4eea-46cf-8510-d1dc4b7c9cc1")
+	)
+	(wire
+		(pts
+			(xy 116.84 114.3) (xy 132.08 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0414f279-4001-4cbf-8bcf-d25674f6c089")
+	)
+	(wire
+		(pts
+			(xy 116.84 121.92) (xy 116.84 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0e4815eb-3d4c-4192-a8ce-521d578fcb83")
 	)
 	(wire
 		(pts
@@ -1721,6 +1896,16 @@
 	)
 	(wire
 		(pts
+			(xy 116.84 127) (xy 116.84 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1ea94e98-baf4-4714-898c-399339843cda")
+	)
+	(wire
+		(pts
 			(xy 144.78 133.35) (xy 144.78 135.89)
 		)
 		(stroke
@@ -1731,6 +1916,16 @@
 	)
 	(wire
 		(pts
+			(xy 116.84 132.08) (xy 124.46 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "42758b24-c601-4507-bfba-a5ff8b621aa2")
+	)
+	(wire
+		(pts
 			(xy 153.67 71.12) (xy 162.56 71.12)
 		)
 		(stroke
@@ -1738,6 +1933,16 @@
 			(type default)
 		)
 		(uuid "45845b4f-4724-49b0-9b8a-8fccb906fd8c")
+	)
+	(wire
+		(pts
+			(xy 124.46 132.08) (xy 124.46 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b0a3d43-7322-4895-8eb3-13a86ca0328e")
 	)
 	(wire
 		(pts
@@ -1791,6 +1996,16 @@
 	)
 	(wire
 		(pts
+			(xy 110.49 114.3) (xy 116.84 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b2ef04c-2955-4ece-ae57-d5d5ad14d2a3")
+	)
+	(wire
+		(pts
 			(xy 121.92 66.04) (xy 130.81 66.04)
 		)
 		(stroke
@@ -1798,6 +2013,16 @@
 			(type default)
 		)
 		(uuid "757dfbb6-50cb-4a29-8698-cc02fcd6330f")
+	)
+	(wire
+		(pts
+			(xy 124.46 111.76) (xy 132.08 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80c31915-884a-4778-b93a-3aaeec4cf5c3")
 	)
 	(wire
 		(pts
@@ -1881,6 +2106,26 @@
 	)
 	(wire
 		(pts
+			(xy 124.46 111.76) (xy 124.46 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d1d46d06-ebe3-4559-8aab-1f34708b14b5")
+	)
+	(wire
+		(pts
+			(xy 116.84 86.36) (xy 132.08 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e40b63a3-1f15-4e3d-928f-1c3d53ad908b")
+	)
+	(wire
+		(pts
 			(xy 153.67 66.04) (xy 162.56 66.04)
 		)
 		(stroke
@@ -1951,7 +2196,7 @@
 		)
 		(uuid "27b80e37-f68d-426d-b2e9-88a9b8544b39")
 	)
-	(hierarchical_label "PA14"
+	(hierarchical_label "SYS_JTCK-SWCLK"
 		(shape input)
 		(at 157.48 121.92 0)
 		(effects
@@ -1962,7 +2207,7 @@
 		)
 		(uuid "32df9cda-c6bc-4446-a8c5-c689bcfbc230")
 	)
-	(hierarchical_label "PA15"
+	(hierarchical_label "USART2_RX"
 		(shape input)
 		(at 157.48 124.46 0)
 		(effects
@@ -1984,7 +2229,7 @@
 		)
 		(uuid "3930b368-7d3d-465e-b551-d20c6fe87b55")
 	)
-	(hierarchical_label "PB3"
+	(hierarchical_label "USART2_TX"
 		(shape input)
 		(at 132.08 101.6 180)
 		(effects
@@ -2017,9 +2262,9 @@
 		)
 		(uuid "50ca2e65-28c8-4f3b-b496-c6cb5ae7a224")
 	)
-	(hierarchical_label "PB7"
+	(hierarchical_label "I2C_SDA"
 		(shape input)
-		(at 132.08 111.76 180)
+		(at 110.49 111.76 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2028,7 +2273,7 @@
 		)
 		(uuid "50ef4c8c-119e-42fe-a762-aaec0a0493f0")
 	)
-	(hierarchical_label "PA9"
+	(hierarchical_label "TIM1_CH2"
 		(shape input)
 		(at 157.48 109.22 0)
 		(effects
@@ -2096,7 +2341,7 @@
 	)
 	(hierarchical_label "PG10"
 		(shape input)
-		(at 132.08 86.36 180)
+		(at 116.84 86.36 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2127,7 +2372,7 @@
 		)
 		(uuid "9bbfb857-664b-4dfc-b6bf-5f962085fae2")
 	)
-	(hierarchical_label "PA8"
+	(hierarchical_label "TIM1_CH1"
 		(shape input)
 		(at 157.48 106.68 0)
 		(effects
@@ -2182,7 +2427,7 @@
 		)
 		(uuid "c472cc7d-ddb7-4e54-8ada-e35856042aee")
 	)
-	(hierarchical_label "PA12"
+	(hierarchical_label "TIM1_CH2N"
 		(shape input)
 		(at 157.48 116.84 0)
 		(effects
@@ -2193,9 +2438,9 @@
 		)
 		(uuid "c4cc3062-d053-4694-959f-0d8ae8cfd93d")
 	)
-	(hierarchical_label "PB8"
+	(hierarchical_label "I2C_SCL"
 		(shape input)
-		(at 132.08 114.3 180)
+		(at 110.49 114.3 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2215,7 +2460,7 @@
 		)
 		(uuid "dec7ae6e-ab84-4469-b4d0-e30f97631293")
 	)
-	(hierarchical_label "PA11"
+	(hierarchical_label "TIM1_CH1N"
 		(shape input)
 		(at 157.48 114.3 0)
 		(effects
@@ -2237,7 +2482,7 @@
 		)
 		(uuid "eacbe5db-3e2b-45d3-a7bd-68c6bd49eb3e")
 	)
-	(hierarchical_label "PA13"
+	(hierarchical_label "SYS_JTMS-SWDIO"
 		(shape input)
 		(at 157.48 119.38 0)
 		(effects
@@ -2302,7 +2547,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "06b48d71-375f-448e-9b81-780a5ad2b6af")
-		(property "Reference" "C2"
+		(property "Reference" "C?"
 			(at 133.35 67.9513 0)
 			(effects
 				(font
@@ -2359,6 +2604,82 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "C?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 124.46 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "23174841-e178-4a5d-8cf6-4d6bdafba6cf")
+		(property "Reference" "R2"
+			(at 127 123.1899 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3.3"
+			(at 127 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 124.46 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 124.46 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 124.46 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "83b010f3-2118-423c-8875-d792672ce820")
+		)
+		(pin "2"
+			(uuid "e1bcbec5-229c-4e6b-ae36-b199530ee3dc")
+		)
+		(instances
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "R2")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2370,7 +2691,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2a885073-eec9-420d-8739-65a01765d421")
-		(property "Reference" "C3"
+		(property "Reference" "C?"
 			(at 156.21 67.9513 0)
 			(effects
 				(font
@@ -2427,6 +2748,12 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2439,7 +2766,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "384e6e63-908c-40aa-b062-dfdbefddca69")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR?"
 			(at 121.92 80.01 0)
 			(effects
 				(font
@@ -2492,6 +2819,82 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 116.84 124.46 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "467ce640-d9fb-45f4-925f-28935991d121")
+		(property "Reference" "R1"
+			(at 119.38 123.1899 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3.3"
+			(at 119.38 125.7299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 116.84 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 116.84 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 116.84 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d5e2dc20-731d-4b91-8737-0cec69b66380")
+		)
+		(pin "2"
+			(uuid "83831ba2-a5bc-4d76-833a-fad142010895")
+		)
+		(instances
+			(project ""
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "R1")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2504,7 +2907,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "62444c4d-7c6f-4067-8513-609cdbfb006f")
-		(property "Reference" "J1"
+		(property "Reference" "J?"
 			(at 55.88 102.235 0)
 			(effects
 				(font
@@ -2597,6 +3000,12 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "J?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2608,7 +3017,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "73b0b6e4-c705-4aff-8e4d-2538b5b48c08")
-		(property "Reference" "C1"
+		(property "Reference" "C?"
 			(at 124.46 67.9513 0)
 			(effects
 				(font
@@ -2665,6 +3074,12 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2677,7 +3092,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "85fb7092-9d5d-4241-b26e-961e8c36bf86")
-		(property "Reference" "U1"
+		(property "Reference" "U?"
 			(at 149.2759 132.08 0)
 			(effects
 				(font
@@ -2825,6 +3240,12 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "U?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2837,7 +3258,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "91356834-f4d1-47a4-8963-d49fa79a1f50")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR?"
 			(at 144.78 142.24 0)
 			(effects
 				(font
@@ -2890,6 +3311,12 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2902,7 +3329,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9214bfae-141b-44c7-86cb-9aaf652480f1")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR?"
 			(at 144.78 64.77 0)
 			(effects
 				(font
@@ -2955,6 +3382,12 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2967,7 +3400,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2eadc1d-95a3-4fcb-85fd-70f2ec6c4fd2")
-		(property "Reference" "C4"
+		(property "Reference" "C?"
 			(at 165.1 67.9513 0)
 			(effects
 				(font
@@ -3024,6 +3457,12 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3036,7 +3475,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e516604d-da59-4cf4-8b2f-db9fa4c4064e")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR?"
 			(at 162.56 80.01 0)
 			(effects
 				(font
@@ -3089,6 +3528,12 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -3101,7 +3546,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ed36b4e5-2713-408a-afc6-5de4fcdb406d")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR?"
 			(at 67.31 129.54 0)
 			(effects
 				(font
@@ -3154,6 +3599,18 @@
 					(unit 1)
 				)
 			)
+			(project "stm32"
+				(path "/65b0f3ad-0127-47d8-b987-c10d9b2c2f40"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
