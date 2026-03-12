@@ -1559,7 +1559,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00c8c7cc-1940-4d55-b765-1650bd4d07a1")
-		(property "Reference" "J2"
+		(property "Reference" "J?"
 			(at 183.515 118.11 0)
 			(effects
 				(font
@@ -1609,6 +1609,12 @@
 			(uuid "550fe6f9-72e4-45ff-b45f-00c673bfba00")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "J?")
+					(unit 1)
+				)
+			)
 			(project "driver"
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "J2")
@@ -1628,7 +1634,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "17456160-40bf-44d8-8484-3f3b312dd345")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR?"
 			(at 149.86 93.98 0)
 			(effects
 				(font
@@ -1676,6 +1682,12 @@
 			(uuid "82ffb3f6-234c-4348-8ec9-d5cce6d09122")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "driver"
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "#PWR04")
@@ -1693,7 +1705,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4714365d-851c-4ec7-9386-eb2a08e22f03")
-		(property "Reference" "C1"
+		(property "Reference" "C?"
 			(at 152.4 76.2062 0)
 			(effects
 				(font
@@ -1745,6 +1757,12 @@
 			(uuid "928eece9-e734-478b-9414-1775e2e062eb")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "C1")
@@ -1764,7 +1782,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7164bd42-52e0-4806-a8bb-a23887f244e8")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR?"
 			(at 132.08 77.47 0)
 			(effects
 				(font
@@ -1812,6 +1830,12 @@
 			(uuid "da6ba26c-a923-4e1f-aa17-fdfa55c7f547")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "driver"
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "#PWR03")
@@ -1830,7 +1854,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "724817af-15a9-42f8-b779-45b76e121608")
-		(property "Reference" "J1"
+		(property "Reference" "J?"
 			(at 186.055 96.52 0)
 			(effects
 				(font
@@ -1880,6 +1904,12 @@
 			(uuid "808f5c81-baed-4e7d-a4f6-d61269799101")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "J?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "J1")
@@ -1898,7 +1928,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "82aa27bd-164c-4f84-9a66-dc49158f806d")
-		(property "Reference" "R1"
+		(property "Reference" "R?"
 			(at 102.87 102.8699 0)
 			(effects
 				(font
@@ -1950,6 +1980,12 @@
 			(uuid "980c43fd-60be-4652-b70a-33daee8d35e6")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "R?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "R1")
@@ -1968,7 +2004,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a258bd4f-b463-4212-833d-b1c743669fa1")
-		(property "Reference" "C2"
+		(property "Reference" "C?"
 			(at 167.64 76.2062 0)
 			(effects
 				(font
@@ -2020,6 +2056,12 @@
 			(uuid "ab0898ad-3ff4-4ecc-a8d3-b59385d7108e")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 			(project "driver"
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "C2")
@@ -2037,7 +2079,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b82e8da7-323d-408a-a926-80fa258423d7")
-		(property "Reference" "C3"
+		(property "Reference" "C?"
 			(at 105.4162 69.85 0)
 			(effects
 				(font
@@ -2089,6 +2131,12 @@
 			(uuid "ab3d0dda-fd4c-4332-9169-e2b70c4b0965")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 			(project "driver"
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "C3")
@@ -2108,7 +2156,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bb3e2852-4bf4-416d-a501-3467efdd0812")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR?"
 			(at 111.76 149.86 0)
 			(effects
 				(font
@@ -2156,6 +2204,12 @@
 			(uuid "b5c12bc6-648a-47e1-8a8d-7c31b7d48ad3")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "driver"
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "#PWR06")
@@ -2175,7 +2229,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c95f71dd-99d6-4400-8eb0-c8cbe43dcfdb")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR?"
 			(at 100.33 95.25 0)
 			(effects
 				(font
@@ -2223,6 +2277,12 @@
 			(uuid "daf7de75-ec33-4546-920d-0caa6520bd20")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "driver"
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "#PWR02")
@@ -2240,7 +2300,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e18ba2f7-81b1-418d-8ba1-ccc8a2ff617d")
-		(property "Reference" "R3"
+		(property "Reference" "R?"
 			(at 134.62 88.8999 0)
 			(effects
 				(font
@@ -2292,6 +2352,12 @@
 			(uuid "5cb14635-ca4c-483e-a4b2-3a4915241feb")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "R?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "R3")
@@ -2309,7 +2375,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e369a653-8a4f-4f2f-a12f-3b1a5cc63890")
-		(property "Reference" "U1"
+		(property "Reference" "U4"
 			(at 131.4959 132.08 0)
 			(effects
 				(font
@@ -2430,7 +2496,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f29970c4-99e5-44fa-982f-4263009d89f0")
-		(property "Reference" "R2"
+		(property "Reference" "R?"
 			(at 152.4 105.4099 0)
 			(effects
 				(font
@@ -2482,6 +2548,12 @@
 			(uuid "a425a44d-b9be-4103-b23b-381fcc40e59d")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "R?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "R2")
@@ -2501,7 +2573,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6504785-17c3-414c-9f0b-b0264623f273")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR?"
 			(at 95.25 72.39 0)
 			(effects
 				(font
@@ -2550,6 +2622,12 @@
 			(uuid "0b6777e8-cfc8-4dac-85e4-ac278072a4b3")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "#PWR01")
@@ -2568,7 +2646,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f7f1b9dd-9906-465f-817b-b0cc99f21407")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR?"
 			(at 113.03 76.2 0)
 			(effects
 				(font
@@ -2616,6 +2694,12 @@
 			(uuid "0b43abdf-c646-4ee4-af63-beea98b3e682")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "#PWR05")
