@@ -1175,6 +1175,16 @@
 	)
 	(wire
 		(pts
+			(xy 149.86 99.06) (xy 149.86 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3dcac95d-a7ef-460e-81b2-a8ae451d01b8")
+	)
+	(wire
+		(pts
 			(xy 149.86 80.01) (xy 149.86 87.63)
 		)
 		(stroke
@@ -1496,7 +1506,7 @@
 	)
 	(hierarchical_label "PA0"
 		(shape input)
-		(at 149.86 104.14 90)
+		(at 149.86 99.06 90)
 		(effects
 			(font
 				(size 1.27 1.27)

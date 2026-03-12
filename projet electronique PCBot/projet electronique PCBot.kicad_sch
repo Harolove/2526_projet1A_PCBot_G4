@@ -159,7 +159,7 @@
 	)
 	(hierarchical_label "PA3"
 		(shape input)
-		(at 102.87 114.3 0)
+		(at 102.87 113.03 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -225,7 +225,7 @@
 	)
 	(hierarchical_label "PA1"
 		(shape input)
-		(at 102.87 109.22 0)
+		(at 102.87 107.95 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -236,7 +236,7 @@
 	)
 	(hierarchical_label "PA2"
 		(shape input)
-		(at 102.87 111.76 0)
+		(at 102.87 110.49 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -511,7 +511,7 @@
 	)
 	(hierarchical_label "PA0"
 		(shape input)
-		(at 102.87 106.68 0)
+		(at 102.87 105.41 0)
 		(effects
 			(font
 				(size 1.27 1.27)
