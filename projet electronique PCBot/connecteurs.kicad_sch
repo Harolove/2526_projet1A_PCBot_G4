@@ -249,9 +249,141 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "JST SH"
+		(exclude_from_sim no)
+		(at 94.488 106.934 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "065c196a-6da0-4dfc-bd3c-87468aa74441")
+	)
+	(text "JST SH"
+		(exclude_from_sim no)
+		(at 140.462 108.966 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0e7201ea-54b3-416d-b5dc-9dd68f172e14")
+	)
+	(text "nrf24 et stm32"
+		(exclude_from_sim no)
+		(at 96.774 103.378 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "1a75a1a9-bd0f-4d07-b6b0-741350854436")
+	)
+	(text "sortie régulateur vers driver\n"
+		(exclude_from_sim no)
+		(at 133.604 45.212 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "507d8c05-2251-4b35-9b74-bff2e08a2ebc")
+	)
+	(text "tof et stm32"
+		(exclude_from_sim no)
+		(at 142.24 105.918 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "761383c9-6161-46e8-af4b-55666444ca5f")
+	)
+	(text "sortie régulateur vers moteur"
+		(exclude_from_sim no)
+		(at 73.914 69.342 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "931d7911-4b88-41ac-b648-bafe25b7f4af")
+	)
+	(text "BMS et Batterie"
+		(exclude_from_sim no)
+		(at 122.428 85.598 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "940b62a5-806e-4acd-b9a6-ecd0aabfec9c")
+	)
+	(text "JST VH"
+		(exclude_from_sim no)
+		(at 66.802 72.136 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a4151760-2293-4fd6-bd3b-e5d051491b74")
+	)
+	(text "JST SH"
+		(exclude_from_sim no)
+		(at 56.642 121.666 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b550d85b-77ca-4ee0-a4fb-5cf243196521")
+	)
+	(text "driver inertielle et stm32"
+		(exclude_from_sim no)
+		(at 63.754 118.872 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "dffdffb5-494f-4259-827a-c9841e2c565d")
+	)
+	(text "JST VH"
+		(exclude_from_sim no)
+		(at 126.492 48.006 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e00cd03a-c5d0-48e5-b80b-245e652ca2c6")
+	)
+	(hierarchical_label "Vcc_driver"
+		(shape input)
+		(at 114.3 40.64 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "07dc77f1-89c4-4f8e-b448-895d7aa764bc")
+	)
+	(hierarchical_label "Vcc_tof"
+		(shape input)
+		(at 128.27 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "253c2103-8028-4424-95b6-0a1adcf2ce3e")
+	)
 	(hierarchical_label "Vcc_mot"
 		(shape input)
-		(at 80.01 80.01 180)
+		(at 54.61 64.77 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -259,6 +391,17 @@
 			(justify right)
 		)
 		(uuid "4c89547d-786f-4d01-990d-acdc399d4a4d")
+	)
+	(hierarchical_label "Vcc_inert"
+		(shape input)
+		(at 44.45 114.3 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "85f387c0-d727-44c6-8d6a-8be71b5e6895")
 	)
 	(hierarchical_label "Vcc_batt"
 		(shape input)
@@ -284,16 +427,16 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x02")
-		(at 85.09 80.01 0)
+		(at 133.35 101.6 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "209b310b-d45c-49ba-9659-7fa940231d3a")
-		(property "Reference" "Moteur"
-			(at 87.63 81.2799 0)
+		(uuid "090d16fc-3408-4e85-96b9-ae853cfdee5e")
+		(property "Reference" "tof"
+			(at 135.89 102.8699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -302,7 +445,7 @@
 			)
 		)
 		(property "Value" "Conn_01x02"
-			(at 87.63 82.5499 0)
+			(at 135.89 104.1399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -312,7 +455,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 85.09 80.01 0)
+			(at 133.35 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -321,7 +464,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 85.09 80.01 0)
+			(at 133.35 101.6 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -330,7 +473,149 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 85.09 80.01 0)
+			(at 133.35 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6edd16f6-f05b-412d-8c21-23776d0b0e0c")
+		)
+		(pin "2"
+			(uuid "307cc071-eb20-4233-a19f-2c00b2191897")
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/ceacf653-ca51-496c-8a7f-54f4646feaa8"
+					(reference "tof")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 49.53 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1131511a-d505-4ba7-a8bf-8cfa856a4e4a")
+		(property "Reference" "driver_inertielle"
+			(at 52.07 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 52.07 116.8399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 49.53 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 49.53 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 49.53 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f83f72b4-75bc-438c-8c27-078c7afa404f")
+		)
+		(pin "2"
+			(uuid "d81e1edf-40d8-4f5b-90d3-aa879b2e222f")
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/ceacf653-ca51-496c-8a7f-54f4646feaa8"
+					(reference "driver_inertielle")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 59.69 64.77 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "209b310b-d45c-49ba-9659-7fa940231d3a")
+		(property "Reference" "Moteur"
+			(at 62.23 66.0399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 62.23 67.3099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 59.69 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 59.69 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 59.69 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -421,7 +706,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 80.01 82.55 0)
+		(at 54.61 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -430,7 +715,7 @@
 		(fields_autoplaced yes)
 		(uuid "9aa96c4b-d237-41fd-888d-7c11ab00ffad")
 		(property "Reference" "#PWR021"
-			(at 80.01 88.9 0)
+			(at 54.61 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -439,7 +724,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 80.01 87.63 0)
+			(at 54.61 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -447,7 +732,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 80.01 82.55 0)
+			(at 54.61 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -456,7 +741,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 80.01 82.55 0)
+			(at 54.61 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -465,7 +750,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 80.01 82.55 0)
+			(at 54.61 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -480,6 +765,209 @@
 			(project ""
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/ceacf653-ca51-496c-8a7f-54f4646feaa8"
 					(reference "#PWR021")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 128.27 104.14 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ac56830c-5647-45fb-a860-23aafe6209fa")
+		(property "Reference" "#PWR025"
+			(at 128.27 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 128.27 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 128.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 128.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 128.27 104.14 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aa6b5698-0d02-4448-94eb-fb692c5757f5")
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/ceacf653-ca51-496c-8a7f-54f4646feaa8"
+					(reference "#PWR025")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x02")
+		(at 119.38 40.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ac71a8ad-4ce6-476c-a4ed-ede679d4415e")
+		(property "Reference" "Driver"
+			(at 121.92 41.9099 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Conn_01x02"
+			(at 121.92 43.1799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 119.38 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 119.38 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7d17f8f0-a007-481c-a6a5-e5107830e0d5")
+		)
+		(pin "2"
+			(uuid "e6217bdf-4e93-4f01-bd1d-16481b269c3f")
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/ceacf653-ca51-496c-8a7f-54f4646feaa8"
+					(reference "Driver")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 44.45 116.84 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ae20b925-4d40-4c1e-82d9-43c3584e4be0")
+		(property "Reference" "#PWR026"
+			(at 44.45 123.19 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 44.45 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 44.45 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 44.45 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 44.45 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "03945b93-d8f7-499f-a336-98375f7762e6")
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/ceacf653-ca51-496c-8a7f-54f4646feaa8"
+					(reference "#PWR026")
 					(unit 1)
 				)
 			)
@@ -688,6 +1176,72 @@
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/ceacf653-ca51-496c-8a7f-54f4646feaa8"
 					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 114.3 43.18 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f6478102-ebf8-491c-ad88-2d8d6288f530")
+		(property "Reference" "#PWR01"
+			(at 114.3 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 114.3 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.3 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 114.3 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d75d6f61-740f-460e-b37a-a677832d9cff")
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/ceacf653-ca51-496c-8a7f-54f4646feaa8"
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)
