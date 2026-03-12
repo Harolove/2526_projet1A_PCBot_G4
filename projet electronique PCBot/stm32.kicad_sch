@@ -1959,7 +1959,7 @@
 		)
 		(uuid "27b80e37-f68d-426d-b2e9-88a9b8544b39")
 	)
-	(hierarchical_label "PA14"
+	(hierarchical_label "SYS_JTCK-SWCLK"
 		(shape input)
 		(at 157.48 121.92 0)
 		(effects
@@ -1970,7 +1970,7 @@
 		)
 		(uuid "32df9cda-c6bc-4446-a8c5-c689bcfbc230")
 	)
-	(hierarchical_label "PA15"
+	(hierarchical_label "USART2_RX"
 		(shape input)
 		(at 157.48 124.46 0)
 		(effects
@@ -1992,7 +1992,7 @@
 		)
 		(uuid "3930b368-7d3d-465e-b551-d20c6fe87b55")
 	)
-	(hierarchical_label "PB3"
+	(hierarchical_label "USART2_TX"
 		(shape input)
 		(at 132.08 101.6 180)
 		(effects
@@ -2025,7 +2025,7 @@
 		)
 		(uuid "50ca2e65-28c8-4f3b-b496-c6cb5ae7a224")
 	)
-	(hierarchical_label "PB7"
+	(hierarchical_label "I2C_SDA"
 		(shape input)
 		(at 132.08 111.76 180)
 		(effects
@@ -2036,7 +2036,7 @@
 		)
 		(uuid "50ef4c8c-119e-42fe-a762-aaec0a0493f0")
 	)
-	(hierarchical_label "PA9"
+	(hierarchical_label "TIM1_CH2"
 		(shape input)
 		(at 157.48 109.22 0)
 		(effects
@@ -2135,7 +2135,7 @@
 		)
 		(uuid "9bbfb857-664b-4dfc-b6bf-5f962085fae2")
 	)
-	(hierarchical_label "PA8"
+	(hierarchical_label "TIM1_CH1"
 		(shape input)
 		(at 157.48 106.68 0)
 		(effects
@@ -2190,7 +2190,7 @@
 		)
 		(uuid "c472cc7d-ddb7-4e54-8ada-e35856042aee")
 	)
-	(hierarchical_label "PA12"
+	(hierarchical_label "TIM1_CH2N"
 		(shape input)
 		(at 157.48 116.84 0)
 		(effects
@@ -2201,7 +2201,7 @@
 		)
 		(uuid "c4cc3062-d053-4694-959f-0d8ae8cfd93d")
 	)
-	(hierarchical_label "PB8"
+	(hierarchical_label "I2C_SCL"
 		(shape input)
 		(at 132.08 114.3 180)
 		(effects
@@ -2223,7 +2223,7 @@
 		)
 		(uuid "dec7ae6e-ab84-4469-b4d0-e30f97631293")
 	)
-	(hierarchical_label "PA11"
+	(hierarchical_label "TIM1_CH1N"
 		(shape input)
 		(at 157.48 114.3 0)
 		(effects
@@ -2245,7 +2245,7 @@
 		)
 		(uuid "eacbe5db-3e2b-45d3-a7bd-68c6bd49eb3e")
 	)
-	(hierarchical_label "PA13"
+	(hierarchical_label "SYS_JTMS-SWDIO"
 		(shape input)
 		(at 157.48 119.38 0)
 		(effects
