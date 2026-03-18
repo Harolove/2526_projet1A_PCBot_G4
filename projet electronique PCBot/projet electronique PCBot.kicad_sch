@@ -15,6 +15,36 @@
 		(comment 4 "Sara KABBANI")
 	)
 	(lib_symbols)
+	(text "J6\n"
+		(exclude_from_sim no)
+		(at 208.534 95.504 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c1742b42-7caa-45cf-9018-0aa345e67261")
+	)
+	(text "J3"
+		(exclude_from_sim no)
+		(at 155.702 94.234 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "d73225bd-49b0-4d39-8fbd-f8294b97a8b4")
+	)
+	(text "J4"
+		(exclude_from_sim no)
+		(at 208.788 98.044 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "e6ba82ca-7cbd-49fd-978d-bddd35dcdf2c")
+	)
 	(wire
 		(pts
 			(xy 52.07 129.54) (xy 69.85 129.54)
@@ -24,6 +54,17 @@
 			(type default)
 		)
 		(uuid "2ab3bff2-cd23-4ac7-813a-642c03335f2f")
+	)
+	(hierarchical_label "XSHUT"
+		(shape input)
+		(at 160.02 93.98 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "01e70ee5-13bc-4c1e-a720-56c0472f4435")
 	)
 	(hierarchical_label "PF1"
 		(shape input)
@@ -46,6 +87,17 @@
 			(justify right)
 		)
 		(uuid "0634eb17-680b-45da-8ac0-0b3ee2657608")
+	)
+	(hierarchical_label "CSN"
+		(shape input)
+		(at 204.47 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0915942c-31dc-410d-8f8d-175701339abd")
 	)
 	(hierarchical_label "PA8"
 		(shape input)
@@ -178,6 +230,17 @@
 			(justify right)
 		)
 		(uuid "306232ad-2400-47e0-be88-93bdf16cab71")
+	)
+	(hierarchical_label "XSHUT"
+		(shape input)
+		(at 204.47 95.25 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "34dbd6ed-0c39-45e7-88c1-a92fab67e564")
 	)
 	(hierarchical_label "PB3"
 		(shape input)
@@ -344,6 +407,17 @@
 		)
 		(uuid "7162e206-e321-4a78-97b1-aecf9945b26d")
 	)
+	(hierarchical_label "CE"
+		(shape input)
+		(at 204.47 110.49 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "794d64be-a4b8-430e-a02f-d25746992f3a")
+	)
 	(hierarchical_label "PA9"
 		(shape input)
 		(at 158.75 161.29 180)
@@ -465,6 +539,17 @@
 		)
 		(uuid "a37229e1-eff9-4dba-980f-dc920140c343")
 	)
+	(hierarchical_label "IRQ"
+		(shape input)
+		(at 204.47 107.95 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a73375a2-93d5-4441-b29a-98ba9ec796f7")
+	)
 	(hierarchical_label "PA1"
 		(shape input)
 		(at 158.75 140.97 180)
@@ -541,6 +626,17 @@
 			(justify left)
 		)
 		(uuid "d2c611a5-d227-4584-9510-4bbc01a21d34")
+	)
+	(hierarchical_label "XSHUT"
+		(shape input)
+		(at 204.47 97.79 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e6102ddf-7b58-40b6-97da-118abceb8380")
 	)
 	(hierarchical_label "PB5"
 		(shape input)
