@@ -2641,6 +2641,16 @@
 		)
 		(uuid "85a0a2c4-82f1-4435-ab6f-ebcb7b222043")
 	)
+	(text "A vérifier\n"
+		(exclude_from_sim no)
+		(at 74.422 111.506 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "92b8e4fb-a850-4485-a440-67e97c39e7c3")
+	)
 	(text "Régulateur 5V -> 3.3V"
 		(exclude_from_sim no)
 		(at 203.2 103.632 0)

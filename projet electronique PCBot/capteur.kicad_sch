@@ -1628,6 +1628,16 @@
 		)
 		(uuid "7c5a8b6d-0c62-4db8-a9a0-1195eae4b226")
 	)
+	(text "A vérifier si c'est bien +3.3V pour les TOF\n(à la place de VCC)"
+		(exclude_from_sim no)
+		(at 79.502 37.846 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "7e8c5927-b5e8-47ed-b16c-91c917b3567a")
+	)
 	(text "Centrale inertielle\n"
 		(exclude_from_sim no)
 		(at 58.42 123.19 0)
@@ -1700,8 +1710,20 @@
 		(uuid "39acf3cb-6920-41c1-9146-c054bf72334a")
 	)
 	(no_connect
+		(at 114.3 81.28)
+		(uuid "591362ea-3803-421c-9484-498e5e286e72")
+	)
+	(no_connect
 		(at 63.5 133.35)
 		(uuid "598427df-0e57-4dbc-9b7e-2ad61e4ade51")
+	)
+	(no_connect
+		(at 86.36 93.98)
+		(uuid "653798c9-7732-446c-846c-84f7a0dd76dd")
+	)
+	(no_connect
+		(at 110.49 54.61)
+		(uuid "b117ff43-8889-4119-8a05-61fcd9eb3089")
 	)
 	(no_connect
 		(at 63.5 138.43)
@@ -2041,27 +2063,6 @@
 		)
 		(uuid "ee7b4ce7-4ba1-4b51-9739-3be64ead7340")
 	)
-	(wire
-		(pts
-			(xy 33.02 54.61) (xy 110.49 54.61)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fcfba7ed-8611-4d31-8bb3-fcb8f00a6154")
-	)
-	(hierarchical_label "TOF1_GPIO1"
-		(shape input)
-		(at 33.02 54.61 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "004e053d-0642-4b76-9285-8d1099ece707")
-	)
 	(hierarchical_label "TOF2_XSHUT"
 		(shape input)
 		(at 114.3 83.82 180)
@@ -2083,17 +2084,6 @@
 			(justify left)
 		)
 		(uuid "0f1da792-007e-44e2-bf82-b92d9878f061")
-	)
-	(hierarchical_label "VCC"
-		(shape input)
-		(at 81.28 83.82 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "409b8d39-a492-4efe-a242-631064a88b56")
 	)
 	(hierarchical_label "CE"
 		(shape input)
@@ -2117,17 +2107,6 @@
 		)
 		(uuid "5408295e-08a6-484e-8e7c-29a2b2de09dc")
 	)
-	(hierarchical_label "TOF2_GPIO1"
-		(shape input)
-		(at 114.3 81.28 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "63a4f9ed-5cf3-4045-80ec-0fe4f26dc613")
-	)
 	(hierarchical_label "TOF1_XSHUT"
 		(shape input)
 		(at 31.75 57.15 180)
@@ -2138,28 +2117,6 @@
 			(justify right)
 		)
 		(uuid "688688a7-efb6-461a-9028-7614d2ca2842")
-	)
-	(hierarchical_label "VCC"
-		(shape input)
-		(at 114.3 71.12 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6a7cecbb-6b2f-4ac3-bddf-298faac27e45")
-	)
-	(hierarchical_label "TOF3_GPIO1"
-		(shape input)
-		(at 86.36 93.98 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6ba4d6fd-eb15-4b0a-ba8f-364ded0ce874")
 	)
 	(hierarchical_label "SDA"
 		(shape input)
@@ -2227,17 +2184,6 @@
 		)
 		(uuid "ecbf5812-eec4-4d17-b18a-8203d3a14003")
 	)
-	(hierarchical_label "VCC"
-		(shape input)
-		(at 110.49 44.45 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "fde2e6fa-16d8-4653-83a2-aa851a3cb85f")
-	)
 	(symbol
 		(lib_id "power:GND")
 		(at 102.87 46.99 270)
@@ -2247,7 +2193,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1e262aa5-bb03-4ea6-b173-ac32f494526c")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR09"
 			(at 96.52 46.99 0)
 			(effects
 				(font
@@ -2319,7 +2265,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "28a7e558-8a87-4f94-8200-88fe3b29971a")
-		(property "Reference" "J3"
+		(property "Reference" "J4"
 			(at 99.06 88.8999 0)
 			(effects
 				(font
@@ -2406,7 +2352,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f73d6bb-da44-4b3b-a881-d8cf0dd93c4f")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR021"
 			(at 167.64 102.87 0)
 			(effects
 				(font
@@ -2470,6 +2416,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 81.28 83.82 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3b4104bd-6c0d-4403-bb0a-48c0e78a3301")
+		(property "Reference" "#PWR017"
+			(at 85.09 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 78.232 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 81.28 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 81.28 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6d22247d-b645-4e03-b2f1-e43781ffdad3")
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 86.36 123.19 90)
 		(unit 1)
@@ -2478,7 +2490,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "53a770e5-fc88-4206-945b-d008cea0b6d1")
-		(property "Reference" "C?"
+		(property "Reference" "C6"
 			(at 86.36 118.11 90)
 			(effects
 				(font
@@ -2551,9 +2563,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "6cb25e4f-a399-4505-a27d-dab50c50b2c7")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR?"
 			(at 57.15 130.81 0)
 			(effects
 				(font
@@ -2563,7 +2574,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 59.69 130.8099 90)
+			(at 60.452 130.81 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2602,6 +2613,12 @@
 			(uuid "67702808-fd8a-4850-915e-e2bc3ab039fb")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
 					(reference "#PWR06")
@@ -2620,7 +2637,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "80e3c101-20c5-4aae-ab47-86f4d69d64ac")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR03"
 			(at 96.52 123.19 0)
 			(effects
 				(font
@@ -2684,6 +2701,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+3.3V")
+		(at 110.49 44.45 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "820472d5-406a-441f-a3a9-643d468beeb2")
+		(property "Reference" "#PWR014"
+			(at 114.3 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 107.442 44.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 110.49 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 110.49 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 110.49 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0317951e-98d6-46da-a504-d7c38dba41af")
+		)
+		(instances
+			(project ""
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "#PWR014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Sensor_Motion:LSM6DSM")
 		(at 78.74 138.43 0)
 		(unit 1)
@@ -2693,7 +2776,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "830ab1c0-25d8-4015-8452-ba03e7e4528e")
-		(property "Reference" "U?"
+		(property "Reference" "U5"
 			(at 80.6959 152.4 0)
 			(effects
 				(font
@@ -2805,7 +2888,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "89170ead-4c01-4783-adbf-a37f12156e8b")
-		(property "Reference" "J1"
+		(property "Reference" "J3"
 			(at 123.19 49.5299 0)
 			(effects
 				(font
@@ -2892,7 +2975,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8aa20173-3912-4286-8016-639e045be449")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR?"
 			(at 81.28 123.19 0)
 			(effects
 				(font
@@ -2940,6 +3023,12 @@
 			(uuid "3dfac7f1-538f-4729-bb3f-1c3849f51299")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
 					(reference "#PWR04")
@@ -2957,7 +3046,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f547dc9-7557-4ea9-907b-e257ae845fdd")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR06"
 			(at 139.7 110.49 0)
 			(effects
 				(font
@@ -3028,7 +3117,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "92dd3e23-bca4-4c38-8c64-36c282ed8f7a")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR02"
 			(at 97.79 113.03 0)
 			(effects
 				(font
@@ -3100,7 +3189,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "93cdf75e-3654-4fcf-b204-84d87719de74")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR?"
 			(at 107.95 73.66 0)
 			(effects
 				(font
@@ -3171,7 +3260,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "acbe4b98-015d-41b4-a574-2e8a5f20733c")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR010"
 			(at 78.74 160.02 0)
 			(effects
 				(font
@@ -3242,7 +3331,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b06565ed-8e2c-455b-a0dd-24cd60f54512")
-		(property "Reference" "J?"
+		(property "Reference" "J2"
 			(at 165.1 97.79 0)
 			(effects
 				(font
@@ -3332,7 +3421,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bbef2d27-0c72-4b74-8cdb-94d5a73374be")
-		(property "Reference" "C?"
+		(property "Reference" "C5"
 			(at 86.36 107.95 90)
 			(effects
 				(font
@@ -3405,7 +3494,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c3f677f8-bc53-4232-960a-28ce9d1d2405")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR?"
 			(at 74.93 86.36 0)
 			(effects
 				(font
@@ -3415,7 +3504,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 72.898 86.614 90)
+			(at 74.168 86.614 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3477,7 +3566,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d0c11e82-ba56-4fe7-b090-3ca0bd2bd0ad")
-		(property "Reference" "J2"
+		(property "Reference" "J6"
 			(at 127 76.1999 0)
 			(effects
 				(font
@@ -3556,6 +3645,72 @@
 	)
 	(symbol
 		(lib_id "power:+3.3V")
+		(at 114.3 71.12 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d5e8cf31-7a2e-4b76-a38f-e1cb84943295")
+		(property "Reference" "#PWR016"
+			(at 118.11 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 111.252 71.12 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.3 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 114.3 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9a29eed3-b8ea-4ab8-ba97-d83fb560400b")
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
 		(at 78.74 109.22 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3564,7 +3719,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e438836c-0694-48f6-9512-31dca08e7694")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR?"
 			(at 78.74 113.03 0)
 			(effects
 				(font
@@ -3612,6 +3767,12 @@
 			(uuid "a95fe4e2-986d-4201-8926-685f03227806")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
 					(reference "#PWR03")
@@ -3630,7 +3791,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f3931b0d-82ae-4d78-9e39-548842bc2cf3")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR?"
 			(at 67.31 146.05 0)
 			(effects
 				(font
@@ -3679,6 +3840,12 @@
 			(uuid "99eae28d-f3e1-4d2f-a33a-f4fab1d240da")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
 					(reference "#PWR05")
