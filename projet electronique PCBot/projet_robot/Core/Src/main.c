@@ -21,7 +21,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "odometrie.h"
+#include "moteur.h"
+#include "capteur.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,7 +44,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+RobotPose maPosition;
+Moteur mot_gauche, mot_droit;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -85,13 +88,66 @@ int main(void)
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL); // Encodeur Gauche
+  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL); // Encodeur Droit
+  ODOM_Init(&maPosition);
+
+  // Configuration Moteur Gauche
+  mot_gauche.htim = &htim4;
+  mot_gauche.channel = TIM_CHANNEL_1;
+  mot_gauche.dir_port = GPIOB;
+  mot_gauche.dir_pin = GPIO_PIN_0;
+  MOTEUR_Init(&mot_gauche);
+
+  // Configuration Moteur Droit
+  mot_droit.htim = &htim4;
+  mot_droit.channel = TIM_CHANNEL_2;
+  mot_droit.dir_port = GPIOB;
+  mot_droit.dir_pin = GPIO_PIN_1;
+  MOTEUR_Init(&mot_droit);
+
+  CAPTEUR_t monCapteur = {GPIOA, GPIO_PIN_1, GPIOA, GPIO_PIN_2, &htim5};
+  HAL_TIM_Base_Start(&htim5);
+
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  float distance = 0;
   while (1)
   {
+	  ODOM_Update(&maPosition, &htim2, &htim3);
+
+	     // Mise à jour de maPosition.x, maPosition.y et maPosition.theta
+
+	  HAL_Delay(10); // Fréquence de 100Hz pour la précision
+
+	  // Avancer tout droit à 50% de vitesse
+	     MOTEUR_SetVitesse(&mot_gauche, 50);
+	     MOTEUR_SetVitesse(&mot_droit, 50);
+
+	     HAL_Delay(2000); // Pendant 2 secondes
+
+	     // Reculer à 30%
+	     MOTEUR_SetVitesse(&mot_gauche, -30);
+	     MOTEUR_SetVitesse(&mot_droit, -30);
+
+	     HAL_Delay(1000);
+
+	     distance = CAPTEUR_Read_Distance(&monCapteur);
+
+	         if (distance < 20.0f) { // Obstacle à moins de 20cm
+	             MOTEUR_SetVitesse(&mot_gauche, 0);
+	             MOTEUR_SetVitesse(&mot_droit, 0); // STOP !
+	         } else {
+	             MOTEUR_SetVitesse(&mot_gauche, 40);
+	             MOTEUR_SetVitesse(&mot_droit, 40);
+	         }
+	         HAL_Delay(100);
+
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
