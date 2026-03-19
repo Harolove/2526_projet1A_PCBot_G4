@@ -1175,7 +1175,7 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 99.06) (xy 149.86 104.14)
+			(xy 149.86 100.33) (xy 149.86 104.14)
 		)
 		(stroke
 			(width 0)
@@ -1506,7 +1506,7 @@
 	)
 	(hierarchical_label "PA0"
 		(shape input)
-		(at 149.86 99.06 90)
+		(at 149.86 100.33 90)
 		(effects
 			(font
 				(size 1.27 1.27)
