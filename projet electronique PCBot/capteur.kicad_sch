@@ -2026,6 +2026,17 @@
 		)
 		(uuid "d6152dc0-f3ba-4f92-80a0-5b034ee32383")
 	)
+	(hierarchical_label "SDO{slash}SA0"
+		(shape input)
+		(at 63.5 130.81 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ddb52925-0adc-4a70-9819-74ce6d8410bf")
+	)
 	(hierarchical_label "TOF3_XSHUT"
 		(shape input)
 		(at 86.36 96.52 180)
@@ -2068,7 +2079,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1e262aa5-bb03-4ea6-b173-ac32f494526c")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR09"
 			(at 96.52 46.99 0)
 			(effects
 				(font
@@ -2140,7 +2151,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "28a7e558-8a87-4f94-8200-88fe3b29971a")
-		(property "Reference" "J3"
+		(property "Reference" "J4"
 			(at 99.06 88.8999 0)
 			(effects
 				(font
@@ -2227,7 +2238,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f73d6bb-da44-4b3b-a881-d8cf0dd93c4f")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR021"
 			(at 167.64 102.87 0)
 			(effects
 				(font
@@ -2299,7 +2310,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "53a770e5-fc88-4206-945b-d008cea0b6d1")
-		(property "Reference" "C?"
+		(property "Reference" "C6"
 			(at 86.36 118.11 90)
 			(effects
 				(font
@@ -2373,7 +2384,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "80e3c101-20c5-4aae-ab47-86f4d69d64ac")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR03"
 			(at 96.52 123.19 0)
 			(effects
 				(font
@@ -2446,7 +2457,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "830ab1c0-25d8-4015-8452-ba03e7e4528e")
-		(property "Reference" "U?"
+		(property "Reference" "U5"
 			(at 80.6959 152.4 0)
 			(effects
 				(font
@@ -2558,7 +2569,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "89170ead-4c01-4783-adbf-a37f12156e8b")
-		(property "Reference" "J1"
+		(property "Reference" "J3"
 			(at 123.19 49.5299 0)
 			(effects
 				(font
@@ -2644,7 +2655,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f547dc9-7557-4ea9-907b-e257ae845fdd")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR06"
 			(at 139.7 110.49 0)
 			(effects
 				(font
@@ -2715,7 +2726,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "92dd3e23-bca4-4c38-8c64-36c282ed8f7a")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR02"
 			(at 97.79 113.03 0)
 			(effects
 				(font
@@ -2787,7 +2798,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "93cdf75e-3654-4fcf-b204-84d87719de74")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR?"
 			(at 107.95 73.66 0)
 			(effects
 				(font
@@ -2835,6 +2846,12 @@
 			(uuid "521373df-209e-4cff-b84a-938486490466")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "capteur"
 				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
 					(reference "#PWR01")
@@ -2853,7 +2870,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9e7c89ba-96ca-408a-9204-9867d747f391")
-		(property "Reference" "U1"
+		(property "Reference" "U?"
 			(at 115.1733 173.99 0)
 			(effects
 				(font
@@ -2942,6 +2959,12 @@
 			(uuid "f2f79d00-4ec3-4e07-8466-bc031a2355f5")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "U?")
+					(unit 1)
+				)
+			)
 			(project ""
 				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
 					(reference "U1")
@@ -2959,7 +2982,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "acbe4b98-015d-41b4-a574-2e8a5f20733c")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR010"
 			(at 78.74 160.02 0)
 			(effects
 				(font
@@ -3030,7 +3053,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b06565ed-8e2c-455b-a0dd-24cd60f54512")
-		(property "Reference" "J?"
+		(property "Reference" "J2"
 			(at 165.1 97.79 0)
 			(effects
 				(font
@@ -3120,7 +3143,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bbef2d27-0c72-4b74-8cdb-94d5a73374be")
-		(property "Reference" "C?"
+		(property "Reference" "C5"
 			(at 86.36 107.95 90)
 			(effects
 				(font
@@ -3193,7 +3216,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c3f677f8-bc53-4232-960a-28ce9d1d2405")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR?"
 			(at 74.93 86.36 0)
 			(effects
 				(font
@@ -3241,6 +3264,12 @@
 			(uuid "3a077202-8f5d-4872-97ed-a04be0fce62d")
 		)
 		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/93c3b10c-af7a-4302-b763-bec1b6a7b44e"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 			(project "capteur"
 				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
 					(reference "#PWR02")
@@ -3259,7 +3288,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d0c11e82-ba56-4fe7-b090-3ca0bd2bd0ad")
-		(property "Reference" "J2"
+		(property "Reference" "J6"
 			(at 127 76.1999 0)
 			(effects
 				(font
