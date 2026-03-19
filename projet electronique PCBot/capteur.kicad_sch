@@ -1461,6 +1461,22 @@
 		(color 0 0 0 0)
 		(uuid "f74a958a-ee0d-4bfc-b36f-81c3d23008f4")
 	)
+	(no_connect
+		(at 63.5 135.89)
+		(uuid "2dcb7fc9-0627-4d24-a4a4-c108c83800d4")
+	)
+	(no_connect
+		(at 63.5 128.27)
+		(uuid "39acf3cb-6920-41c1-9146-c054bf72334a")
+	)
+	(no_connect
+		(at 63.5 133.35)
+		(uuid "598427df-0e57-4dbc-9b7e-2ad61e4ade51")
+	)
+	(no_connect
+		(at 63.5 138.43)
+		(uuid "d693263b-d1d2-43ca-9b7e-871492761b43")
+	)
 	(wire
 		(pts
 			(xy 88.9 123.19) (xy 90.17 123.19)
@@ -1483,7 +1499,7 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 76.2) (xy 102.87 76.2)
+			(xy 114.3 76.2) (xy 102.87 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1543,7 +1559,17 @@
 	)
 	(wire
 		(pts
-			(xy 107.95 78.74) (xy 100.33 78.74)
+			(xy 81.28 83.82) (xy 86.36 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33224439-5736-461e-bb49-658d7fc544fe")
+	)
+	(wire
+		(pts
+			(xy 114.3 78.74) (xy 100.33 78.74)
 		)
 		(stroke
 			(width 0)
@@ -1743,6 +1769,16 @@
 	)
 	(wire
 		(pts
+			(xy 81.28 86.36) (xy 86.36 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e020edcf-99c5-40e9-8f5e-2ed71948d0d1")
+	)
+	(wire
+		(pts
 			(xy 31.75 57.15) (xy 110.49 57.15)
 		)
 		(stroke
@@ -1781,7 +1817,7 @@
 		)
 		(uuid "fcfba7ed-8611-4d31-8bb3-fcb8f00a6154")
 	)
-	(hierarchical_label "GPIO1"
+	(hierarchical_label "TOF1_GPIO1"
 		(shape input)
 		(at 33.02 54.61 180)
 		(effects
@@ -1803,9 +1839,9 @@
 		)
 		(uuid "0496cfe4-5df2-4c84-be2c-d74dd65fa863")
 	)
-	(hierarchical_label "XSHUT"
+	(hierarchical_label "TOF2_XSHUT"
 		(shape input)
-		(at 107.95 83.82 180)
+		(at 114.3 83.82 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1847,6 +1883,17 @@
 		)
 		(uuid "27ba0e9f-2451-456c-8be2-bb7eb679c954")
 	)
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 81.28 83.82 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "409b8d39-a492-4efe-a242-631064a88b56")
+	)
 	(hierarchical_label "CE"
 		(shape input)
 		(at 158.75 105.41 180)
@@ -1869,9 +1916,9 @@
 		)
 		(uuid "5408295e-08a6-484e-8e7c-29a2b2de09dc")
 	)
-	(hierarchical_label "GPIO1"
+	(hierarchical_label "TOF2_GPIO1"
 		(shape input)
-		(at 107.95 81.28 180)
+		(at 114.3 81.28 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1880,7 +1927,7 @@
 		)
 		(uuid "63a4f9ed-5cf3-4045-80ec-0fe4f26dc613")
 	)
-	(hierarchical_label "XSHUT"
+	(hierarchical_label "TOF1_XSHUT"
 		(shape input)
 		(at 31.75 57.15 180)
 		(effects
@@ -1891,7 +1938,18 @@
 		)
 		(uuid "688688a7-efb6-461a-9028-7614d2ca2842")
 	)
-	(hierarchical_label "GPIO1"
+	(hierarchical_label "VCC"
+		(shape input)
+		(at 114.3 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6a7cecbb-6b2f-4ac3-bddf-298faac27e45")
+	)
+	(hierarchical_label "TOF3_GPIO1"
 		(shape input)
 		(at 86.36 93.98 180)
 		(effects
@@ -1946,39 +2004,6 @@
 		)
 		(uuid "a8d79201-80dd-47c8-84c9-7d86f2f0cde5")
 	)
-	(hierarchical_label "SDO{slash}SA0"
-		(shape input)
-		(at 63.5 130.81 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "af5241c2-0567-4b34-bb6a-20e67ec0166f")
-	)
-	(hierarchical_label "SDX"
-		(shape input)
-		(at 63.5 133.35 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "b81c67c1-6062-4515-bfe2-1994a5a1dd4d")
-	)
-	(hierarchical_label "SCX"
-		(shape input)
-		(at 63.5 135.89 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "be7fd679-c5ab-433d-9034-181366a5dc02")
-	)
 	(hierarchical_label "SCK"
 		(shape input)
 		(at 158.75 107.95 180)
@@ -2001,7 +2026,7 @@
 		)
 		(uuid "d6152dc0-f3ba-4f92-80a0-5b034ee32383")
 	)
-	(hierarchical_label "XSHUT"
+	(hierarchical_label "TOF3_XSHUT"
 		(shape input)
 		(at 86.36 96.52 180)
 		(effects
@@ -2011,28 +2036,6 @@
 			(justify right)
 		)
 		(uuid "dfab2c48-c950-4ee0-85d6-291b04651609")
-	)
-	(hierarchical_label "OCS_Aux"
-		(shape input)
-		(at 63.5 138.43 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e3444094-7842-4c08-83ae-84e0589227a0")
-	)
-	(hierarchical_label "SDO_Aux"
-		(shape input)
-		(at 63.5 128.27 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "e7baf01b-0ca6-4e60-ae1c-4cbdfecb1082")
 	)
 	(hierarchical_label "CSN"
 		(shape input)
@@ -2065,7 +2068,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1e262aa5-bb03-4ea6-b173-ac32f494526c")
-		(property "Reference" "#PWR09"
+		(property "Reference" "#PWR?"
 			(at 96.52 46.99 0)
 			(effects
 				(font
@@ -2119,6 +2122,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2131,8 +2140,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "28a7e558-8a87-4f94-8200-88fe3b29971a")
-		(property "Reference" "J4"
-			(at 99.06 89.535 0)
+		(property "Reference" "J3"
+			(at 99.06 88.8999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2141,7 +2150,7 @@
 			)
 		)
 		(property "Value" "TOF"
-			(at 99.06 92.075 0)
+			(at 99.06 91.4399 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2200,6 +2209,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "J3")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2212,7 +2227,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f73d6bb-da44-4b3b-a881-d8cf0dd93c4f")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR?"
 			(at 167.64 102.87 0)
 			(effects
 				(font
@@ -2267,6 +2282,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2278,7 +2299,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "53a770e5-fc88-4206-945b-d008cea0b6d1")
-		(property "Reference" "C6"
+		(property "Reference" "C?"
 			(at 86.36 118.11 90)
 			(effects
 				(font
@@ -2334,6 +2355,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2346,7 +2373,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "80e3c101-20c5-4aae-ab47-86f4d69d64ac")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR?"
 			(at 96.52 123.19 0)
 			(effects
 				(font
@@ -2401,6 +2428,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2413,7 +2446,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "830ab1c0-25d8-4015-8452-ba03e7e4528e")
-		(property "Reference" "U5"
+		(property "Reference" "U?"
 			(at 80.6959 152.4 0)
 			(effects
 				(font
@@ -2507,6 +2540,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "U?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2519,8 +2558,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "89170ead-4c01-4783-adbf-a37f12156e8b")
-		(property "Reference" "J3"
-			(at 123.19 50.165 0)
+		(property "Reference" "J1"
+			(at 123.19 49.5299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2529,7 +2568,7 @@
 			)
 		)
 		(property "Value" "TOF"
-			(at 123.19 52.705 0)
+			(at 123.19 52.0699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2588,6 +2627,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "J1")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2599,7 +2644,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f547dc9-7557-4ea9-907b-e257ae845fdd")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR?"
 			(at 139.7 110.49 0)
 			(effects
 				(font
@@ -2652,6 +2697,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2664,7 +2715,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "92dd3e23-bca4-4c38-8c64-36c282ed8f7a")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR?"
 			(at 97.79 113.03 0)
 			(effects
 				(font
@@ -2719,6 +2770,184 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 114.3 73.66 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "93cdf75e-3654-4fcf-b204-84d87719de74")
+		(property "Reference" "#PWR01"
+			(at 107.95 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 107.442 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 114.3 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 114.3 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 114.3 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "521373df-209e-4cff-b84a-938486490466")
+		)
+		(instances
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "#PWR01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Sensor_Motion:LSM6DSM")
+		(at 113.03 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9e7c89ba-96ca-408a-9204-9867d747f391")
+		(property "Reference" "U1"
+			(at 115.1733 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "LSM6DSM"
+			(at 115.1733 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_LGA:LGA-14_3x2.5mm_P0.5mm_LayoutBorder3x4y"
+			(at 102.87 177.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.st.com/resource/en/datasheet/lsm6dsm.pdf"
+			(at 115.57 176.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "I2C/SPI, iNEMO inertial module: always-on 3D accelerometer and 3D gyroscope, with auxiliary SPI, 1.71V to 3.6V VCC"
+			(at 113.03 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "9"
+			(uuid "8de2d7c3-7cd4-41ea-9185-8da5fb52b037")
+		)
+		(pin "2"
+			(uuid "6cd0cebc-410b-42eb-943d-4c87063c0329")
+		)
+		(pin "3"
+			(uuid "97046099-10ca-435a-8f6c-960a4b592b90")
+		)
+		(pin "4"
+			(uuid "652da67c-5f3a-42b5-a7bd-4190e28611e6")
+		)
+		(pin "12"
+			(uuid "ccbeb572-2c80-4bca-b6ec-1e3c06d118ff")
+		)
+		(pin "1"
+			(uuid "dac383b3-f17a-4e72-b808-c30cc86e6351")
+		)
+		(pin "10"
+			(uuid "08f227fe-1a7f-4a21-9dad-1a82abee18a2")
+		)
+		(pin "14"
+			(uuid "c7b02706-15ca-44a0-9770-5b2cf3700321")
+		)
+		(pin "13"
+			(uuid "6dccef10-e8f3-4222-8dfa-ecf3dbd64b65")
+		)
+		(pin "5"
+			(uuid "65f30838-9aa8-4474-97ac-d34f29e0301f")
+		)
+		(pin "6"
+			(uuid "2329ed3c-cc07-47e1-bec5-9334ddc235a4")
+		)
+		(pin "11"
+			(uuid "5ab29305-c5c8-4be3-ae42-372987f8d60b")
+		)
+		(pin "7"
+			(uuid "7972a735-1f61-49d3-8148-16dc0c4199d9")
+		)
+		(pin "8"
+			(uuid "f2f79d00-4ec3-4e07-8466-bc031a2355f5")
+		)
+		(instances
+			(project ""
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "U1")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2730,7 +2959,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "acbe4b98-015d-41b4-a574-2e8a5f20733c")
-		(property "Reference" "#PWR010"
+		(property "Reference" "#PWR?"
 			(at 78.74 160.02 0)
 			(effects
 				(font
@@ -2783,6 +3012,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "#PWR?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2795,7 +3030,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b06565ed-8e2c-455b-a0dd-24cd60f54512")
-		(property "Reference" "J2"
+		(property "Reference" "J?"
 			(at 165.1 97.79 0)
 			(effects
 				(font
@@ -2868,6 +3103,12 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "J?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
@@ -2879,7 +3120,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "bbef2d27-0c72-4b74-8cdb-94d5a73374be")
-		(property "Reference" "C5"
+		(property "Reference" "C?"
 			(at 86.36 107.95 90)
 			(effects
 				(font
@@ -2935,29 +3176,34 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "C?")
+					(unit 1)
+				)
+			)
 		)
 	)
 	(symbol
-		(lib_id "pcbot_lib:TOF")
-		(at 113.03 76.2 0)
+		(lib_id "power:GND")
+		(at 81.28 86.36 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "d0c11e82-ba56-4fe7-b090-3ca0bd2bd0ad")
-		(property "Reference" "J6"
-			(at 120.65 76.835 0)
+		(uuid "c3f677f8-bc53-4232-960a-28ce9d1d2405")
+		(property "Reference" "#PWR02"
+			(at 74.93 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(hide yes)
 			)
 		)
-		(property "Value" "TOF"
-			(at 120.65 79.375 0)
+		(property "Value" "GND"
+			(at 72.898 86.614 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2966,7 +3212,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 113.03 76.2 0)
+			(at 81.28 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2975,7 +3221,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 113.03 76.2 0)
+			(at 81.28 86.36 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2984,7 +3230,73 @@
 			)
 		)
 		(property "Description" ""
-			(at 113.03 76.2 0)
+			(at 81.28 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "3a077202-8f5d-4872-97ed-a04be0fce62d")
+		)
+		(instances
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "#PWR02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "pcbot_lib:TOF")
+		(at 119.38 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d0c11e82-ba56-4fe7-b090-3ca0bd2bd0ad")
+		(property "Reference" "J2"
+			(at 127 76.1999 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TOF"
+			(at 127 78.7399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 119.38 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3016,6 +3328,18 @@
 					(unit 1)
 				)
 			)
+			(project "capteur"
+				(path "/c8d670ff-7238-40a1-bca3-b6d77bee1c63"
+					(reference "J2")
+					(unit 1)
+				)
+			)
 		)
 	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
 )
