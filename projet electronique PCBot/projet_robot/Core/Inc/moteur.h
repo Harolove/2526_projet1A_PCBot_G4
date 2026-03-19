@@ -12,7 +12,7 @@
 
 typedef struct {
     TIM_HandleTypeDef *htim; // Timer du PWM
-    uint32_t channel;        // Canal du Timer (ex: TIM_CHANNEL_1)
+    uint32_t channel;        // Canal du Timer
     GPIO_TypeDef *dir_port;  // Port de la broche direction
     uint16_t dir_pin;        // Numéro de la broche direction
 } Moteur;

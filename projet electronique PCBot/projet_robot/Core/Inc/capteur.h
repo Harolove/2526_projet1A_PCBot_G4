@@ -16,10 +16,10 @@ typedef struct {
     GPIO_TypeDef *echo_port;
     uint16_t echo_pin;
     TIM_HandleTypeDef *htim; // Un timer pour mesurer le temps (microsecondes)
-} HCSR04_t;
+} CAPTEUR_t;
 
 // Prototype
-float HCSR04_Read_Distance(CAPTEUR_t *sensor);
+float CAPTEUR_Read_Distance(CAPTEUR_t *sensor);
 
 
 #endif /* INC_CAPTEUR_H_ */
