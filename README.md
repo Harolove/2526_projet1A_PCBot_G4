@@ -53,4 +53,13 @@ Début du projet: présentation des différents projets; découvrir git et githu
 Schéma architectural sur draw.io; début de schematic sur Kicad et modification des symboles déjà existant sur Kicad pour avoir des composants qui se rapprochent de la réalité
 
 ## 19/02/2026
+Création des feuilles hiérarchiques
 Continuation du schematic sur Kicad
+
+## 12/03/2026
+Continuation du schematic sur Kicad
+
+
+## 19/03/2026
+Kicad : ajout de connexions inter-feuille
+CubeIDE : début de code (détermination de position, calcul de distance avec obstacle, déplacement dans l'espace)
