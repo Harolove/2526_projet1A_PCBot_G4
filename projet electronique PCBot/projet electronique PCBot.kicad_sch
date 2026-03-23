@@ -1466,26 +1466,6 @@
 				(justify left)
 			)
 		)
-		(pin "SWDIO" input
-			(at 172.72 87.63 90)
-			(uuid "40c727b0-2e19-4461-ac0f-5d73d45f0709")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "SWO" input
-			(at 175.26 87.63 90)
-			(uuid "73b6f895-a7e6-4fe7-9103-9fc00a590b37")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "SYS_JTCK-SWCLK" input
 			(at 204.47 137.16 0)
 			(uuid "c4e9da33-4d92-4d87-aafe-91598ada9ebe")
@@ -1564,46 +1544,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-			)
-		)
-		(pin "VCC" input
-			(at 165.1 87.63 90)
-			(uuid "2664d29d-ee1e-43cc-95dc-9a9b86273dda")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "VCP_RX" input
-			(at 179.07 87.63 90)
-			(uuid "2ff92ff6-94f8-48ef-ae67-f9e07cbb60af")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "VCP_TX" input
-			(at 181.61 87.63 90)
-			(uuid "0699bf9a-be1f-4851-9b45-c7f161fef3a5")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(pin "~{RST}" input
-			(at 167.64 87.63 90)
-			(uuid "bac720a8-b1de-4ce4-969a-93c61b18e2c9")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 			)
 		)
 		(instances
