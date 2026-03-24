@@ -1053,6 +1053,26 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "TIMER CHANNEL 1, 1N"
+		(exclude_from_sim no)
+		(at 85.09 108.458 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a07bba46-b53b-421d-a69c-c8d396ab87b2")
+	)
+	(text "TIMER CHANNEL 2, 2N"
+		(exclude_from_sim no)
+		(at 85.09 114.046 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c9d72153-1c00-45a6-b538-8bdd3da483bc")
+	)
 	(junction
 		(at 107.95 132.08)
 		(diameter 0)
@@ -1076,6 +1096,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "71de2f85-4f8f-4c2b-a47c-a36edb1142f7")
+	)
+	(junction
+		(at 154.94 102.87)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8a35164e-b63e-475c-801c-8f564828a29f")
 	)
 	(junction
 		(at 118.11 60.96)
@@ -1305,6 +1331,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 102.87) (xy 158.75 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9705017a-10e5-401d-b8ff-1e13444d272d")
+	)
+	(wire
+		(pts
 			(xy 176.53 90.17) (xy 195.58 90.17)
 		)
 		(stroke
@@ -1493,20 +1529,9 @@
 		)
 		(uuid "f764209a-afb6-45ac-a6b3-f2a1b9f7273f")
 	)
-	(hierarchical_label "PA1"
-		(shape input)
-		(at 119.38 110.49 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "0317cb6e-d5cf-4ee6-8c69-e54eb358496a")
-	)
 	(hierarchical_label "PA4"
 		(shape input)
-		(at 154.94 88.9 90)
+		(at 158.75 102.87 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1515,38 +1540,27 @@
 		)
 		(uuid "1b3d023d-ecdf-4eba-a862-454edb1be18b")
 	)
-	(hierarchical_label "PA0"
+	(hierarchical_label "TIM1_CH1"
 		(shape input)
-		(at 119.38 107.95 180)
+		(at 102.87 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "263ecf11-9864-4052-88a1-06ec1f42dcd1")
+		(uuid "38cbede2-2297-4951-9ad5-779aab9fe7c8")
 	)
-	(hierarchical_label "PA3"
+	(hierarchical_label "TIM1_CH2"
 		(shape input)
-		(at 119.38 115.57 180)
+		(at 102.87 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify right)
+			(justify left)
 		)
-		(uuid "563ec3a7-c4c1-4d34-a365-5d16b2612acb")
-	)
-	(hierarchical_label "PA2"
-		(shape input)
-		(at 119.38 113.03 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "89adc2bc-7e41-44b7-8fa1-a7ec211afed2")
+		(uuid "66731823-0c0b-49c3-bfa1-33acaf95c7e0")
 	)
 	(hierarchical_label "SYS"
 		(shape input)
@@ -1559,6 +1573,28 @@
 		)
 		(uuid "b4fe5423-57e5-46e6-8264-8a2c9dd77add")
 	)
+	(hierarchical_label "TIM1_CH2N"
+		(shape input)
+		(at 102.87 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "d17edfc6-a3a7-40cb-a8c2-23a9072c8daf")
+	)
+	(hierarchical_label "TIM1_CH1N"
+		(shape input)
+		(at 102.87 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "f4e1bc1e-d996-4eab-a0f2-afb44acdaab6")
+	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
 		(at 187.96 111.76 0)
@@ -1569,7 +1605,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "00c8c7cc-1940-4d55-b765-1650bd4d07a1")
-		(property "Reference" "J?"
+		(property "Reference" "J9"
 			(at 188.595 106.68 0)
 			(effects
 				(font
@@ -1585,7 +1621,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 187.96 111.76 0)
 			(effects
 				(font
@@ -1621,7 +1657,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "J?")
+					(reference "J9")
 					(unit 1)
 				)
 			)
@@ -1644,7 +1680,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "17456160-40bf-44d8-8484-3f3b312dd345")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR0112"
 			(at 154.94 82.55 0)
 			(effects
 				(font
@@ -1694,7 +1730,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "#PWR?")
+					(reference "#PWR0112")
 					(unit 1)
 				)
 			)
@@ -1715,7 +1751,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4714365d-851c-4ec7-9386-eb2a08e22f03")
-		(property "Reference" "C?"
+		(property "Reference" "C19"
 			(at 157.48 64.7762 0)
 			(effects
 				(font
@@ -1724,7 +1760,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "0u1"
+		(property "Value" "100n"
 			(at 157.48 67.3162 0)
 			(effects
 				(font
@@ -1733,7 +1769,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 154.94 66.04 0)
 			(effects
 				(font
@@ -1769,13 +1805,79 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "C?")
+					(reference "C19")
 					(unit 1)
 				)
 			)
 			(project ""
 				(path "/7d11412a-f71f-4764-add7-c39197843588"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 154.94 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "54340ebd-de15-4fc6-8a6f-72d33f1ac35c")
+		(property "Reference" "#PWR023"
+			(at 154.94 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 154.94 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 154.94 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 154.94 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "87da8800-3349-4e05-a1b3-153e68456bb2")
+		)
+		(instances
+			(project ""
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
@@ -1792,7 +1894,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7164bd42-52e0-4806-a8bb-a23887f244e8")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR0115"
 			(at 137.16 66.04 0)
 			(effects
 				(font
@@ -1842,7 +1944,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "#PWR?")
+					(reference "#PWR0115")
 					(unit 1)
 				)
 			)
@@ -1864,7 +1966,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "724817af-15a9-42f8-b779-45b76e121608")
-		(property "Reference" "J?"
+		(property "Reference" "J10"
 			(at 191.135 85.09 0)
 			(effects
 				(font
@@ -1880,7 +1982,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
 			(at 190.5 90.17 0)
 			(effects
 				(font
@@ -1916,7 +2018,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "J?")
+					(reference "J10")
 					(unit 1)
 				)
 			)
@@ -1938,7 +2040,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "82aa27bd-164c-4f84-9a66-dc49158f806d")
-		(property "Reference" "R?"
+		(property "Reference" "R11"
 			(at 107.95 91.4399 0)
 			(effects
 				(font
@@ -1956,7 +2058,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 105.41 92.71 0)
 			(effects
 				(font
@@ -1992,7 +2094,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "R?")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -2014,7 +2116,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a258bd4f-b463-4212-833d-b1c743669fa1")
-		(property "Reference" "C?"
+		(property "Reference" "C20"
 			(at 172.72 64.7762 0)
 			(effects
 				(font
@@ -2032,7 +2134,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 170.18 66.04 0)
 			(effects
 				(font
@@ -2068,7 +2170,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "C?")
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -2089,7 +2191,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b82e8da7-323d-408a-a926-80fa258423d7")
-		(property "Reference" "C?"
+		(property "Reference" "C18"
 			(at 110.4962 58.42 0)
 			(effects
 				(font
@@ -2107,7 +2209,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 111.76 60.96 0)
 			(effects
 				(font
@@ -2143,7 +2245,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "C?")
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -2166,7 +2268,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bb3e2852-4bf4-416d-a501-3467efdd0812")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR0114"
 			(at 116.84 138.43 0)
 			(effects
 				(font
@@ -2216,7 +2318,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "#PWR?")
+					(reference "#PWR0114")
 					(unit 1)
 				)
 			)
@@ -2239,7 +2341,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c95f71dd-99d6-4400-8eb0-c8cbe43dcfdb")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR0113"
 			(at 105.41 83.82 0)
 			(effects
 				(font
@@ -2289,7 +2391,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "#PWR?")
+					(reference "#PWR0113")
 					(unit 1)
 				)
 			)
@@ -2310,7 +2412,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e18ba2f7-81b1-418d-8ba1-ccc8a2ff617d")
-		(property "Reference" "R?"
+		(property "Reference" "R12"
 			(at 139.7 77.4699 0)
 			(effects
 				(font
@@ -2328,7 +2430,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 137.16 78.74 0)
 			(effects
 				(font
@@ -2364,7 +2466,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "R?")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -2394,7 +2496,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "DRV8833PWP"
+		(property "Value" "DRV8411APWPR"
 			(at 136.5759 123.19 0)
 			(effects
 				(font
@@ -2506,7 +2608,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f29970c4-99e5-44fa-982f-4263009d89f0")
-		(property "Reference" "R?"
+		(property "Reference" "R13"
 			(at 157.48 93.9799 0)
 			(effects
 				(font
@@ -2524,7 +2626,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 154.94 95.25 0)
 			(effects
 				(font
@@ -2560,7 +2662,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "R?")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -2583,7 +2685,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f6504785-17c3-414c-9f0b-b0264623f273")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR0116"
 			(at 100.33 60.96 0)
 			(effects
 				(font
@@ -2634,7 +2736,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "#PWR?")
+					(reference "#PWR0116")
 					(unit 1)
 				)
 			)
@@ -2656,7 +2758,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f7f1b9dd-9906-465f-817b-b0cc99f21407")
-		(property "Reference" "#PWR?"
+		(property "Reference" "#PWR0117"
 			(at 118.11 64.77 0)
 			(effects
 				(font
@@ -2706,7 +2808,7 @@
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/8074907f-d1dc-4b1d-805f-91e9bac82bf7"
-					(reference "#PWR?")
+					(reference "#PWR0117")
 					(unit 1)
 				)
 			)
