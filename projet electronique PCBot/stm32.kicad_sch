@@ -1760,6 +1760,16 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "PF0 PF1 a vérifier\n"
+		(exclude_from_sim no)
+		(at 118.11 88.138 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "23fb40dd-d77f-4c5c-8c7a-5bab1880dad8")
+	)
 	(text "NRST????\n"
 		(exclude_from_sim no)
 		(at 81.28 122.682 0)
@@ -2158,7 +2168,7 @@
 		)
 		(uuid "ee3eed91-f02a-4b1d-810a-5e389ed4d2d3")
 	)
-	(hierarchical_label "PB4"
+	(hierarchical_label "CSN"
 		(shape input)
 		(at 132.08 104.14 180)
 		(effects
@@ -2246,7 +2256,7 @@
 		)
 		(uuid "5e3f858f-6c6f-49df-ad41-ea35abfbfc34")
 	)
-	(hierarchical_label "PA0"
+	(hierarchical_label "TOF3_XSHUT"
 		(shape input)
 		(at 157.48 86.36 0)
 		(effects
@@ -2257,7 +2267,7 @@
 		)
 		(uuid "6110c624-d49b-4f22-a5da-c186abb103d3")
 	)
-	(hierarchical_label "PA1"
+	(hierarchical_label "TOF2_XSHUT"
 		(shape input)
 		(at 157.48 88.9 0)
 		(effects
@@ -2279,7 +2289,7 @@
 		)
 		(uuid "8f3621a4-0c84-4ef4-ac2d-d94bf7f42900")
 	)
-	(hierarchical_label "PB6"
+	(hierarchical_label "IRQ"
 		(shape input)
 		(at 132.08 109.22 180)
 		(effects
@@ -2323,7 +2333,7 @@
 		)
 		(uuid "b0aa9eaa-f1b7-4a16-9563-4ea773c8f4e1")
 	)
-	(hierarchical_label "PA6"
+	(hierarchical_label "MOSI"
 		(shape input)
 		(at 157.48 101.6 0)
 		(effects
@@ -2334,7 +2344,7 @@
 		)
 		(uuid "ba4222f8-8f2a-43a1-aba7-a2204695900f")
 	)
-	(hierarchical_label "PB5"
+	(hierarchical_label "~{CE}"
 		(shape input)
 		(at 132.08 106.68 180)
 		(effects
@@ -2345,7 +2355,7 @@
 		)
 		(uuid "c2af840b-43de-4a32-a1ee-7604ab5654c3")
 	)
-	(hierarchical_label "PB0"
+	(hierarchical_label "INT"
 		(shape input)
 		(at 132.08 99.06 180)
 		(effects
@@ -2411,7 +2421,7 @@
 		)
 		(uuid "e5091032-9737-462f-94a7-8b24a9ae51d6")
 	)
-	(hierarchical_label "PA10"
+	(hierarchical_label "CE"
 		(shape input)
 		(at 157.48 111.76 0)
 		(effects
@@ -2444,7 +2454,7 @@
 		)
 		(uuid "ec2c4daa-ff5a-4be8-a2e9-e896dab67f9a")
 	)
-	(hierarchical_label "PA2"
+	(hierarchical_label "TOF1_XSHUT"
 		(shape input)
 		(at 157.48 91.44 0)
 		(effects
@@ -2455,7 +2465,7 @@
 		)
 		(uuid "ed5b0852-b53b-4ff5-b993-96667ac0fcc5")
 	)
-	(hierarchical_label "PA5"
+	(hierarchical_label "SCK"
 		(shape input)
 		(at 157.48 99.06 0)
 		(effects
@@ -2466,7 +2476,7 @@
 		)
 		(uuid "f1619f92-3bff-4db4-9e44-4a36e16570e0")
 	)
-	(hierarchical_label "PA7"
+	(hierarchical_label "MISO"
 		(shape input)
 		(at 157.48 104.14 0)
 		(effects
