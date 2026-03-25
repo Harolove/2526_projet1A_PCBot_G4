@@ -1760,25 +1760,15 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "PF0 PF1 a vérifier\n"
+	(text "PF0 PF1 à vérifier\n"
 		(exclude_from_sim no)
-		(at 118.11 88.138 0)
+		(at 116.84 92.71 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 		)
 		(uuid "23fb40dd-d77f-4c5c-8c7a-5bab1880dad8")
-	)
-	(text "NRST????\n"
-		(exclude_from_sim no)
-		(at 81.28 122.682 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "3083da69-7ca5-4326-b8ca-c77cc654b045")
 	)
 	(junction
 		(at 143.51 66.04)
@@ -3096,7 +3086,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "91356834-f4d1-47a4-8963-d49fa79a1f50")
 		(property "Reference" "#PWR08"
 			(at 144.78 142.24 0)
@@ -3108,7 +3097,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 144.78 140.97 0)
+			(at 144.78 140.208 0)
 			(effects
 				(font
 					(size 1.27 1.27)
