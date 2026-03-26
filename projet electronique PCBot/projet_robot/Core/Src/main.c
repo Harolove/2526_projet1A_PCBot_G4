@@ -21,12 +21,15 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "odometrie.h"
-#include "moteur.h"
-#include "capteur.h"
-#include <math.h>
-#include <stdio.h>
-#include <stdbool.h>
+#include "odometrie.h"  // Gestion de la position du robot
+#include "moteur.h"     // Contrôle des moteurs
+#include "capteur.h"    // Capteur ultrasonique
+#include "comm.h"       // Communication inter-robots et base
+#include "map.h"        // Cartographie et fusion
+#include "zone.h"       // Gestion des zones
+#include <math.h>       // Fonctions mathématiques
+#include <stdio.h>      // Entrées/sorties
+#include <stdbool.h>    // Type booléen
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -47,32 +50,42 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+// Position actuelle du robot
 RobotPose maPosition;
+// Moteurs gauche et droit
 Moteur mot_gauche, mot_droit;
 
+// Structure pour données IMU (non utilisée actuellement)
 typedef struct {
-    float ax;
-    float ay;
-    float az;
-    float gx;
-    float gy;
-    float gz;
+    float ax, ay, az;  // Accélérations
+    float gx, gy, gz;  // Gyroscopes
 } IMU_Data;
 
-#define OBSTACLE_DISTANCE_CM 20.0f
-#define BACKUP_TIME_MS 500
-#define TURN_TIME_MS 400
-#define CONTROL_LOOP_MS 50
-#define MAX_OBSTACLES 32
+// Constantes pour l'évitement d'obstacles et contrôle
+#define OBSTACLE_DISTANCE_CM 20.0f  // Distance seuil pour détecter un obstacle
+#define BACKUP_TIME_MS 500          // Temps de recul en ms
+#define TURN_TIME_MS 400            // Temps de rotation en ms
+#define CONTROL_LOOP_MS 50          // Période de la boucle de contrôle
+#define MAX_OBSTACLES 32            // Nombre max d'obstacles stockés
 
+// Structure pour un point d'obstacle
 typedef struct {
-    float x;
-    float y;
-    float distance_cm;
+    float x, y;           // Position
+    float distance_cm;    // Distance mesurée
 } ObstaclePoint;
 
+// Tableau des obstacles détectés
 ObstaclePoint obstacle_map[MAX_OBSTACLES];
 uint32_t obstacle_count = 0;
+
+// Carte globale pour fusion
+MapGrid global_map;
+// Zone assignée au robot
+Zone my_zone;
+// Obstacles pour communication
+CommObstacle comm_obstacles[MAX_OBSTACLES];
+// Capteur ultrasonique
+CAPTEUR_t monCapteur;
 
 /* USER CODE END PV */
 
@@ -88,6 +101,8 @@ static void Robot_CheckBattery(void);
 static void IMU_Read(IMU_Data *imu);
 static void Robot_RecordObstacle(const RobotPose *pose, float distance_cm);
 static void Robot_LogStatus(const RobotPose *pose, float distance_cm, const IMU_Data *imu);
+static void Robot_SendToBase(void);
+static void Robot_ProcessInterComm(void);
 
 
 /* USER CODE END PFP */
@@ -152,6 +167,31 @@ static void Robot_LogStatus(const RobotPose *pose, float distance_cm, const IMU_
     // Si port série disponible, appeler HAL_UART_Transmit(&huartX, (uint8_t*)message, len, 20);
 }
 
+static void Robot_SendToBase(void) {
+    // Conversion des obstacles locaux en format communication
+    for (uint32_t i = 0; i < obstacle_count; i++) {
+        comm_obstacles[i].x = obstacle_map[i].x;
+        comm_obstacles[i].y = obstacle_map[i].y;
+        comm_obstacles[i].distance_cm = obstacle_map[i].distance_cm;
+    }
+    // Envoi à la station de base pour visualisation
+    COMM_SendToBase(&maPosition, comm_obstacles, obstacle_count);
+}
+
+static void Robot_ProcessInterComm(void) {
+    CommMessage msg;
+    // Réception de messages inter-robots
+    if (COMM_ReceiveMessage(&msg)) {
+        if (msg.type == MSG_FUSION_DATA) {
+            // Fusion des données de carte reçues
+            MapGrid remote_map;
+            // TODO: Désérialiser payload.fusion en remote_map
+            MAP_FuseData(&global_map, &remote_map);
+        }
+        // Autres types de messages peuvent être traités ici
+    }
+}
+
 static void Robot_AvoidObstacle(Moteur *g, Moteur *d) {
     // Arrêt + recul + rotation
     MOTEUR_SetVitesse(g, 0);
@@ -201,25 +241,38 @@ int main(void)
 
   /* Initialize all configured peripherals */
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL); // Encodeur Gauche
-  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL); // Encodeur Droit
+  // Démarrage des encodeurs pour odométrie
+  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL); // Encodeur roue gauche
+  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL); // Encodeur roue droite
+  // Initialisation odométrie
   ODOM_Init(&maPosition);
+  maPosition.id = 1;  // ID unique du robot (modifier pour chaque robot)
 
-  // Configuration Moteur Gauche
+  // Initialisation des modules ajoutés
+  MAP_Init(&global_map);              // Carte globale vide
+  ZONE_AssignFromID(maPosition.id, &my_zone);  // Assignation zone basée sur ID
+  COMM_Init(&huart2);                 // Communication UART (inter-robots)
+
+  // Configuration moteur gauche
   mot_gauche.htim = &htim4;
   mot_gauche.channel = TIM_CHANNEL_1;
   mot_gauche.dir_port = GPIOB;
   mot_gauche.dir_pin = GPIO_PIN_0;
   MOTEUR_Init(&mot_gauche);
 
-  // Configuration Moteur Droit
+  // Configuration moteur droit
   mot_droit.htim = &htim4;
   mot_droit.channel = TIM_CHANNEL_2;
   mot_droit.dir_port = GPIOB;
   mot_droit.dir_pin = GPIO_PIN_1;
   MOTEUR_Init(&mot_droit);
 
-  CAPTEUR_t monCapteur = {GPIOA, GPIO_PIN_1, GPIOA, GPIO_PIN_2, &htim5};
+  // Configuration capteur ultrasonique
+  monCapteur.trig_port = GPIOA;
+  monCapteur.trig_pin = GPIO_PIN_1;
+  monCapteur.echo_port = GPIOA;
+  monCapteur.echo_pin = GPIO_PIN_2;
+  monCapteur.htim = &htim5;
   HAL_TIM_Base_Start(&htim5);
 
 
@@ -258,29 +311,43 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  float distance = 0;
-  IMU_Data imu = {0};
+  float distance = 0;  // Distance mesurée par le capteur
+  IMU_Data imu = {0};  // Données IMU (non utilisées)
   while (1)
   {
+      // Mise à jour de la position via odométrie
       ODOM_Update(&maPosition, &htim2, &htim3);
+      // Lecture IMU (stub)
       IMU_Read(&imu);
+      // Mesure distance avec capteur ultrasonique
       distance = CAPTEUR_Read_Distance(&monCapteur);
 
+      // Enregistrement obstacle et ajout à la carte
       Robot_RecordObstacle(&maPosition, distance);
+      MAP_AddObstacle(&global_map, maPosition.x, maPosition.y);
+      // Vérification batterie
       Robot_CheckBattery();
+      // Traitement communications inter-robots
+      Robot_ProcessInterComm();
 
+      // Évitement d'obstacle ou mouvement normal
       if (distance <= OBSTACLE_DISTANCE_CM) {
           Robot_AvoidObstacle(&mot_gauche, &mot_droit);
       } else {
-          int32_t base_speed = 50;
-          float correction = -imu.gz * 0.5f; // compensation rotation selon gyroscope
+          int32_t base_speed = 50;  // Vitesse de base
+          float correction = -imu.gz * 0.5f;  // Compensation rotation via gyroscope
           int32_t left_speed = (int32_t)fmaxf(-100, fminf(100, base_speed + correction));
           int32_t right_speed = (int32_t)fmaxf(-100, fminf(100, base_speed - correction));
+          // Ajustement pour rester dans la zone assignée
+          ZONE_AdjustMovement(&my_zone, &left_speed, &right_speed, &maPosition);
           Robot_SetDifferential(left_speed, right_speed);
       }
 
+      // Log et envoi à la base
       Robot_LogStatus(&maPosition, distance, &imu);
+      Robot_SendToBase();
 
+      // Délai boucle de contrôle
       HAL_Delay(CONTROL_LOOP_MS);
 
     /* USER CODE END WHILE */
