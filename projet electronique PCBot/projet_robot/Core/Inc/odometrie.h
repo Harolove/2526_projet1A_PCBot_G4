@@ -29,6 +29,7 @@ typedef struct {
 // Prototypes
 void ODOM_Init(RobotPose *pose);
 void ODOM_Update(RobotPose *pose, TIM_HandleTypeDef *htimG, TIM_HandleTypeDef *htimD);
+void ODOM_UpdateFromCounts(RobotPose *pose, int32_t current_gauche, int32_t current_droit);
 
 
 #endif /* INC_ODOMETRIE_H_ */

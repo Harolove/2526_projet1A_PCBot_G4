@@ -24,6 +24,9 @@
 #include "odometrie.h"
 #include "moteur.h"
 #include "capteur.h"
+#include <math.h>
+#include <stdio.h>
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,16 +49,126 @@
 /* USER CODE BEGIN PV */
 RobotPose maPosition;
 Moteur mot_gauche, mot_droit;
+
+typedef struct {
+    float ax;
+    float ay;
+    float az;
+    float gx;
+    float gy;
+    float gz;
+} IMU_Data;
+
+#define OBSTACLE_DISTANCE_CM 20.0f
+#define BACKUP_TIME_MS 500
+#define TURN_TIME_MS 400
+#define CONTROL_LOOP_MS 50
+#define MAX_OBSTACLES 32
+
+typedef struct {
+    float x;
+    float y;
+    float distance_cm;
+} ObstaclePoint;
+
+ObstaclePoint obstacle_map[MAX_OBSTACLES];
+uint32_t obstacle_count = 0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+
 /* USER CODE BEGIN PFP */
+
+static void Robot_Stop(void);
+static void Robot_SetDifferential(int32_t left, int32_t right);
+static void Robot_AvoidObstacle(Moteur *g, Moteur *d);
+static void Robot_CheckBattery(void);
+static void IMU_Read(IMU_Data *imu);
+static void Robot_RecordObstacle(const RobotPose *pose, float distance_cm);
+static void Robot_LogStatus(const RobotPose *pose, float distance_cm, const IMU_Data *imu);
+
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+static void Robot_Stop(void) {
+    MOTEUR_SetVitesse(&mot_gauche, 0);
+    MOTEUR_SetVitesse(&mot_droit, 0);
+}
+
+static void Robot_SetDifferential(int32_t left, int32_t right) {
+    MOTEUR_SetVitesse(&mot_gauche, left);
+    MOTEUR_SetVitesse(&mot_droit, right);
+}
+
+static void IMU_Read(IMU_Data *imu) {
+    // Driver inertiel non disponible dans cette base; stub à compléter pour I2C/SPI
+    imu->ax = 0.0f;
+    imu->ay = 0.0f;
+    imu->az = 0.0f;
+    imu->gx = 0.0f;
+    imu->gy = 0.0f;
+    imu->gz = 0.0f;
+}
+
+static void Robot_CheckBattery(void) {
+    // Stub de supervision batterie/USB : à remplacer par lecture ADC + GPIO USB
+    float battery_voltage = 7.4f; // valeur simulée
+    bool usb_connected = true;
+
+    if (!usb_connected) {
+        // Si pas de recharge USB et batterie faible, réduire la vitesse
+        if (battery_voltage < 6.8f) {
+            Robot_Stop();
+            HAL_Delay(100);
+            return;
+        }
+    }
+    (void)battery_voltage;
+    (void)usb_connected;
+}
+
+static void Robot_RecordObstacle(const RobotPose *pose, float distance_cm) {
+    if (distance_cm < OBSTACLE_DISTANCE_CM && obstacle_count < MAX_OBSTACLES) {
+        obstacle_map[obstacle_count].x = pose->x;
+        obstacle_map[obstacle_count].y = pose->y;
+        obstacle_map[obstacle_count].distance_cm = distance_cm;
+        obstacle_count++;
+    }
+}
+
+static void Robot_LogStatus(const RobotPose *pose, float distance_cm, const IMU_Data *imu) {
+    // Émission à un réseau de robots ou debug
+    // Format de message : "POSE x y theta dist imu_gx imu_gy imu_gz\r\n"
+    char message[128];
+    int len = snprintf(message, sizeof(message), "POSE:%.2f,%.2f,%.2f DIST:%.1fcm IMU:%.2f,%.2f,%.2f\r\n",
+          pose->x, pose->y, pose->theta, distance_cm, imu->gx, imu->gy, imu->gz);
+
+    (void)len;
+    // Si port série disponible, appeler HAL_UART_Transmit(&huartX, (uint8_t*)message, len, 20);
+}
+
+static void Robot_AvoidObstacle(Moteur *g, Moteur *d) {
+    // Arrêt + recul + rotation
+    MOTEUR_SetVitesse(g, 0);
+    MOTEUR_SetVitesse(d, 0);
+    HAL_Delay(50);
+
+    MOTEUR_SetVitesse(g, -40);
+    MOTEUR_SetVitesse(d, -40);
+    HAL_Delay(BACKUP_TIME_MS);
+
+    MOTEUR_SetVitesse(g, 40);
+    MOTEUR_SetVitesse(d, -40);
+    HAL_Delay(TURN_TIME_MS);
+
+    Robot_Stop();
+    HAL_Delay(50);
+}
 
 /* USER CODE END 0 */
 
@@ -110,43 +223,65 @@ int main(void)
   HAL_TIM_Base_Start(&htim5);
 
 
+#ifdef UNIT_TEST
+  // Test auto-exécuté en mode simulation
+  {
+      bool all_ok = true;
+      RobotPose p;
+      ODOM_Init(&p);
+
+      ODOM_UpdateFromCounts(&p, 1024, 1024);
+      if (fabsf(p.x - (PI * DIAMETRE_ROUE)) > 1e-4f) all_ok = false;
+
+      float d = CAPTEUR_ConvertTimeToDistance(1000);
+      if (fabsf(d - (1000.0f * 0.034f / 2.0f)) > 1e-6f) all_ok = false;
+
+      if (!all_ok) {
+          // Indicate error (boucle infinie pour debug)
+          while (1) {
+              HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+              HAL_Delay(200);
+          }
+      }
+      // succès : clignoter plus lentement
+      for (int i = 0; i < 10; i++) {
+          HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
+          HAL_Delay(500);
+      }
+      while (1) {
+          // fini
+      }
+  }
+#endif
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   float distance = 0;
+  IMU_Data imu = {0};
   while (1)
   {
-	  ODOM_Update(&maPosition, &htim2, &htim3);
+      ODOM_Update(&maPosition, &htim2, &htim3);
+      IMU_Read(&imu);
+      distance = CAPTEUR_Read_Distance(&monCapteur);
 
-	     // Mise à jour de maPosition.x, maPosition.y et maPosition.theta
+      Robot_RecordObstacle(&maPosition, distance);
+      Robot_CheckBattery();
 
-	  HAL_Delay(10); // Fréquence de 100Hz pour la précision
+      if (distance <= OBSTACLE_DISTANCE_CM) {
+          Robot_AvoidObstacle(&mot_gauche, &mot_droit);
+      } else {
+          int32_t base_speed = 50;
+          float correction = -imu.gz * 0.5f; // compensation rotation selon gyroscope
+          int32_t left_speed = (int32_t)fmaxf(-100, fminf(100, base_speed + correction));
+          int32_t right_speed = (int32_t)fmaxf(-100, fminf(100, base_speed - correction));
+          Robot_SetDifferential(left_speed, right_speed);
+      }
 
-	  // Avancer tout droit à 50% de vitesse
-	     MOTEUR_SetVitesse(&mot_gauche, 50);
-	     MOTEUR_SetVitesse(&mot_droit, 50);
+      Robot_LogStatus(&maPosition, distance, &imu);
 
-	     HAL_Delay(2000); // Pendant 2 secondes
-
-	     // Reculer à 30%
-	     MOTEUR_SetVitesse(&mot_gauche, -30);
-	     MOTEUR_SetVitesse(&mot_droit, -30);
-
-	     HAL_Delay(1000);
-
-	     distance = CAPTEUR_Read_Distance(&monCapteur);
-
-	         if (distance < 20.0f) { // Obstacle à moins de 20cm
-	             MOTEUR_SetVitesse(&mot_gauche, 0);
-	             MOTEUR_SetVitesse(&mot_droit, 0); // STOP !
-	         } else {
-	             MOTEUR_SetVitesse(&mot_gauche, 40);
-	             MOTEUR_SetVitesse(&mot_droit, 40);
-	         }
-	         HAL_Delay(100);
-
-
+      HAL_Delay(CONTROL_LOOP_MS);
 
     /* USER CODE END WHILE */
 

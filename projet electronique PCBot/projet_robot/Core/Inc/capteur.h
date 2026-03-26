@@ -20,6 +20,7 @@ typedef struct {
 
 // Prototype
 float CAPTEUR_Read_Distance(CAPTEUR_t *sensor);
+float CAPTEUR_ConvertTimeToDistance(uint32_t local_time_us);
 
 
 #endif /* INC_CAPTEUR_H_ */

@@ -29,6 +29,10 @@ float CAPTEUR_Read_Distance(CAPTEUR_t *sensor) {
     }
 
     // Conversion en cm
-    return (float)local_time * 0.034f / 2.0f;
+    return CAPTEUR_ConvertTimeToDistance(local_time);
+}
+
+float CAPTEUR_ConvertTimeToDistance(uint32_t local_time_us) {
+    return (float)local_time_us * 0.034f / 2.0f;
 }
 
