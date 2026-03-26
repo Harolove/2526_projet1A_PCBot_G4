@@ -42,3 +42,21 @@ void ODOM_Update(RobotPose *pose, TIM_HandleTypeDef *htimG, TIM_HandleTypeDef *h
     pose->last_pulse_droit = current_droit;
 }
 
+void ODOM_UpdateFromCounts(RobotPose *pose, int32_t current_gauche, int32_t current_droit) {
+    int32_t diff_g = current_gauche - pose->last_pulse_gauche;
+    int32_t diff_d = current_droit - pose->last_pulse_droit;
+
+    float dist_g = (float)diff_g * (PI * DIAMETRE_ROUE) / CPR;
+    float dist_d = (float)diff_d * (PI * DIAMETRE_ROUE) / CPR;
+
+    float d_distance = (dist_d + dist_g) / 2.0f;
+    float d_theta = (dist_d - dist_g) / ENTRAXE;
+
+    pose->x += d_distance * cosf(pose->theta);
+    pose->y += d_distance * sinf(pose->theta);
+    pose->theta += d_theta;
+
+    pose->last_pulse_gauche = current_gauche;
+    pose->last_pulse_droit = current_droit;
+}
+
