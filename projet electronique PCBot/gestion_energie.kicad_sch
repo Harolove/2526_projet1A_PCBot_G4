@@ -2812,16 +2812,6 @@
 		)
 		(uuid "45433435-1bb3-4f02-8d31-fde24b8d0a6f")
 	)
-	(text "valeur des condensateurs a re vérifier auprès du prof\n"
-		(exclude_from_sim no)
-		(at 238.76 140.208 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "618a556f-320b-4f9f-a97c-bf831e4d8568")
-	)
 	(text "Lier VBUS à USB (3.9V-14V à 3A)\navec OTG 5V à 2A"
 		(exclude_from_sim no)
 		(at 60.706 48.768 0)
@@ -2949,6 +2939,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f354622b-c962-498d-8bcc-bcb5466d996d")
+	)
+	(junction
+		(at 41.91 88.9)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f51dfb77-cad5-47cc-b2e3-a4c39f9d0a70")
 	)
 	(wire
 		(pts
@@ -3462,6 +3458,16 @@
 	)
 	(wire
 		(pts
+			(xy 41.91 87.63) (xy 41.91 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf988642-850a-4585-b5da-7399477a1f3e")
+	)
+	(wire
+		(pts
 			(xy 228.6 124.46) (xy 226.06 124.46)
 		)
 		(stroke
@@ -3609,6 +3615,16 @@
 			(type default)
 		)
 		(uuid "fdb3257d-5097-4ab3-bb5b-04206ba1fcee")
+	)
+	(label "SW"
+		(at 119.38 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3cb58abd-8d48-4283-859e-fdfba3f3efb6")
 	)
 	(label "SYS"
 		(at 191.77 88.9 0)
@@ -5330,6 +5346,71 @@
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/d457b8fa-dc83-43ee-b672-fc417651a09a"
 					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3.3V")
+		(at 41.91 87.63 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "83a83e30-4ff5-4e0f-b38a-0f1da552a18b")
+		(property "Reference" "#PWR0124"
+			(at 41.91 91.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 41.91 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 41.91 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 41.91 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 41.91 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b764f840-5cc4-49f7-ae48-d202b45a9c9e")
+		)
+		(instances
+			(project "projet electronique PCBot"
+				(path "/210be09d-86cd-4faa-bb91-cc54c5972517/d457b8fa-dc83-43ee-b672-fc417651a09a"
+					(reference "#PWR0124")
 					(unit 1)
 				)
 			)

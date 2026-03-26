@@ -1597,7 +1597,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x02_Pin")
-		(at 187.96 111.76 0)
+		(at 198.12 114.3 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1606,23 +1606,25 @@
 		(fields_autoplaced yes)
 		(uuid "00c8c7cc-1940-4d55-b765-1650bd4d07a1")
 		(property "Reference" "J9"
-			(at 188.595 106.68 0)
+			(at 199.39 111.7599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Value" "Conn_01x02_Pin"
-			(at 188.595 109.22 0)
+			(at 199.39 114.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical"
-			(at 187.96 111.76 0)
+			(at 198.12 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1631,7 +1633,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 187.96 111.76 0)
+			(at 198.12 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1640,7 +1642,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 187.96 111.76 0)
+			(at 198.12 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
