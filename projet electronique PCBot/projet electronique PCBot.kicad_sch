@@ -318,6 +318,16 @@
 	)
 	(wire
 		(pts
+			(xy 68.58 102.87) (xy 41.91 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d8bd340-70a8-4142-bc18-ce5d6b2e5285")
+	)
+	(wire
+		(pts
 			(xy 85.09 35.56) (xy 20.32 35.56)
 		)
 		(stroke
@@ -385,16 +395,6 @@
 			(type default)
 		)
 		(uuid "25cd4b75-485d-4fd2-8565-fb72c4d6c44b")
-	)
-	(wire
-		(pts
-			(xy 41.91 102.87) (xy 68.58 102.87)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2ab3bff2-cd23-4ac7-813a-642c03335f2f")
 	)
 	(wire
 		(pts
@@ -935,281 +935,6 @@
 			(type default)
 		)
 		(uuid "fad8a28e-d636-4913-9b52-fb416a60c35a")
-	)
-	(hierarchical_label "CSN"
-		(shape input)
-		(at 162.56 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0915942c-31dc-410d-8f8d-175701339abd")
-	)
-	(hierarchical_label "VBUS"
-		(shape input)
-		(at 41.91 102.87 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "14e383e0-8653-4d4d-83c6-09ece797cc6a")
-	)
-	(hierarchical_label "TOF1_XSHUT"
-		(shape input)
-		(at 207.01 48.26 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "15a723eb-84aa-443b-87ce-8b20b4ce70ce")
-	)
-	(hierarchical_label "OTG"
-		(shape input)
-		(at 92.71 130.81 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "181a9d33-30a5-4f6c-a65b-c3d02c930fae")
-	)
-	(hierarchical_label "SCL"
-		(shape input)
-		(at 92.71 128.27 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1aae72f6-c3be-4e1b-910c-00c6a041018c")
-	)
-	(hierarchical_label "SDA"
-		(shape input)
-		(at 92.71 125.73 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1c6f1451-172c-4080-8e20-c70084c0f1d2")
-	)
-	(hierarchical_label "~{CE}"
-		(shape input)
-		(at 92.71 120.65 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2222f25a-6980-438d-8218-8a398096ebb1")
-	)
-	(hierarchical_label "TIM1_CH2"
-		(shape input)
-		(at 60.96 60.96 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "276be0c8-ce2a-4436-9360-c2afc61f4f3b")
-	)
-	(hierarchical_label "TIM1_CH1"
-		(shape input)
-		(at 60.96 66.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "2d7d5709-21d3-47b1-8676-f32c04c040ff")
-	)
-	(hierarchical_label "nFAULT"
-		(shape input)
-		(at 91.44 41.91 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "306232ad-2400-47e0-be88-93bdf16cab71")
-	)
-	(hierarchical_label "SDA"
-		(shape input)
-		(at 162.56 48.26 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "4fc7964b-1ba0-46c2-9c1e-eb602595cc1d")
-	)
-	(hierarchical_label "TOF3_XSHUT"
-		(shape input)
-		(at 207.01 53.34 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "501439b1-a031-40f9-b07e-c3932bf5bc28")
-	)
-	(hierarchical_label "MOSI"
-		(shape input)
-		(at 207.01 63.5 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "53bdd333-7248-4188-ac90-f6f1e31a6525")
-	)
-	(hierarchical_label "INT"
-		(shape input)
-		(at 92.71 123.19 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "64aacdba-c010-4d0c-a526-2a0a8477ceb9")
-	)
-	(hierarchical_label "SYS"
-		(shape input)
-		(at 85.09 41.91 270)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7162e206-e321-4a78-97b1-aecf9945b26d")
-	)
-	(hierarchical_label "CE"
-		(shape input)
-		(at 207.01 66.04 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "794d64be-a4b8-430e-a02f-d25746992f3a")
-	)
-	(hierarchical_label "TIM1_CH1N"
-		(shape input)
-		(at 60.96 63.5 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "81ef64be-e127-44e8-a27b-d87cd77ca5b1")
-	)
-	(hierarchical_label "TOF2_XSHUT"
-		(shape input)
-		(at 207.01 50.8 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "8d99ad20-4feb-4ec9-a366-0aa1be20facd")
-	)
-	(hierarchical_label "SCK"
-		(shape input)
-		(at 207.01 58.42 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a49b188c-9608-4de8-be0d-1082b66affda")
-	)
-	(hierarchical_label "IRQ"
-		(shape input)
-		(at 162.56 58.42 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "a73375a2-93d5-4441-b29a-98ba9ec796f7")
-	)
-	(hierarchical_label "TIM1_CH2N"
-		(shape input)
-		(at 60.96 58.42 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b820fca1-122d-44ae-b46b-a3a733b420fa")
-	)
-	(hierarchical_label "SCL"
-		(shape input)
-		(at 162.56 50.8 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "e509f257-2702-4e61-b743-5c4d590688f5")
-	)
-	(hierarchical_label "MISO"
-		(shape input)
-		(at 207.01 60.96 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "eb36fd34-5a00-4692-8861-b6338b1a39b9")
-	)
-	(hierarchical_label "SYS"
-		(shape input)
-		(at 92.71 106.68 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "f790b611-4be7-45ac-b85d-b4d98bf97d31")
-	)
-	(hierarchical_label "VBUS"
-		(shape input)
-		(at 68.58 102.87 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fc0e7bf8-2926-40b6-a69c-7fdf470a8fdf")
 	)
 	(symbol
 		(lib_id "power:GND")
@@ -1813,16 +1538,6 @@
 				(justify right)
 			)
 		)
-		(pin "TOF2_XSHUT" input
-			(at 204.47 101.6 0)
-			(uuid "4bfaa71d-4a0b-43c8-a680-f1b2711fc8cc")
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
 		(pin "PA3" input
 			(at 204.47 104.14 0)
 			(uuid "af907c57-3697-4e3f-8719-cba20d808865")
@@ -2033,6 +1748,26 @@
 				(justify left)
 			)
 		)
+		(pin "PA4" input
+			(at 148.59 132.08 180)
+			(uuid "d56bdaf5-053c-40bf-98a6-27da32c2daaf")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "TOF1_XSHUT" input
+			(at 204.47 101.6 0)
+			(uuid "ce331bc0-6b2b-454a-b9a0-031101191356")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517"
@@ -2073,6 +1808,66 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "nFAULT" input
+			(at 91.44 41.91 90)
+			(uuid "19a9dc00-3362-48a4-b221-ee632d5362f1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SYS" input
+			(at 85.09 41.91 90)
+			(uuid "74846482-33fa-4057-89ad-36729ecc2d6f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TIM1_CH1" input
+			(at 60.96 66.04 180)
+			(uuid "54bc0081-0ebf-470d-8859-c9aa5fd783c4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "TIM1_CH1N" input
+			(at 60.96 63.5 180)
+			(uuid "6580b770-caac-41cd-b6c4-22388fc2f59b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "TIM1_CH2" input
+			(at 60.96 60.96 180)
+			(uuid "80842e32-00ab-423d-8f78-0e5e4420a7a8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "TIM1_CH2N" input
+			(at 60.96 58.42 180)
+			(uuid "2e45cc37-0927-4ad4-b691-ae834d06238d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(instances
@@ -2117,6 +1912,116 @@
 				(justify left top)
 			)
 		)
+		(pin "CE" input
+			(at 207.01 66.04 0)
+			(uuid "a8ae1971-3cc2-400c-a376-849f52c7e5ad")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CSN" input
+			(at 162.56 60.96 180)
+			(uuid "80617c08-8286-43ed-be88-7a0574a107eb")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "IRQ" input
+			(at 162.56 58.42 180)
+			(uuid "11f9ffea-33c1-497c-8083-4637c7725145")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "MISO" input
+			(at 207.01 60.96 0)
+			(uuid "f8ff373e-b6d8-4973-9df1-812da3ea76b0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "MOSI" input
+			(at 207.01 63.5 0)
+			(uuid "0ea3d5c3-1093-4d66-a56b-f847bc86818a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SCK" input
+			(at 207.01 58.42 0)
+			(uuid "f78c95fa-a938-421b-80c5-6592b320196c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SCL" input
+			(at 162.56 50.8 180)
+			(uuid "fab3d9b1-ed71-4690-80e6-a53349d0b6e3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SDA" input
+			(at 162.56 48.26 180)
+			(uuid "4843cc65-bf9b-4499-9f37-bfa45a641f14")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "TOF1_XSHUT" input
+			(at 207.01 48.26 0)
+			(uuid "0b98958d-7f55-4d80-b8a1-8dc128e35f1d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TOF2_XSHUT" input
+			(at 207.01 50.8 0)
+			(uuid "bbaee1a8-1909-4648-b27e-866c2a529916")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "TOF3_XSHUT" input
+			(at 207.01 53.34 0)
+			(uuid "a6dd007d-325b-4cb8-976b-cf0e64c56dc1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517"
@@ -2159,6 +2064,76 @@
 				(justify left top)
 			)
 		)
+		(pin "INT" input
+			(at 92.71 123.19 0)
+			(uuid "ee2d151f-b846-458b-b6e7-4799776670e7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "OTG" input
+			(at 68.58 110.49 180)
+			(uuid "f145554f-859a-4e97-95d9-9855b9047b96")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "SCL" input
+			(at 92.71 128.27 0)
+			(uuid "2d71761c-ed1b-4929-bfaf-485c420dcb88")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SDA" input
+			(at 92.71 125.73 0)
+			(uuid "cce0cbe3-4037-4ad8-8854-ff1c0ed880df")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "SYS" input
+			(at 92.71 106.68 0)
+			(uuid "79d7fb48-dd44-4c96-b21a-2c5fd5fce845")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "VBUS" input
+			(at 68.58 102.87 180)
+			(uuid "f455d76b-74d2-4090-a1ab-fdbbbfa83466")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "~{CE}" input
+			(at 92.71 120.65 0)
+			(uuid "2da2f66d-e589-46cc-9de7-0b6773a24b32")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
 		(instances
 			(project "projet electronique PCBot"
 				(path "/210be09d-86cd-4faa-bb91-cc54c5972517"
@@ -2199,6 +2174,16 @@
 					(size 1.27 1.27)
 				)
 				(justify left top)
+			)
+		)
+		(pin "VBUS" input
+			(at 41.91 102.87 0)
+			(uuid "15e6994c-a82c-46ff-a839-bd816c7f18c9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 			)
 		)
 		(instances
