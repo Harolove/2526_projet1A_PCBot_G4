@@ -1760,16 +1760,6 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "PF0 PF1 à vérifier\n"
-		(exclude_from_sim no)
-		(at 116.84 92.71 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "23fb40dd-d77f-4c5c-8c7a-5bab1880dad8")
-	)
 	(junction
 		(at 143.51 66.04)
 		(diameter 0)
@@ -1845,8 +1835,16 @@
 		(uuid "4a9e595f-1aa3-41d9-a236-33f024934a2a")
 	)
 	(no_connect
+		(at 132.08 93.98)
+		(uuid "5bc1f57a-2585-4ae4-a156-68a522bc695c")
+	)
+	(no_connect
 		(at 80.01 107.95)
 		(uuid "e41905ae-f2d7-4c55-9823-add841c211f2")
+	)
+	(no_connect
+		(at 132.08 91.44)
+		(uuid "effb67a2-54aa-40bf-9fff-ac7ee5d5ab7f")
 	)
 	(wire
 		(pts
@@ -2213,17 +2211,6 @@
 		)
 		(uuid "3e115d7f-af44-4e1f-989e-2b547b65a25b")
 	)
-	(hierarchical_label "PF1"
-		(shape input)
-		(at 132.08 93.98 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "4a699900-0c27-4a5f-9aa2-ce5444805a48")
-	)
 	(hierarchical_label "I2C_SDA"
 		(shape input)
 		(at 132.08 111.76 180)
@@ -2289,17 +2276,6 @@
 			(justify right)
 		)
 		(uuid "9a874686-84cb-4b29-a56c-ddfde6eaf58f")
-	)
-	(hierarchical_label "PF0"
-		(shape input)
-		(at 132.08 91.44 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "9bbfb857-664b-4dfc-b6bf-5f962085fae2")
 	)
 	(hierarchical_label "SYS_JTCK-SWCLK"
 		(shape input)
