@@ -1529,6 +1529,46 @@
 		)
 		(uuid "f764209a-afb6-45ac-a6b3-f2a1b9f7273f")
 	)
+	(label "AOUT2"
+		(at 151.13 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "37859a0b-f66c-45ff-82cd-4717644cee7c")
+	)
+	(label "BOUT2"
+		(at 151.13 115.57 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6579111c-e0f5-4a72-b519-d5bfce162088")
+	)
+	(label "AOUT1"
+		(at 151.13 107.95 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e85fd188-8d7e-422e-a4c6-bc2abcd7a2d9")
+	)
+	(label "BOUT1"
+		(at 151.13 113.03 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f84640cd-34c3-4b56-92e1-ee72adefe86e")
+	)
 	(hierarchical_label "nFAULT"
 		(shape input)
 		(at 158.75 102.87 0)

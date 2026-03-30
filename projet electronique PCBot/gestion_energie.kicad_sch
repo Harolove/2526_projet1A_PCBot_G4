@@ -3656,6 +3656,16 @@
 		)
 		(uuid "d2adce1c-f2e0-46dc-a7a6-7e8d048bdeff")
 	)
+	(label "VBUS_TO_BQ"
+		(at 78.74 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ed052946-210b-45a3-88b9-8c87eb17c244")
+	)
 	(hierarchical_label "INT"
 		(shape input)
 		(at 41.91 101.6 180)
