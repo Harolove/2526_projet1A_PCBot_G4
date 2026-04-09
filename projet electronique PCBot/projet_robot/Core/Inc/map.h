@@ -13,6 +13,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stddef.h>
 
 // Dimensions de la grille de cartographie
 #define MAP_WIDTH 20       // Nombre de cellules en largeur

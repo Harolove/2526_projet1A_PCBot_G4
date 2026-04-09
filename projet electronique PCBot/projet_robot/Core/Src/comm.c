@@ -12,9 +12,6 @@
 #include <string.h>
 #include <stdio.h>
 
-// Déclaration externe de l'UART pour la base (supposé défini dans main.c)
-extern UART_HandleTypeDef huart1;
-
 static UART_HandleTypeDef *comm_huart;  // Handle UART pour la communication
 static uint8_t rx_buffer[sizeof(CommMessage)];  // Buffer pour réception
 
@@ -46,6 +43,10 @@ bool COMM_ReceiveMessage(CommMessage *msg) {
 
 // Envoi des données (pose + obstacles) à la station de base en format JSON
 void COMM_SendToBase(const RobotPose *pose, const CommObstacle *obstacles, uint32_t count) {
+    if (comm_huart == NULL) {
+        return;
+    }
+
     char buffer[512];
     // Début du JSON avec ID et pose
     int len = snprintf(buffer, sizeof(buffer), "{\"robot_id\":%d,\"pose\":{\"x\":%.2f,\"y\":%.2f,\"theta\":%.2f},\"obstacles\":[",
@@ -57,7 +58,7 @@ void COMM_SendToBase(const RobotPose *pose, const CommObstacle *obstacles, uint3
     }
     // Fermer le JSON
     len += snprintf(buffer + len, sizeof(buffer) - len, "]}\r\n");
-    HAL_UART_Transmit(&huart1, (uint8_t*)buffer, len, 100);  // Envoi via UART1 (vers PC)
+    HAL_UART_Transmit(comm_huart, (uint8_t*)buffer, len, 100);
 }
 
 // Callback pour la réception UART (à appeler depuis stm32g4xx_it.c)
