@@ -60,8 +60,8 @@ all: main-build
 main-build: projet_robot.elf secondary-outputs
 
 # Tool invocations
-projet_robot.elf projet_robot.map: $(OBJS) $(USER_OBJS) D:\Documents\2526_projet1A_PCBot_G4\projet\ electronique\ PCBot\projet_robot\STM32G431KBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "projet_robot.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Documents\2526_projet1A_PCBot_G4\projet electronique PCBot\projet_robot\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="projet_robot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+projet_robot.elf projet_robot.map: $(OBJS) $(USER_OBJS) ../STM32G431KBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "projet_robot.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"../STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="projet_robot.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

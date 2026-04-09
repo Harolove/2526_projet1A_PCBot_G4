@@ -1,10 +1,3 @@
-/*
- * moteur.c
- *
- *  Created on: Mar 19, 2026
- *      Author: dig94
- */
-
 #include "moteur.h"
 
 void MOTEUR_Init(Moteur *m) {
@@ -12,17 +5,22 @@ void MOTEUR_Init(Moteur *m) {
 }
 
 void MOTEUR_SetVitesse(Moteur *m, int32_t vitesse) {
+    uint32_t period;
+    uint32_t pulse;
+
     if (vitesse >= 0) {
         HAL_GPIO_WritePin(m->dir_port, m->dir_pin, GPIO_PIN_SET);
     } else {
         HAL_GPIO_WritePin(m->dir_port, m->dir_pin, GPIO_PIN_RESET);
-        vitesse = -vitesse; // On repasse en positif pour le PWM
+        vitesse = -vitesse;
     }
 
-    if (vitesse > 100) vitesse = 100; // limite
+    if (vitesse > 100) {
+        vitesse = 100;
+    }
 
-    uint32_t period = __HAL_TIM_GET_AUTORELOAD(m->htim); // rapport cyclique
-    uint32_t pulse = (vitesse * period) / 100; // registre ARR du timer
+    period = __HAL_TIM_GET_AUTORELOAD(m->htim);
+    pulse = (vitesse * period) / 100;
 
     __HAL_TIM_SET_COMPARE(m->htim, m->channel, pulse);
 }
