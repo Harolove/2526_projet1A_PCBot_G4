@@ -1,4 +1,2 @@
-../Core/Src/map.c:16:6:MAP_Init	1
-../Core/Src/map.c:21:6:MAP_AddObstacle	5
-../Core/Src/map.c:33:6:MAP_FuseData	3
-../Core/Src/map.c:43:6:MAP_SerializeForSend	1
+../Core/Src/map.c:4:6:MAP_Init	1
+../Core/Src/map.c:8:6:MAP_AddObstacle	6

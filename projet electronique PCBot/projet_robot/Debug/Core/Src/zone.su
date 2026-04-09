@@ -1,3 +1,3 @@
-../Core/Src/zone.c:14:6:ZONE_AssignFromID	16	static
-../Core/Src/zone.c:36:6:ZONE_IsInZone	16	static
-../Core/Src/zone.c:42:6:ZONE_AdjustMovement	24	static
+../Core/Src/zone.c:3:6:ZONE_AssignFromID	16	static
+../Core/Src/zone.c:32:6:ZONE_IsInZone	16	static
+../Core/Src/zone.c:49:6:ZONE_AdjustMovement	24	static

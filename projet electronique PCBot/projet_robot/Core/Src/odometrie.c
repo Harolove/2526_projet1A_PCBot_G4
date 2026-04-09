@@ -1,3 +1,6 @@
+// Pour estimer la position (x, y) et l'orientation (θ) du robot, en comptant les tours de roue
+//(grâce aux encodeurs)
+
 #include "odometrie.h"
 
 void ODOM_Init(RobotPose *pose) {
