@@ -63,3 +63,15 @@ Continuation du schematic sur Kicad
 ## 19/03/2026
 Kicad : ajout de connexions inter-feuille
 CubeIDE : début de code (détermination de position, calcul de distance avec obstacle, déplacement dans l'espace)
+
+# 25/03/2026
+Kicad :
+- Début du routage (ajout des Mounting_Hole_Pad)
+- ajout des plans de masse (GND pour couches n°1, 2 et 4)
+
+# 26/03/2026
+CubeIDE : Modification du code et ajout de code test (car nous n'avons pas encore la carte)
+
+# 09/04/2026
+CubeIDE :
+- Correction d'erreurs

@@ -1,0 +1,5 @@
+../Core/Src/comm.c:19:6:COMM_Init	16	static
+../Core/Src/comm.c:26:6:COMM_SendMessage	416	static
+../Core/Src/comm.c:34:6:COMM_ReceiveMessage	416	static
+../Core/Src/comm.c:45:6:COMM_SendToBase	600	static
+../Core/Src/comm.c:65:6:HAL_UART_RxCpltCallback	16	static
