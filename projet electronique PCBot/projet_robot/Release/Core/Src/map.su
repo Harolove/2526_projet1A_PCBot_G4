@@ -1,0 +1,4 @@
+../Core/Src/map.c:16:6:MAP_Init	0	static
+../Core/Src/map.c:21:6:MAP_AddObstacle	8	static
+../Core/Src/map.c:33:6:MAP_FuseData	12	static
+../Core/Src/map.c:43:6:MAP_SerializeForSend	0	static

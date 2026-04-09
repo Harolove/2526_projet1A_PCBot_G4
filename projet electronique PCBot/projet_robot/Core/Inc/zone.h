@@ -11,6 +11,8 @@
 #ifndef INC_ZONE_H_
 #define INC_ZONE_H_
 
+#include <stdint.h>
+#include <stdbool.h>
 #include "odometrie.h"
 
 // Structure définissant une zone rectangulaire

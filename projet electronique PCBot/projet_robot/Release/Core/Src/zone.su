@@ -1,0 +1,3 @@
+../Core/Src/zone.c:14:6:ZONE_AssignFromID	8	static
+../Core/Src/zone.c:36:6:ZONE_IsInZone	0	static
+../Core/Src/zone.c:42:6:ZONE_AdjustMovement	16	static
