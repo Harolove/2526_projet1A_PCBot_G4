@@ -6,34 +6,13 @@
  */
 #include "zone.h"   // Inclut les types et prototypes du module de gestion des zones.
 
-void ZONE_AssignFromID(RobotID id, Zone *zone) {   // Associe une zone cartésienne au robot selon son ID.
-    switch (id % 4) {   // Répartit les IDs en 4 groupes pour définir 4 zones possibles.
-        case 0:   // Cas du premier groupe d'IDs.
-            zone->x_min = -5.0f;   // Définit la borne minimale en X de la zone.
-            zone->x_max = 0.0f;   // Définit la borne maximale en X de la zone.
-            zone->y_min = 0.0f;   // Définit la borne minimale en Y de la zone.
-            zone->y_max = 5.0f;   // Définit la borne maximale en Y de la zone.
-            break;   // Termine ce cas du switch.
-        case 1:   // Cas du deuxième groupe d'IDs.
-            zone->x_min = 0.0f;   // Définit la borne minimale en X de la zone.
-            zone->x_max = 5.0f;   // Définit la borne maximale en X de la zone.
-            zone->y_min = 0.0f;   // Définit la borne minimale en Y de la zone.
-            zone->y_max = 5.0f;   // Définit la borne maximale en Y de la zone.
-            break;   // Termine ce cas du switch.
-        case 2:   // Cas du troisième groupe d'IDs.
-            zone->x_min = -5.0f;   // Définit la borne minimale en X de la zone.
-            zone->x_max = 0.0f;   // Définit la borne maximale en X de la zone.
-            zone->y_min = -5.0f;   // Définit la borne minimale en Y de la zone.
-            zone->y_max = 0.0f;   // Définit la borne maximale en Y de la zone.
-            break;   // Termine ce cas du switch.
-        default:   // Cas du quatrième groupe d'IDs (tous les autres résultats).
-            zone->x_min = 0.0f;   // Définit la borne minimale en X de la zone.
-            zone->x_max = 5.0f;   // Définit la borne maximale en X de la zone.
-            zone->y_min = -5.0f;   // Définit la borne minimale en Y de la zone.
-            zone->y_max = 0.0f;   // Définit la borne maximale en Y de la zone.
-            break;   // Termine ce cas du switch.
-    }   // Fin de la sélection de zone selon l'ID.
-}   // Fin de la fonction d'attribution de zone.
+void ZONE_AssignFromID(RobotID id, Zone *zone) {
+    // Le robot va partout dans le carré de 16m²
+    zone->x_min = -2.0f;
+    zone->x_max =  2.0f;
+    zone->y_min = -2.0f;
+    zone->y_max =  2.0f;
+}
 
 bool ZONE_IsInZone(const RobotPose *pose, const Zone *zone) {   // Vérifie si la pose du robot est à l'intérieur de la zone.
     if (pose->x < zone->x_min) {   // Teste si X est à gauche de la borne minimale.
@@ -58,15 +37,15 @@ void ZONE_AdjustMovement(const Zone *zone, int32_t *left_speed, int32_t *right_s
         *right_speed /= 2;   // Réduit la vitesse de la roue droite pour ralentir le robot.
 
         if (pose->x < zone->x_min) {   // Si le robot est trop à gauche de la zone.
-            *right_speed += 10;   // Augmente la roue droite pour favoriser une correction vers la droite.
+            *right_speed += 20;   // Augmente la roue droite pour favoriser une correction vers la droite.
         } else if (pose->x > zone->x_max) {   // Sinon, si le robot est trop à droite de la zone.
-            *left_speed += 10;   // Augmente la roue gauche pour favoriser une correction vers la gauche.
+            *left_speed += 20;   // Augmente la roue gauche pour favoriser une correction vers la gauche.
         }   // Fin de la correction selon la position en X.
 
         if (pose->y < zone->y_min) {   // Si le robot est trop bas par rapport à la zone.
-            *right_speed += 10;   // Applique une correction supplémentaire via la roue droite.
+            *right_speed += 20;   // Applique une correction supplémentaire via la roue droite.
         } else if (pose->y > zone->y_max) {   // Sinon, si le robot est trop haut par rapport à la zone.
-            *left_speed += 10;   // Applique une correction supplémentaire via la roue gauche.
+            *left_speed += 20;   // Applique une correction supplémentaire via la roue gauche.
         }   // Fin de la correction selon la position en Y.
     }   // Fin du traitement hors zone.
 }   // Fin de la fonction d'ajustement de mouvement.
