@@ -59,7 +59,6 @@ Continuation du schematic sur Kicad
 ## 12/03/2026
 Continuation du schematic sur Kicad
 
-
 ## 19/03/2026
 Kicad : ajout de connexions inter-feuille
 CubeIDE : début de code (détermination de position, calcul de distance avec obstacle, déplacement dans l'espace)
