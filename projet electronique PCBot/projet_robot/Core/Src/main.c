@@ -135,8 +135,8 @@ static void Robot_RunStep(void) {
   if (distance_cm <= OBSTACLE_DISTANCE_CM) {
     Robot_AvoidObstacle();
   } else {
-    left_speed = 50;
-    right_speed = 50;
+    left_speed = 60;
+    right_speed = 60;
     ZONE_AdjustMovement(&my_zone, &left_speed, &right_speed, &maPosition);
     Robot_SetSpeeds(Robot_ClampSpeed(left_speed), Robot_ClampSpeed(right_speed));
   }
@@ -183,30 +183,28 @@ int main(void)
   MX_TIM6_Init();
   MX_USART2_UART_Init();
 
-  // Démarrage des encodeurs pour odométrie
-  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL); // Encodeur roue gauche
-  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL); // Encodeur roue droite
   // Initialisation odométrie
   ODOM_Init(&maPosition);
   maPosition.id = 1;  // ID unique du robot (modifier pour chaque robot)
+
+  // Démarrage des encodeurs pour odométrie
+  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL); // Encodeur roue gauche
+  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL); // Encodeur roue droite
 
   // Initialisation des modules ajoutés
   MAP_Init(&global_map);              // Carte globale vide
   ZONE_AssignFromID(maPosition.id, &my_zone);  // Assignation zone basée sur ID
   COMM_Init(&huart2);                 // Communication UART (inter-robots)
 
-  // Configuration moteur gauche
+
+  // Configuration moteur gauche (PA8 = CH1, PA11 = CH1N)
   mot_gauche.htim = &htim4;
   mot_gauche.channel = TIM_CHANNEL_1;
-  mot_gauche.dir_port = GPIOB;
-  mot_gauche.dir_pin = GPIO_PIN_0;
   MOTEUR_Init(&mot_gauche);
 
-  // Configuration moteur droit
+  // Configuration moteur droit (PA9 = CH2, PA12 = CH2N)
   mot_droit.htim = &htim4;
   mot_droit.channel = TIM_CHANNEL_2;
-  mot_droit.dir_port = GPIOB;
-  mot_droit.dir_pin = GPIO_PIN_1;
   MOTEUR_Init(&mot_droit);
 
   // Configuration capteur ultrasonique
