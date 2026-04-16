@@ -45,7 +45,7 @@ A faire à chaque fois qu'on commence à travailler
 ```bash
 git pull
 ```
-## Timeline:
+## Timeline
 ### 05/02/2026
 Début du projet: présentation des différents projets; découvrir git et github; recherche de datasheet sur les différents composants et sur le PCBot, lister les différentes fonctionnalités du PCBot
 
