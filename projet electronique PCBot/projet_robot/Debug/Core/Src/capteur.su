@@ -1,1 +1,4 @@
-../Core/Src/capteur.c:16:7:CAPTEUR_Read_Distance	24	static
+../Core/Src/capteur.c:4:26:writeReg	32	static
+../Core/Src/capteur.c:9:16:readReg	32	static
+../Core/Src/capteur.c:16:6:Capteur_Configure	16	static
+../Core/Src/capteur.c:43:10:CAPTEUR_Read_Distance	40	static

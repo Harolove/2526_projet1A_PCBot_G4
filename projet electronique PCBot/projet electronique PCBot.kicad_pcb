@@ -178,7 +178,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -206,6 +206,12 @@
 		(path "/93c3b10c-af7a-4302-b763-bec1b6a7b44e/b06565ed-8e2c-455b-a0dd-24cd60f54512")
 		(sheetname "/Capteur/")
 		(sheetfile "capteur.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "3" "5" "7" "2" "4" "6" "8")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -396,7 +402,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "Pin_1")
+			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(uuid "e08b7631-849b-4f59-8c4b-b5ed16961c01")
 		)
@@ -407,7 +413,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "+3.3V")
-			(pinfunction "Pin_2")
+			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(uuid "70e35ecc-17db-4414-925f-a113d77da37a")
 		)
@@ -418,7 +424,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/CE")
-			(pinfunction "Pin_3")
+			(pinfunction "Pin_3_3")
 			(pintype "passive")
 			(uuid "98f70a7a-3963-4225-a570-df65743ee788")
 		)
@@ -429,7 +435,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/CSN")
-			(pinfunction "Pin_4")
+			(pinfunction "Pin_4_4")
 			(pintype "passive")
 			(uuid "a18a4063-b8d9-4c1e-8508-e0864ffc6cca")
 		)
@@ -440,7 +446,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/SCK")
-			(pinfunction "Pin_5")
+			(pinfunction "Pin_5_5")
 			(pintype "passive")
 			(uuid "7b9ae2bf-5022-43c4-9951-ad626e79d341")
 		)
@@ -451,7 +457,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/MOSI")
-			(pinfunction "Pin_6")
+			(pinfunction "Pin_6_6")
 			(pintype "passive")
 			(uuid "649f2fe3-3863-4872-b84c-4d9db0506f4e")
 		)
@@ -462,7 +468,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/MISO")
-			(pinfunction "Pin_7")
+			(pinfunction "Pin_7_7")
 			(pintype "passive")
 			(uuid "e8ccbdf6-1b5a-4eb9-8847-297c502f951c")
 		)
@@ -473,7 +479,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/IRQ")
-			(pinfunction "Pin_8")
+			(pinfunction "Pin_8_8")
 			(pintype "passive")
 			(uuid "a7cdbf17-b63d-4281-913e-e0c54d917177")
 		)
@@ -518,7 +524,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -546,6 +552,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/eaf414a6-a9e7-40f8-86ce-a856383c8b9a")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -718,7 +730,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -746,6 +758,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/47facf2d-a7c7-475a-a8d1-6c1295deae5d")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -946,6 +964,12 @@
 		(path "/93c3b10c-af7a-4302-b763-bec1b6a7b44e/d0c11e82-ba56-4fe7-b090-3ca0bd2bd0ad")
 		(sheetname "/Capteur/")
 		(sheetfile "capteur.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5" "6")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1116,7 +1140,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "+3.3V")
-			(pinfunction "3.3V")
+			(pinfunction "3.3V_1")
 			(pintype "passive")
 			(uuid "ee1e4aa5-4dd0-4d51-897d-017464d66ef8")
 		)
@@ -1127,7 +1151,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_2")
 			(pintype "passive")
 			(uuid "eea5612c-f241-451e-ba9c-e307e30c7c2c")
 		)
@@ -1138,7 +1162,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/SCL")
-			(pinfunction "SCL")
+			(pinfunction "SCL_3")
 			(pintype "passive")
 			(uuid "bddbd6ca-4da7-4744-9168-a63e4cdca4d9")
 		)
@@ -1149,7 +1173,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/SDA")
-			(pinfunction "SDA")
+			(pinfunction "SDA_4")
 			(pintype "passive")
 			(uuid "1ae69d8a-ce79-4167-8405-d1c339505b57")
 		)
@@ -1160,7 +1184,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "unconnected-(J6-GPIO1-Pad5)")
-			(pinfunction "GPIO1")
+			(pinfunction "GPIO1_5")
 			(pintype "passive+no_connect")
 			(uuid "74d6427b-9f23-43b0-9578-0ea71e38708f")
 		)
@@ -1171,7 +1195,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/TOF2_XSHUT")
-			(pinfunction "XST")
+			(pinfunction "XST_6")
 			(pintype "passive")
 			(uuid "0c1fffe5-45e1-4cd5-adde-3ae26a38e4d8")
 		)
@@ -1244,6 +1268,12 @@
 		(path "/93c3b10c-af7a-4302-b763-bec1b6a7b44e/28a7e558-8a87-4f94-8200-88fe3b29971a")
 		(sheetname "/Capteur/")
 		(sheetfile "capteur.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5" "6")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1414,7 +1444,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "+3.3V")
-			(pinfunction "3.3V")
+			(pinfunction "3.3V_1")
 			(pintype "passive")
 			(uuid "95872347-248d-4124-8b85-8d8d6d7d8009")
 		)
@@ -1425,7 +1455,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_2")
 			(pintype "passive")
 			(uuid "35b1faa3-0673-4fe1-a82c-569adb77dfaa")
 		)
@@ -1436,7 +1466,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/SCL")
-			(pinfunction "SCL")
+			(pinfunction "SCL_3")
 			(pintype "passive")
 			(uuid "d7c1c9b6-653a-4b05-83b0-c9095f040d66")
 		)
@@ -1447,7 +1477,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/SDA")
-			(pinfunction "SDA")
+			(pinfunction "SDA_4")
 			(pintype "passive")
 			(uuid "8b86bbf2-5552-4f5d-b20a-432cf00e737e")
 		)
@@ -1458,7 +1488,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "unconnected-(J4-GPIO1-Pad5)")
-			(pinfunction "GPIO1")
+			(pinfunction "GPIO1_5")
 			(pintype "passive+no_connect")
 			(uuid "912b4dff-8b26-4c3d-a89c-5e4481254c87")
 		)
@@ -1469,7 +1499,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/TOF3_XSHUT")
-			(pinfunction "XST")
+			(pinfunction "XST_6")
 			(pintype "passive")
 			(uuid "6caf2dcd-e782-4388-b671-195666eb730c")
 		)
@@ -1542,6 +1572,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/acbfe3ee-83fa-491c-8e52-1dc4f11945ec")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "3" "2" "4" "5")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -1775,7 +1811,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/SYS")
-			(pinfunction "VIN")
+			(pinfunction "VIN_1")
 			(pintype "power_in")
 			(uuid "3cdcb48f-8d41-4d27-9537-3db449b79085")
 		)
@@ -1785,7 +1821,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_2")
 			(pintype "power_in")
 			(uuid "de4b12e1-757e-4069-a3e0-61d5e01978e8")
 		)
@@ -1795,7 +1831,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/SYS")
-			(pinfunction "~{SHDN}")
+			(pinfunction "~{SHDN}_3")
 			(pintype "input")
 			(uuid "6bebbc4c-ed51-4972-95f0-596f3b78c928")
 		)
@@ -1805,7 +1841,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U3-NC-Pad4)")
-			(pinfunction "NC")
+			(pinfunction "NC_4")
 			(pintype "no_connect")
 			(uuid "1031171f-b275-4a38-ac4a-cad113a8476a")
 		)
@@ -1815,7 +1851,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "+3.3V")
-			(pinfunction "VOUT")
+			(pinfunction "VOUT_5")
 			(pintype "power_out")
 			(uuid "34d30f80-e9f6-47c6-9ce2-8f0d9109424d")
 		)
@@ -1860,7 +1896,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -1888,6 +1924,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/d34c54b9-0e81-45f4-8c7b-b3e11219c65d")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2058,7 +2100,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "Pin_1")
+			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(uuid "802e4c11-d5aa-4615-950c-f958a605a00d")
 		)
@@ -2069,7 +2111,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "Net-(J7-Pin_2)")
-			(pinfunction "Pin_2")
+			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(uuid "b6c32c68-7ce0-4dbb-b8ae-1c4084d4ca48")
 		)
@@ -2114,7 +2156,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2142,6 +2184,12 @@
 		(path "/8074907f-d1dc-4b1d-805f-91e9bac82bf7/f29970c4-99e5-44fa-982f-4263009d89f0")
 		(sheetname "/Driver/")
 		(sheetfile "driver.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2314,7 +2362,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -2342,6 +2390,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/32deec02-3a1f-4da1-9d00-7507e6586b14")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2542,6 +2596,14 @@
 		(path "/8074907f-d1dc-4b1d-805f-91e9bac82bf7/e369a653-8a4f-4f2f-a12f-3b1a5cc63890")
 		(sheetname "/Driver/")
 		(sheetfile "driver.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "11" "3" "6" "16" "15" "9" "10" "13" "17" "14" "12" "8" "2"
+					"4" "7" "5"
+				)
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -2765,7 +2827,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "+3.3V")
-			(pinfunction "VREF")
+			(pinfunction "VREF_1")
 			(pintype "input")
 			(uuid "273e6c1e-1514-4567-a426-1d903abc1a18")
 		)
@@ -2775,7 +2837,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/AOUT1")
-			(pinfunction "AOUT1")
+			(pinfunction "AOUT1_2")
 			(pintype "power_out")
 			(uuid "0193c0be-d4b6-4461-a79e-3c171ba3681f")
 		)
@@ -2785,7 +2847,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "PGNDA")
+			(pinfunction "PGNDA_3")
 			(pintype "bidirectional")
 			(uuid "3c7b5fc7-7b8a-4c81-a56f-cf207ff709f0")
 		)
@@ -2795,7 +2857,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/AOUT2")
-			(pinfunction "AOUT2")
+			(pinfunction "AOUT2_4")
 			(pintype "power_out")
 			(uuid "cb61dd93-cdca-4e5a-846c-0daaa7abff57")
 		)
@@ -2805,7 +2867,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/BOUT2")
-			(pinfunction "BOUT2")
+			(pinfunction "BOUT2_5")
 			(pintype "power_out")
 			(uuid "baa074d3-7c5b-4387-b4e3-5a12b08e94d2")
 		)
@@ -2815,7 +2877,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "PGNDB")
+			(pinfunction "PGNDB_6")
 			(pintype "bidirectional")
 			(uuid "233c187c-a21a-4435-8941-ffd7e9a0e267")
 		)
@@ -2825,7 +2887,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/BOUT1")
-			(pinfunction "BOUT1")
+			(pinfunction "BOUT1_7")
 			(pintype "power_out")
 			(uuid "8065a9f6-9399-4282-9b6d-f66ae699c684")
 		)
@@ -2835,7 +2897,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/nFAULT")
-			(pinfunction "nFAULT")
+			(pinfunction "nFAULT_8")
 			(pintype "open_collector")
 			(uuid "8880031c-dca4-4438-a81e-38f18b4fd4b9")
 		)
@@ -2845,7 +2907,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/TIM1_CH2")
-			(pinfunction "BIN1")
+			(pinfunction "BIN1_9")
 			(pintype "input")
 			(uuid "a7a6c857-c8f3-4c90-a817-e2ed20516bf0")
 		)
@@ -2855,7 +2917,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/TIM1_CH2N")
-			(pinfunction "BIN2")
+			(pinfunction "BIN2_10")
 			(pintype "input")
 			(uuid "b19f2ae8-c6fc-487c-8b38-eb0119f09ab8")
 		)
@@ -2865,7 +2927,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(U4-BIPROPI)")
-			(pinfunction "BIPROPI")
+			(pinfunction "BIPROPI_11")
 			(pintype "output")
 			(uuid "1df077db-2ad2-4b59-afe1-568379a85241")
 		)
@@ -2875,7 +2937,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/SYS")
-			(pinfunction "VM")
+			(pinfunction "VM_12")
 			(pintype "power_in")
 			(uuid "2264868f-4cd7-4844-abff-b4dd25fccf26")
 		)
@@ -2885,7 +2947,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_13")
 			(pintype "power_in")
 			(uuid "8ddf173a-ac77-4835-ba95-fa9568235122")
 		)
@@ -2895,7 +2957,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(U4-AIPROPI)")
-			(pinfunction "AIPROPI")
+			(pinfunction "AIPROPI_14")
 			(pintype "output")
 			(uuid "09c17bc8-b3e8-44bd-b7a6-4473b6fdbd93")
 		)
@@ -2905,7 +2967,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/TIM1_CH1N")
-			(pinfunction "AIN2")
+			(pinfunction "AIN2_15")
 			(pintype "input")
 			(uuid "8649eff1-9137-4269-a44d-009176ef77e8")
 		)
@@ -2915,7 +2977,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/TIM1_CH1")
-			(pinfunction "AIN1")
+			(pinfunction "AIN1_16")
 			(pintype "input")
 			(uuid "558464cd-8e06-4300-bfce-82309ad977d1")
 		)
@@ -2925,7 +2987,7 @@
 			(property pad_prop_heatsink)
 			(layers "B.Cu")
 			(net "GND")
-			(pinfunction "GND(PPAD)")
+			(pinfunction "GND(PPAD)_17")
 			(pintype "power_in")
 			(zone_connect 2)
 			(uuid "7a56391c-a630-42d4-a3ec-5ecd53957ed8")
@@ -2936,7 +2998,7 @@
 			(property pad_prop_heatsink)
 			(layers "F.Cu")
 			(net "GND")
-			(pinfunction "GND(PPAD)")
+			(pinfunction "GND(PPAD)_17")
 			(pintype "power_in")
 			(zone_connect 2)
 			(uuid "f28260f6-a52d-4aa2-8362-09f0e5dd481c")
@@ -3010,6 +3072,12 @@
 		(path "/12710ea4-c2d3-4e50-951d-2a4a0058690c/62444c4d-7c6f-4067-8513-609cdbfb006f")
 		(sheetname "/STM32/")
 		(sheetfile "stm32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "11" "3" "5" "7" "12" "6" "4" "8" "10" "9" "13" "14")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3608,7 +3676,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "unconnected-(J1-NC-Pad1)")
-			(pinfunction "NC")
+			(pinfunction "NC_1")
 			(pintype "no_connect")
 			(uuid "2269591b-d7b3-42ea-8f43-3532279d44f2")
 		)
@@ -3617,7 +3685,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "unconnected-(J1-NC-Pad2)")
-			(pinfunction "NC")
+			(pinfunction "NC_2")
 			(pintype "no_connect")
 			(uuid "c4ef2fd9-ce53-437e-8b04-2bfdca346cd1")
 		)
@@ -3626,7 +3694,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "+3.3V")
-			(pinfunction "VCC")
+			(pinfunction "VCC_3")
 			(pintype "power_in")
 			(uuid "34f90922-ed85-4519-a4cd-cd8f087813d5")
 		)
@@ -3635,7 +3703,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/STM32/SYS_JTMS-SWDIO")
-			(pinfunction "JTMS/SWDIO")
+			(pinfunction "JTMS/SWDIO_4")
 			(pintype "bidirectional")
 			(uuid "5d7e4fb2-0fb0-444b-82c6-f84595978f26")
 		)
@@ -3644,7 +3712,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_5")
 			(pintype "power_in")
 			(uuid "7e2a0414-c9fa-4e59-a816-7630e3176040")
 		)
@@ -3653,7 +3721,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/STM32/SYS_JTCK-SWCLK")
-			(pinfunction "JCLK/SWCLK")
+			(pinfunction "JCLK/SWCLK_6")
 			(pintype "output")
 			(uuid "55d662d9-2747-46aa-a829-c54cc6651747")
 		)
@@ -3662,7 +3730,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_7")
 			(pintype "passive")
 			(uuid "3e40c6e4-4820-4a7a-9788-021f73d38085")
 		)
@@ -3671,7 +3739,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "unconnected-(J1-JTDO{slash}SWO-Pad8)")
-			(pinfunction "JTDO/SWO")
+			(pinfunction "JTDO/SWO_8")
 			(pintype "input+no_connect")
 			(uuid "19016bde-3793-409b-8196-7b4db28fb9d0")
 		)
@@ -3680,7 +3748,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "unconnected-(J1-JRCLK{slash}NC-Pad9)")
-			(pinfunction "JRCLK/NC")
+			(pinfunction "JRCLK/NC_9")
 			(pintype "input+no_connect")
 			(uuid "b8c7c4c4-3eb0-4ba5-846d-40657d92d282")
 		)
@@ -3689,7 +3757,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "unconnected-(J1-JTDI{slash}NC-Pad10)")
-			(pinfunction "JTDI/NC")
+			(pinfunction "JTDI/NC_10")
 			(pintype "output+no_connect")
 			(uuid "9bdb9afa-af89-4438-93a9-0a4202f134b7")
 		)
@@ -3698,7 +3766,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "GND")
-			(pinfunction "GNDDetect")
+			(pinfunction "GNDDetect_11")
 			(pintype "passive")
 			(uuid "17166f34-9a27-46e0-80a8-ab49addae43d")
 		)
@@ -3707,7 +3775,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/STM32/NRST")
-			(pinfunction "~{RST}")
+			(pinfunction "~{RST}_12")
 			(pintype "open_collector")
 			(uuid "8337739a-0d1c-4c67-a1f0-932b05ef562c")
 		)
@@ -3716,7 +3784,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/STM32/USART2_RX")
-			(pinfunction "VCP_RX")
+			(pinfunction "VCP_RX_13")
 			(pintype "output")
 			(uuid "02d0742a-a08a-4896-b712-540d21e93b24")
 		)
@@ -3725,7 +3793,7 @@
 			(size 2.4 0.74)
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(net "/STM32/USART2_TX")
-			(pinfunction "VCP_TX")
+			(pinfunction "VCP_TX_14")
 			(pintype "input")
 			(uuid "6c4da55e-e5fb-46fe-a35f-dfddffa030a8")
 		)
@@ -3770,7 +3838,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3798,6 +3866,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/e9ca16cc-8af1-4d8f-81ae-4126853efb98")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -3970,7 +4044,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -3998,6 +4072,12 @@
 		(path "/8074907f-d1dc-4b1d-805f-91e9bac82bf7/00c8c7cc-1940-4d55-b765-1650bd4d07a1")
 		(sheetname "/Driver/")
 		(sheetfile "driver.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4359,7 +4439,7 @@
 			(remove_unused_layers no)
 			(roundrect_rratio 0.147059)
 			(net "/Driver/BOUT2")
-			(pinfunction "Pin_1")
+			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(uuid "6ef0690e-5232-4880-b0e0-2983dc6bbcea")
 		)
@@ -4370,7 +4450,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Driver/BOUT1")
-			(pinfunction "Pin_2")
+			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(uuid "fafa5fe0-20f8-4796-9c21-caeb3f5ccb44")
 		)
@@ -4415,7 +4495,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4456,6 +4536,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/65da7e39-180f-4caa-8780-f263e9a78546")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4595,7 +4681,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(D1-K)")
-			(pinfunction "K")
+			(pinfunction "K_1")
 			(pintype "passive")
 			(uuid "c4b50b39-9691-4e8c-84f7-ebf12c3d0f22")
 		)
@@ -4605,7 +4691,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/SYS")
-			(pinfunction "A")
+			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "5241ac50-ef71-487f-b461-8e23a7e9efd7")
 		)
@@ -4650,7 +4736,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -4678,6 +4764,12 @@
 		(path "/12710ea4-c2d3-4e50-951d-2a4a0058690c/2a885073-eec9-420d-8739-65a01765d421")
 		(sheetname "/STM32/")
 		(sheetfile "stm32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -4850,7 +4942,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4878,6 +4970,12 @@
 		(path "/ec7ab1be-c578-4fca-aa6b-dcfd18d510ea/6b7ed59c-80ab-46d4-850d-b55fe0cc48bb")
 		(sheetname "/USB/")
 		(sheetfile "usb.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5050,7 +5148,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -5078,6 +5176,12 @@
 		(path "/93c3b10c-af7a-4302-b763-bec1b6a7b44e/53a770e5-fc88-4206-945b-d008cea0b6d1")
 		(sheetname "/Capteur/")
 		(sheetfile "capteur.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5250,7 +5354,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5291,6 +5395,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/6c6fe3ca-fd5e-4ee3-8336-ab13922d0fd0")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5430,7 +5540,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(D2-K)")
-			(pinfunction "K")
+			(pinfunction "K_1")
 			(pintype "passive")
 			(uuid "286b3336-4052-43ab-864b-9d5f8c175c1b")
 		)
@@ -5440,7 +5550,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/SYS")
-			(pinfunction "A")
+			(pinfunction "A_2")
 			(pintype "passive")
 			(uuid "44d50ccd-caef-4d6b-913e-17a5e0e5bc23")
 		)
@@ -5485,7 +5595,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5513,6 +5623,12 @@
 		(path "/8074907f-d1dc-4b1d-805f-91e9bac82bf7/b82e8da7-323d-408a-a926-80fa258423d7")
 		(sheetname "/Driver/")
 		(sheetfile "driver.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5685,7 +5801,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -5713,6 +5829,12 @@
 		(path "/93c3b10c-af7a-4302-b763-bec1b6a7b44e/b9d7bc24-62e8-4bb7-bdf2-a7e3eca5464e")
 		(sheetname "/Capteur/")
 		(sheetfile "capteur.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -5917,6 +6039,14 @@
 		(path "/ec7ab1be-c578-4fca-aa6b-dcfd18d510ea/67084f46-985d-42ca-90f9-dd3616d60801")
 		(sheetname "/USB/")
 		(sheetfile "usb.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "S1" "A1" "A12" "B1" "B12" "A4" "A9" "B4" "B9" "A5" "B5" "A7" "B7"
+					"A6" "B6" "A8" "B8"
+				)
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6015,7 +6145,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_A1")
 			(pintype "passive")
 			(uuid "5a2e582a-1e0d-479c-a632-f449951f7270")
 		)
@@ -6025,7 +6155,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/VBUS")
-			(pinfunction "VBUS")
+			(pinfunction "VBUS_A4")
 			(pintype "passive")
 			(uuid "dd9b21cf-4048-4fca-b4af-397584b2e3ba")
 		)
@@ -6035,7 +6165,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(J5-CC1)")
-			(pinfunction "CC1")
+			(pinfunction "CC1_A5")
 			(pintype "bidirectional")
 			(uuid "a7f9c786-fd60-40e5-907d-a8647de16fae")
 		)
@@ -6045,7 +6175,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(J5-D+-PadA6)")
-			(pinfunction "D+")
+			(pinfunction "D+_A6")
 			(pintype "bidirectional+no_connect")
 			(uuid "02e1f64a-4d80-4377-b713-4846cfa5f05c")
 		)
@@ -6055,7 +6185,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(J5-D--PadA7)")
-			(pinfunction "D-")
+			(pinfunction "D-_A7")
 			(pintype "bidirectional+no_connect")
 			(uuid "768cfbd8-7f6e-4747-9afd-1da95624c38e")
 		)
@@ -6065,7 +6195,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(J5-SBU1-PadA8)")
-			(pinfunction "SBU1")
+			(pinfunction "SBU1_A8")
 			(pintype "bidirectional+no_connect")
 			(uuid "2a793637-e95e-4fed-9650-03b13bb9bbb6")
 		)
@@ -6075,7 +6205,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/VBUS")
-			(pinfunction "VBUS")
+			(pinfunction "VBUS_A9")
 			(pintype "passive")
 			(uuid "5b4b55ab-20de-4c14-aeec-a92f5fcb3d74")
 		)
@@ -6085,7 +6215,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_A12")
 			(pintype "passive")
 			(uuid "8e1b9c5d-c3ea-4968-baff-a1986bf79b67")
 		)
@@ -6095,7 +6225,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_B1")
 			(pintype "passive")
 			(uuid "c5462cf9-b811-460d-a957-b18f43252fb9")
 		)
@@ -6105,7 +6235,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/VBUS")
-			(pinfunction "VBUS")
+			(pinfunction "VBUS_B4")
 			(pintype "passive")
 			(uuid "f1c7ad11-b44b-4167-a0b9-9aa6899d6576")
 		)
@@ -6115,7 +6245,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(J5-CC2)")
-			(pinfunction "CC2")
+			(pinfunction "CC2_B5")
 			(pintype "bidirectional")
 			(uuid "5db98c3c-3066-44d2-a656-b85e19cbdc25")
 		)
@@ -6125,7 +6255,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(J5-D+-PadB6)")
-			(pinfunction "D+")
+			(pinfunction "D+_B6")
 			(pintype "bidirectional+no_connect")
 			(uuid "7a864220-4948-41e8-8211-d56263913b0f")
 		)
@@ -6135,7 +6265,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(J5-D--PadB7)")
-			(pinfunction "D-")
+			(pinfunction "D-_B7")
 			(pintype "bidirectional+no_connect")
 			(uuid "af2ce292-4499-4370-af78-0bf6cbcb8ced")
 		)
@@ -6145,7 +6275,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(J5-SBU2-PadB8)")
-			(pinfunction "SBU2")
+			(pinfunction "SBU2_B8")
 			(pintype "bidirectional+no_connect")
 			(uuid "8de0e0ef-c1b9-481c-8079-b0798791fc02")
 		)
@@ -6155,7 +6285,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/VBUS")
-			(pinfunction "VBUS")
+			(pinfunction "VBUS_B9")
 			(pintype "passive")
 			(uuid "1122cbc6-4b90-422d-97ef-7eecb79e17cc")
 		)
@@ -6165,7 +6295,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_B12")
 			(pintype "passive")
 			(uuid "d70a781d-8134-4d44-b6af-fe2c9354fd3d")
 		)
@@ -6177,7 +6307,7 @@
 			(layers "*.Cu" "*.Mask" "F.Paste")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "SHIELD")
+			(pinfunction "SHIELD_S1")
 			(pintype "passive")
 			(uuid "edcb65ed-c7da-4560-b593-930158267e97")
 		)
@@ -6189,7 +6319,7 @@
 			(layers "*.Cu" "*.Mask" "F.Paste")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "SHIELD")
+			(pinfunction "SHIELD_S1")
 			(pintype "passive")
 			(uuid "c6337154-2c94-436d-8081-83715de2e37d")
 		)
@@ -6201,7 +6331,7 @@
 			(layers "*.Cu" "*.Mask" "F.Paste")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "SHIELD")
+			(pinfunction "SHIELD_S1")
 			(pintype "passive")
 			(uuid "8950ef54-88f7-48af-ae0c-aa48ac86aebd")
 		)
@@ -6213,7 +6343,7 @@
 			(layers "*.Cu" "*.Mask" "F.Paste")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "SHIELD")
+			(pinfunction "SHIELD_S1")
 			(pintype "passive")
 			(uuid "81f16ce2-ce85-4155-a90d-c572e198311e")
 		)
@@ -6258,7 +6388,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -6286,6 +6416,12 @@
 		(path "/8074907f-d1dc-4b1d-805f-91e9bac82bf7/e18ba2f7-81b1-418d-8ba1-ccc8a2ff617d")
 		(sheetname "/Driver/")
 		(sheetfile "driver.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6486,6 +6622,15 @@
 		(path "/12710ea4-c2d3-4e50-951d-2a4a0058690c/85fb7092-9d5d-4241-b26e-961e8c36bf86")
 		(sheetname "/STM32/")
 		(sheetfile "stm32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "4" "2" "3" "13" "26" "27" "28" "29" "30" "31" "1" "17" "16" "32"
+					"15" "14" "5" "6" "7" "8" "9" "10" "11" "12" "18" "19" "20" "21" "22"
+					"23" "24" "25"
+				)
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -6809,7 +6954,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "+3.3V")
-			(pinfunction "VDD")
+			(pinfunction "VDD_1")
 			(pintype "power_in")
 			(uuid "0861ae30-c2e7-4ab1-bcce-3e8a2125d7e8")
 		)
@@ -6819,7 +6964,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U1-PF0-Pad2)")
-			(pinfunction "PF0")
+			(pinfunction "PF0_2")
 			(pintype "bidirectional+no_connect")
 			(uuid "c7e90f53-f132-4eaa-87a9-a20859a2b2f4")
 		)
@@ -6829,7 +6974,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U1-PF1-Pad3)")
-			(pinfunction "PF1")
+			(pinfunction "PF1_3")
 			(pintype "bidirectional+no_connect")
 			(uuid "06ce47e5-c019-481c-8a66-85de905e175d")
 		)
@@ -6839,7 +6984,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/STM32/NRST")
-			(pinfunction "PG10")
+			(pinfunction "PG10_4")
 			(pintype "bidirectional")
 			(uuid "dfc7c219-fd79-4f08-8f29-2213f12ee8a7")
 		)
@@ -6849,7 +6994,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/TOF3_XSHUT")
-			(pinfunction "PA0")
+			(pinfunction "PA0_5")
 			(pintype "bidirectional")
 			(uuid "7c3b41e1-d09a-4781-89bd-999ce0c59f74")
 		)
@@ -6859,7 +7004,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/TOF2_XSHUT")
-			(pinfunction "PA1")
+			(pinfunction "PA1_6")
 			(pintype "bidirectional")
 			(uuid "ddc80b16-e8c1-40a4-9037-3268511b59e5")
 		)
@@ -6869,7 +7014,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/TOF1_XSHUT")
-			(pinfunction "PA2")
+			(pinfunction "PA2_7")
 			(pintype "bidirectional")
 			(uuid "67000122-0fc1-4299-9d05-7a38cb7c15ec")
 		)
@@ -6879,7 +7024,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/STM32/PA3")
-			(pinfunction "PA3")
+			(pinfunction "PA3_8")
 			(pintype "bidirectional")
 			(uuid "479d2e67-7298-45b9-b3c6-5bed5b2f16c9")
 		)
@@ -6889,7 +7034,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/STM32/PA4")
-			(pinfunction "PA4")
+			(pinfunction "PA4_9")
 			(pintype "bidirectional")
 			(uuid "55a8215a-d073-4a08-beb4-aff41577e453")
 		)
@@ -6899,7 +7044,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/SCK")
-			(pinfunction "PA5")
+			(pinfunction "PA5_10")
 			(pintype "bidirectional")
 			(uuid "a883edf8-966a-4fa7-be5f-e2c011708934")
 		)
@@ -6909,7 +7054,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/MOSI")
-			(pinfunction "PA6")
+			(pinfunction "PA6_11")
 			(pintype "bidirectional")
 			(uuid "d2a403b6-2a6c-4152-80f6-4879ba923362")
 		)
@@ -6919,7 +7064,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/MISO")
-			(pinfunction "PA7")
+			(pinfunction "PA7_12")
 			(pintype "bidirectional")
 			(uuid "83aecce0-4c4c-4a99-9637-ad2b674bcb92")
 		)
@@ -6929,7 +7074,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/INT")
-			(pinfunction "PB0")
+			(pinfunction "PB0_13")
 			(pintype "bidirectional")
 			(uuid "daed8e06-e60f-4861-8657-c0aa0da131b5")
 		)
@@ -6939,7 +7084,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "VSSA")
+			(pinfunction "VSSA_14")
 			(pintype "power_in")
 			(uuid "493bced7-ed5d-436f-b422-053053794a90")
 		)
@@ -6949,7 +7094,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "+3.3V")
-			(pinfunction "VDDA")
+			(pinfunction "VDDA_15")
 			(pintype "power_in")
 			(uuid "f341801f-684a-453f-a241-9a39f8fae5e0")
 		)
@@ -6959,7 +7104,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "VSS")
+			(pinfunction "VSS_16")
 			(pintype "power_in")
 			(uuid "d1596875-460f-44a0-9b2a-800d53371ae2")
 		)
@@ -6969,7 +7114,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "+3.3V")
-			(pinfunction "VDD")
+			(pinfunction "VDD_17")
 			(pintype "power_in")
 			(uuid "a0c3c55c-d45c-4a66-91fb-ceb28bd69ef0")
 		)
@@ -6979,7 +7124,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/TIM1_CH1")
-			(pinfunction "PA8")
+			(pinfunction "PA8_18")
 			(pintype "bidirectional")
 			(uuid "485fef55-d619-417a-b784-6f756ae82928")
 		)
@@ -6989,7 +7134,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/TIM1_CH2")
-			(pinfunction "PA9")
+			(pinfunction "PA9_19")
 			(pintype "bidirectional")
 			(uuid "659e9ef6-4638-4ab1-8761-35aee292d6b8")
 		)
@@ -6999,7 +7144,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/CE")
-			(pinfunction "PA10")
+			(pinfunction "PA10_20")
 			(pintype "bidirectional")
 			(uuid "81dd824e-bf0e-42f5-85a4-d6d0cd46d0ab")
 		)
@@ -7009,7 +7154,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/TIM1_CH1N")
-			(pinfunction "PA11")
+			(pinfunction "PA11_21")
 			(pintype "bidirectional")
 			(uuid "b71242b2-ea93-4517-b95a-5505ad456184")
 		)
@@ -7019,7 +7164,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Driver/TIM1_CH2N")
-			(pinfunction "PA12")
+			(pinfunction "PA12_22")
 			(pintype "bidirectional")
 			(uuid "880241d7-cd9e-4746-9b8c-f8164fa495e6")
 		)
@@ -7029,7 +7174,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/STM32/SYS_JTMS-SWDIO")
-			(pinfunction "PA13")
+			(pinfunction "PA13_23")
 			(pintype "bidirectional")
 			(uuid "aabf6857-57ac-4a39-a5fc-54e814b17d0a")
 		)
@@ -7039,7 +7184,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/STM32/SYS_JTCK-SWCLK")
-			(pinfunction "PA14")
+			(pinfunction "PA14_24")
 			(pintype "bidirectional")
 			(uuid "1e77eafb-e26b-4f7e-9b27-7d80f37e9961")
 		)
@@ -7049,7 +7194,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/STM32/USART2_RX")
-			(pinfunction "PA15")
+			(pinfunction "PA15_25")
 			(pintype "bidirectional")
 			(uuid "42bd3103-b45b-4c46-94d8-439ec85394e9")
 		)
@@ -7059,7 +7204,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/STM32/USART2_TX")
-			(pinfunction "PB3")
+			(pinfunction "PB3_26")
 			(pintype "bidirectional")
 			(uuid "1a1db508-745c-41bb-b2e6-a6e204915c58")
 		)
@@ -7069,7 +7214,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/CSN")
-			(pinfunction "PB4")
+			(pinfunction "PB4_27")
 			(pintype "bidirectional")
 			(uuid "1fcac887-7cb5-4e11-99b4-6f2e3eae9fc6")
 		)
@@ -7079,7 +7224,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/~{CE}")
-			(pinfunction "PB5")
+			(pinfunction "PB5_28")
 			(pintype "bidirectional")
 			(uuid "e9b9dd60-15d3-4d13-93cd-69797a3d7ccc")
 		)
@@ -7089,7 +7234,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/IRQ")
-			(pinfunction "PB6")
+			(pinfunction "PB6_29")
 			(pintype "bidirectional")
 			(uuid "2ace3db5-9fb9-46c4-9518-889544a2e491")
 		)
@@ -7099,7 +7244,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/SDA")
-			(pinfunction "PB7")
+			(pinfunction "PB7_30")
 			(pintype "bidirectional")
 			(uuid "6698fb83-b6f7-42b9-a33b-f57c7e4651f5")
 		)
@@ -7109,7 +7254,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/SCL")
-			(pinfunction "PB8")
+			(pinfunction "PB8_31")
 			(pintype "bidirectional")
 			(uuid "a76436e2-aef7-4b1a-b840-9768f69c988b")
 		)
@@ -7119,7 +7264,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "VSS")
+			(pinfunction "VSS_32")
 			(pintype "passive")
 			(uuid "58f59afa-ccdb-4157-9162-21c6a47ff98e")
 		)
@@ -7164,7 +7309,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -7192,6 +7337,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/5dffe61d-1bdd-4d86-b747-d9e79e61fa69")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7364,7 +7515,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7392,6 +7543,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/75de2f2a-0fe2-4d35-8a9d-3cee6c9d729e")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7564,7 +7721,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -7592,6 +7749,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/63515417-64cf-4bca-8621-37298712e39c")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7764,7 +7927,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7792,6 +7955,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/fa54ee04-4991-4c74-b060-231c6321ca45")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -7992,6 +8161,12 @@
 		(path "/93c3b10c-af7a-4302-b763-bec1b6a7b44e/830ab1c0-25d8-4015-8452-ba03e7e4528e")
 		(sheetname "/Capteur/")
 		(sheetfile "capteur.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "11" "1" "2" "3" "10" "14" "13" "12" "5" "6" "7" "8" "4" "9")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8126,7 +8301,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "SDO/SA0")
+			(pinfunction "SDO/SA0_1")
 			(pintype "bidirectional")
 			(uuid "7f469f23-4ddc-4bcd-b3b3-79dded588d03")
 		)
@@ -8136,7 +8311,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U5-SDX-Pad2)")
-			(pinfunction "SDX")
+			(pinfunction "SDX_2")
 			(pintype "bidirectional+no_connect")
 			(uuid "34a3b9dd-401b-4490-95fb-18ff5c7bceb0")
 		)
@@ -8146,7 +8321,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U5-SCX-Pad3)")
-			(pinfunction "SCX")
+			(pinfunction "SCX_3")
 			(pintype "input+no_connect")
 			(uuid "a8595222-687d-4465-b330-64e0217e5a08")
 		)
@@ -8156,7 +8331,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U5-INT1-Pad4)")
-			(pinfunction "INT1")
+			(pinfunction "INT1_4")
 			(pintype "output+no_connect")
 			(uuid "5feb9b4f-fd3e-4ef6-a128-a01559c67533")
 		)
@@ -8166,7 +8341,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "+3.3V")
-			(pinfunction "VDDIO")
+			(pinfunction "VDDIO_5")
 			(pintype "power_in")
 			(uuid "d3913410-b211-4b3a-97c1-4281f34078f8")
 		)
@@ -8176,7 +8351,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_6")
 			(pintype "power_in")
 			(uuid "c8aef9fc-d589-4828-b6ac-28c1289d686d")
 		)
@@ -8186,7 +8361,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_7")
 			(pintype "passive")
 			(uuid "b44f26f2-97f4-4b81-b088-4d97f3cc467c")
 		)
@@ -8196,7 +8371,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "+3.3V")
-			(pinfunction "VDD")
+			(pinfunction "VDD_8")
 			(pintype "power_in")
 			(uuid "cd6816eb-0553-44f5-a879-ea53a19fbf7f")
 		)
@@ -8206,7 +8381,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U5-INT2-Pad9)")
-			(pinfunction "INT2")
+			(pinfunction "INT2_9")
 			(pintype "output+no_connect")
 			(uuid "58a4f8bf-ce14-406b-9fa7-09b646b653bf")
 		)
@@ -8216,7 +8391,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U5-OCS_Aux-Pad10)")
-			(pinfunction "OCS_Aux")
+			(pinfunction "OCS_Aux_10")
 			(pintype "passive+no_connect")
 			(uuid "9f071858-0c56-4bfa-92dc-54f8c9cb25d1")
 		)
@@ -8226,7 +8401,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U5-SDO_Aux-Pad11)")
-			(pinfunction "SDO_Aux")
+			(pinfunction "SDO_Aux_11")
 			(pintype "bidirectional+no_connect")
 			(uuid "633f31e1-a6e5-41ab-8beb-eaa873c8a7ec")
 		)
@@ -8236,7 +8411,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "+3.3V")
-			(pinfunction "CS")
+			(pinfunction "CS_12")
 			(pintype "input")
 			(uuid "2d51624b-db8a-49a8-9a18-9f8b4ed17201")
 		)
@@ -8246,7 +8421,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/SCL")
-			(pinfunction "SCL")
+			(pinfunction "SCL_13")
 			(pintype "input")
 			(uuid "23ce63e6-ad32-46fc-8a90-3c35ac27653a")
 		)
@@ -8256,7 +8431,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/SDA")
-			(pinfunction "SDA")
+			(pinfunction "SDA_14")
 			(pintype "bidirectional")
 			(uuid "25eb4753-b899-4593-a1d7-4a45e4e46846")
 		)
@@ -8301,7 +8476,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -8329,6 +8504,12 @@
 		(path "/8074907f-d1dc-4b1d-805f-91e9bac82bf7/4714365d-851c-4ec7-9386-eb2a08e22f03")
 		(sheetname "/Driver/")
 		(sheetfile "driver.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8501,7 +8682,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -8529,6 +8710,12 @@
 		(path "/12710ea4-c2d3-4e50-951d-2a4a0058690c/73b0b6e4-c705-4aff-8e4d-2538b5b48c08")
 		(sheetname "/STM32/")
 		(sheetfile "stm32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8701,7 +8888,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -8729,6 +8916,12 @@
 		(path "/ec7ab1be-c578-4fca-aa6b-dcfd18d510ea/c9d65e3b-301e-4607-907e-40c5483cfa6d")
 		(sheetname "/USB/")
 		(sheetfile "usb.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -8901,7 +9094,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -8929,6 +9122,12 @@
 		(path "/12710ea4-c2d3-4e50-951d-2a4a0058690c/06b48d71-375f-448e-9b81-780a5ad2b6af")
 		(sheetname "/STM32/")
 		(sheetfile "stm32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9101,7 +9300,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -9129,6 +9328,12 @@
 		(path "/8074907f-d1dc-4b1d-805f-91e9bac82bf7/724817af-15a9-42f8-b779-45b76e121608")
 		(sheetname "/Driver/")
 		(sheetfile "driver.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9490,7 +9695,7 @@
 			(remove_unused_layers no)
 			(roundrect_rratio 0.147059)
 			(net "/Driver/AOUT1")
-			(pinfunction "Pin_1")
+			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(uuid "ae2e41b3-6046-4301-8443-7eff79f7cf29")
 		)
@@ -9501,7 +9706,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Driver/AOUT2")
-			(pinfunction "Pin_2")
+			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(uuid "dbab87a8-3600-494b-9cc5-5a1ca4878c2a")
 		)
@@ -9546,7 +9751,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -9574,6 +9779,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/f0474a55-b2b1-4759-9ba4-76ea2b6d18a3")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -9774,6 +9985,14 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/c30c1bb6-a238-4318-b2fd-61ecce6ab50b")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "10" "4" "6" "5" "7" "8" "9" "12" "17" "18" "25" "23"
+					"19" "20" "21" "15" "16" "13" "14" "24" "22" "11"
+				)
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10125,7 +10344,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/VBUS_TO_BQ")
-			(pinfunction "VBUS")
+			(pinfunction "VBUS_1")
 			(pintype "power_in")
 			(uuid "24e3d6e3-c91e-4489-82d4-352c616d027b")
 		)
@@ -10135,7 +10354,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "PSEL")
+			(pinfunction "PSEL_2")
 			(pintype "input")
 			(uuid "65aff78f-b4b3-4755-a899-6b0b639b4118")
 		)
@@ -10145,7 +10364,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(U2-~{PG})")
-			(pinfunction "~{PG}")
+			(pinfunction "~{PG}_3")
 			(pintype "output")
 			(uuid "85ed32f6-0ced-4ade-849c-6fdebb4ed934")
 		)
@@ -10155,7 +10374,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(U2-STAT)")
-			(pinfunction "STAT")
+			(pinfunction "STAT_4")
 			(pintype "open_collector")
 			(uuid "fe67b5b7-533a-439f-bc46-79e89da4af65")
 		)
@@ -10165,7 +10384,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/SCL")
-			(pinfunction "SCL")
+			(pinfunction "SCL_5")
 			(pintype "input")
 			(uuid "0d950caf-4e80-46a8-b3ae-31654095fbf4")
 		)
@@ -10175,7 +10394,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Capteur/SDA")
-			(pinfunction "SDA")
+			(pinfunction "SDA_6")
 			(pintype "bidirectional")
 			(uuid "92f29150-ad72-47e5-9817-2d09c5c26189")
 		)
@@ -10185,7 +10404,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/INT")
-			(pinfunction "INT")
+			(pinfunction "INT_7")
 			(pintype "open_collector")
 			(uuid "3cae2d7f-90a8-40b9-a78d-f0404aadc894")
 		)
@@ -10195,7 +10414,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/OTG")
-			(pinfunction "OTG")
+			(pinfunction "OTG_8")
 			(pintype "input")
 			(uuid "e80b0076-2a58-49a6-bbe4-7a88d00391c3")
 		)
@@ -10205,7 +10424,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/~{CE}")
-			(pinfunction "~{CE}")
+			(pinfunction "~{CE}_9")
 			(pintype "input")
 			(uuid "b38c614a-b59a-452d-9a59-f5c6c206f83e")
 		)
@@ -10215,7 +10434,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(U2-ILIM)")
-			(pinfunction "ILIM")
+			(pinfunction "ILIM_10")
 			(pintype "passive")
 			(uuid "e89d3ee4-8899-4dab-be5a-cfb97d6e0a97")
 		)
@@ -10225,7 +10444,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(U2-TS)")
-			(pinfunction "TS")
+			(pinfunction "TS_11")
 			(pintype "passive")
 			(uuid "79d73ca1-92cf-4da0-8baf-db02cf1c92e4")
 		)
@@ -10235,7 +10454,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(J7-Pin_2)")
-			(pinfunction "~{QON}")
+			(pinfunction "~{QON}_12")
 			(pintype "input")
 			(uuid "7df3b3ff-bfca-4a29-8d13-aac9d38390ed")
 		)
@@ -10245,7 +10464,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(J8-Pin_1)")
-			(pinfunction "BAT")
+			(pinfunction "BAT_13")
 			(pintype "passive")
 			(uuid "03474bb9-bb26-4d57-a0ed-f13392f628c7")
 		)
@@ -10255,7 +10474,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(J8-Pin_1)")
-			(pinfunction "BAT")
+			(pinfunction "BAT_14")
 			(pintype "passive")
 			(uuid "5dde1ab4-2547-4bc7-b54c-0f0f5a839029")
 		)
@@ -10265,7 +10484,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(JP2-A)")
-			(pinfunction "SYS")
+			(pinfunction "SYS_15")
 			(pintype "passive")
 			(uuid "40912105-363b-4c79-82bc-49d194f934c9")
 		)
@@ -10275,7 +10494,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(JP2-A)")
-			(pinfunction "SYS")
+			(pinfunction "SYS_16")
 			(pintype "passive")
 			(uuid "2aa596a9-aa34-4a30-8353-a9b8eafb5860")
 		)
@@ -10285,7 +10504,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "PGND")
+			(pinfunction "PGND_17")
 			(pintype "power_in")
 			(uuid "29389ee5-8203-4a84-b544-8656e3748008")
 		)
@@ -10295,7 +10514,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "GND")
-			(pinfunction "PGND")
+			(pinfunction "PGND_18")
 			(pintype "passive")
 			(uuid "cb43b5f8-8163-4f0d-ace0-ae41343c86a7")
 		)
@@ -10305,7 +10524,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/SW")
-			(pinfunction "SW")
+			(pinfunction "SW_19")
 			(pintype "power_out")
 			(uuid "403f2d64-3557-4998-bca1-e74ae4014554")
 		)
@@ -10315,7 +10534,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "/Gestion d'energie/SW")
-			(pinfunction "SW")
+			(pinfunction "SW_20")
 			(pintype "passive")
 			(uuid "569e9a7f-db93-44a1-a823-a2fa721d3de4")
 		)
@@ -10325,7 +10544,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(U2-BTST)")
-			(pinfunction "BTST")
+			(pinfunction "BTST_21")
 			(pintype "passive")
 			(uuid "65d78b48-49e1-4f91-a27f-84979be2cdd4")
 		)
@@ -10335,7 +10554,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(U2-REGN)")
-			(pinfunction "REGN")
+			(pinfunction "REGN_22")
 			(pintype "passive")
 			(uuid "a269415c-33a9-4a11-af95-0b3d941ca2ed")
 		)
@@ -10345,7 +10564,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "Net-(U2-PMID)")
-			(pinfunction "PMID")
+			(pinfunction "PMID_23")
 			(pintype "power_out")
 			(uuid "768a8b02-dfa7-4107-b873-deaf5f7d628b")
 		)
@@ -10355,7 +10574,7 @@
 			(layers "F.Cu" "F.Mask" "F.Paste")
 			(roundrect_rratio 0.25)
 			(net "unconnected-(U2-NC-Pad24)")
-			(pinfunction "NC")
+			(pinfunction "NC_24")
 			(pintype "no_connect")
 			(uuid "e6693d47-59af-47ca-a44f-672466d79eb7")
 		)
@@ -10365,7 +10584,7 @@
 			(property pad_prop_heatsink)
 			(layers "F.Cu" "F.Mask")
 			(net "GND")
-			(pinfunction "PGND")
+			(pinfunction "PGND_25")
 			(pintype "passive")
 			(zone_connect 2)
 			(uuid "21a33328-973f-4936-878c-3064eff1aceb")
@@ -10411,7 +10630,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10439,6 +10658,12 @@
 		(path "/93c3b10c-af7a-4302-b763-bec1b6a7b44e/6208379f-fd60-4884-855a-5f9a600d461d")
 		(sheetname "/Capteur/")
 		(sheetfile "capteur.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10611,7 +10836,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10639,6 +10864,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/dc9d9d44-6665-4b61-9d98-aea00e952614")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -10811,7 +11042,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -10839,6 +11070,12 @@
 		(path "/12710ea4-c2d3-4e50-951d-2a4a0058690c/5fb50bc4-6258-4876-bd07-5a989e8ea721")
 		(sheetname "/STM32/")
 		(sheetfile "stm32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11011,7 +11248,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -11039,6 +11276,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/28bf5402-40f7-48b5-a41b-05a8f8565229")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11211,7 +11454,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11241,7 +11484,13 @@
 		(path "/2c1d67f3-b90b-492e-9916-485c8b77fd89")
 		(sheetname "/")
 		(sheetfile "projet electronique PCBot.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom)
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
+		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -11283,7 +11532,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "1")
+			(pinfunction "1_1")
 			(pintype "input")
 			(uuid "d21eb45a-d8ad-4480-a2d6-cc6f93088ff3")
 		)
@@ -11345,6 +11594,12 @@
 		(path "/93c3b10c-af7a-4302-b763-bec1b6a7b44e/89170ead-4c01-4783-adbf-a37f12156e8b")
 		(sheetname "/Capteur/")
 		(sheetfile "capteur.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2" "3" "4" "5" "6")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11515,7 +11770,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "+3.3V")
-			(pinfunction "3.3V")
+			(pinfunction "3.3V_1")
 			(pintype "passive")
 			(uuid "61af96cb-db69-457d-ac25-544aa1eaa501")
 		)
@@ -11526,7 +11781,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "GND")
+			(pinfunction "GND_2")
 			(pintype "passive")
 			(uuid "fd7175d7-0790-45af-9af1-534f1d6920da")
 		)
@@ -11537,7 +11792,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/SCL")
-			(pinfunction "SCL")
+			(pinfunction "SCL_3")
 			(pintype "passive")
 			(uuid "3b8d4632-7279-4b8b-b2ec-5e7c8a2ddd00")
 		)
@@ -11548,7 +11803,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/SDA")
-			(pinfunction "SDA")
+			(pinfunction "SDA_4")
 			(pintype "passive")
 			(uuid "0e977f9c-5caf-4e8e-a0fb-0a4279c0ea6b")
 		)
@@ -11559,7 +11814,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "unconnected-(J3-GPIO1-Pad5)")
-			(pinfunction "GPIO1")
+			(pinfunction "GPIO1_5")
 			(pintype "passive+no_connect")
 			(uuid "9edab821-cb4e-4607-a0f7-7173bec7529b")
 		)
@@ -11570,7 +11825,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "/Capteur/TOF1_XSHUT")
-			(pinfunction "XST")
+			(pinfunction "XST_6")
 			(pintype "passive")
 			(uuid "05aecb91-2a09-49ec-ab1f-c831f4baddc9")
 		)
@@ -11615,7 +11870,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -11643,6 +11898,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/69adf7ea-b0cc-407f-af64-f2a0f6cb161d")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -11815,7 +12076,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11845,7 +12106,13 @@
 		(path "/552003d4-a95c-49ae-b008-3bf18785a514")
 		(sheetname "/")
 		(sheetfile "projet electronique PCBot.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom)
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
+		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -11887,7 +12154,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "1")
+			(pinfunction "1_1")
 			(pintype "input")
 			(uuid "4f9176f5-2bc3-4e00-837b-d1379c24baac")
 		)
@@ -11921,7 +12188,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -11949,6 +12216,12 @@
 		(path "/93c3b10c-af7a-4302-b763-bec1b6a7b44e/bbef2d27-0c72-4b74-8cdb-94d5a73374be")
 		(sheetname "/Capteur/")
 		(sheetfile "capteur.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12121,7 +12394,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -12149,6 +12422,12 @@
 		(path "/8074907f-d1dc-4b1d-805f-91e9bac82bf7/a258bd4f-b463-4212-833d-b1c743669fa1")
 		(sheetname "/Driver/")
 		(sheetfile "driver.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12321,7 +12600,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -12349,6 +12628,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/35e90257-9343-48ae-9d12-fb7430e97d63")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12521,7 +12806,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -12549,6 +12834,12 @@
 		(path "/8074907f-d1dc-4b1d-805f-91e9bac82bf7/82aa27bd-164c-4f84-9a66-dc49158f806d")
 		(sheetname "/Driver/")
 		(sheetfile "driver.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -12721,7 +13012,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -12751,7 +13042,13 @@
 		(path "/f0d2c634-65a6-4ebc-a201-429900f969e2")
 		(sheetname "/")
 		(sheetfile "projet electronique PCBot.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom)
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
+		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -12793,7 +13090,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "1")
+			(pinfunction "1_1")
 			(pintype "input")
 			(uuid "b3c317b6-a7fc-487a-bda0-00b1bde10987")
 		)
@@ -12827,7 +13124,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -12855,6 +13152,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/7f08fbdd-25dd-4c53-89d9-5b41935e12e0")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13216,7 +13519,7 @@
 			(remove_unused_layers no)
 			(roundrect_rratio 0.147059)
 			(net "Net-(J8-Pin_1)")
-			(pinfunction "Pin_1")
+			(pinfunction "Pin_1_1")
 			(pintype "passive")
 			(uuid "0e5a8e93-ad15-41e5-8215-6b5fa806e2fd")
 		)
@@ -13227,7 +13530,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "Pin_2")
+			(pinfunction "Pin_2_2")
 			(pintype "passive")
 			(uuid "a4b282bb-1f07-4d91-be78-c34ea2a96d8a")
 		)
@@ -13272,7 +13575,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13300,6 +13603,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/95005d5e-709d-4ed0-94e1-4b2e726e48bb")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13472,7 +13781,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -13500,6 +13809,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/d49f10b0-7393-4ed5-bb74-18e268ea2ad5")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13672,7 +13987,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -13700,6 +14015,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/a7265072-a2b4-4a5a-8def-be2221040f33")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -13872,7 +14193,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -13900,6 +14221,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/c6c2ff7f-5801-470c-b257-b083055969bc")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14072,7 +14399,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -14102,7 +14429,13 @@
 		(path "/98a5ea62-d966-4429-beed-0f00ca33f109")
 		(sheetname "/")
 		(sheetfile "projet electronique PCBot.kicad_sch")
-		(attr exclude_from_pos_files exclude_from_bom)
+		(units
+			(unit
+				(name "A")
+				(pins "1")
+			)
+		)
+		(attr exclude_from_bom)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_circle
 			(center 0 0)
@@ -14144,7 +14477,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(net "GND")
-			(pinfunction "1")
+			(pinfunction "1_1")
 			(pintype "input")
 			(uuid "c0dcd88e-4f19-4275-9ff3-1b2b247e4544")
 		)
@@ -14178,7 +14511,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -14206,6 +14539,12 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/12128ee0-ee76-42c4-a501-3b6a9be2f595")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14378,7 +14717,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -14406,6 +14745,12 @@
 		(path "/12710ea4-c2d3-4e50-951d-2a4a0058690c/c2eadc1d-95a3-4fcb-85fd-70f2ec6c4fd2")
 		(sheetname "/STM32/")
 		(sheetfile "stm32.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(attr smd)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_line
@@ -14580,7 +14925,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -14612,8 +14957,14 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/4a1c9f59-3a66-4799-a922-bff63ef0db18")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(zone_connect 1)
-		(attr exclude_from_pos_files exclude_from_bom allow_soldermask_bridges)
+		(attr exclude_from_bom allow_soldermask_bridges)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
 			(start -1.225 0.75)
@@ -14711,7 +15062,7 @@
 			(size 0.3 0.3)
 			(layers "B.Cu" "B.Mask")
 			(net "Net-(JP2-A)")
-			(pinfunction "A")
+			(pinfunction "A_1")
 			(pintype "passive")
 			(zone_connect 2)
 			(thermal_bridge_angle 45)
@@ -14735,7 +15086,7 @@
 			(size 0.3 0.3)
 			(layers "B.Cu" "B.Mask")
 			(net "/Gestion d'energie/SYS")
-			(pinfunction "B")
+			(pinfunction "B_2")
 			(pintype "passive")
 			(zone_connect 2)
 			(thermal_bridge_angle 45)
@@ -14786,7 +15137,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 0 0 270)
 			(unlocked yes)
 			(layer "B.Fab")
@@ -14818,8 +15169,14 @@
 		(path "/d457b8fa-dc83-43ee-b672-fc417651a09a/c2e0d442-1dc7-4f3f-a6b6-f111aeb30de0")
 		(sheetname "/Gestion d'energie/")
 		(sheetfile "gestion_energie.kicad_sch")
+		(units
+			(unit
+				(name "A")
+				(pins "1" "2")
+			)
+		)
 		(zone_connect 1)
-		(attr exclude_from_pos_files exclude_from_bom allow_soldermask_bridges)
+		(attr exclude_from_bom allow_soldermask_bridges)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
 			(start -1.225 0.75)
@@ -14917,7 +15274,7 @@
 			(size 0.3 0.3)
 			(layers "B.Cu" "B.Mask")
 			(net "/Gestion d'energie/VBUS")
-			(pinfunction "A")
+			(pinfunction "A_1")
 			(pintype "passive")
 			(zone_connect 2)
 			(thermal_bridge_angle 45)
@@ -14941,7 +15298,7 @@
 			(size 0.3 0.3)
 			(layers "B.Cu" "B.Mask")
 			(net "/Gestion d'energie/VBUS_TO_BQ")
-			(pinfunction "B")
+			(pinfunction "B_2")
 			(pintype "passive")
 			(zone_connect 2)
 			(thermal_bridge_angle 45)

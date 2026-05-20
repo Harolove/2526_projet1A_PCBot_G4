@@ -1,53 +1,73 @@
-/* Le principe repose sur le temps de trajet d'une onde sonore :
-
- - la stm32 envoie une impulsion courte (trigger) au capteur (pour lui dire d'émettre un son)
- - le capteur émet un son et attend l'écho
- - on mesure la durée pendant laquelle le signal "echo" reste à l'état haut
- - on convertit ce temps en distance
-
-Au repos, le pin Echo est à 0V (état BAS).
-Dès que le capteur a fini d'envoyer ses ultrasons, il met la pin Echo à 3.3V (état HAUT).
-Dès que le capteur "entend" l'écho revenir, il remet la pin Echo à 0V.
-
-*/
-
 #include "capteur.h"
+#include "main.h"
 
-float CAPTEUR_Read_Distance(CAPTEUR_t *sensor) {
-    uint32_t local_time = 0; //variable stockant la durée de l'écho
-    uint32_t timeout = 0; //compteur pour éviter un blocage infini (si capteur débranché ou fil cassé par exemple)
-
-    if (sensor == NULL) { //sécurité si le pointeur est vide
-        return 0.0f;
-    }
-
-    //déclenchement (trigger)
-    HAL_GPIO_WritePin(sensor->trig_port, sensor->trig_pin, GPIO_PIN_SET);
-    __HAL_TIM_SET_COUNTER(sensor->htim, 0);
-    while (__HAL_TIM_GET_COUNTER(sensor->htim) < 10) {
-    }
-
-    HAL_GPIO_WritePin(sensor->trig_port, sensor->trig_pin, GPIO_PIN_RESET);
-
-    //attente du retour
-    while (HAL_GPIO_ReadPin(sensor->echo_port, sensor->echo_pin) == GPIO_PIN_RESET) {
-        timeout++;
-        if (timeout > 40000) {
-            return 0.0f;
-        }
-    }
-
-    //mesure de la durée
-    __HAL_TIM_SET_COUNTER(sensor->htim, 0);
-    while (HAL_GPIO_ReadPin(sensor->echo_port, sensor->echo_pin) == GPIO_PIN_SET) {
-        local_time = __HAL_TIM_GET_COUNTER(sensor->htim);
-        if (local_time > 38000) {
-            break;
-        }
-    }
-
-    //conversion en cm
-    //distance = (temps en µs * vitesse du son 0.034 cm/µs)/2 (aller-retour)
-    return (float)local_time * 0.034f / 2.0f;
+static HAL_StatusTypeDef writeReg(I2C_HandleTypeDef *hi2c, uint8_t reg, uint8_t value) {
+    uint8_t data[2] = {reg, value};
+    return HAL_I2C_Master_Transmit(hi2c, VL53L0X_ADDRESS, data, 2, 100);
 }
 
+static uint8_t readReg(I2C_HandleTypeDef *hi2c, uint8_t reg) {
+    uint8_t value = 0;
+    HAL_I2C_Master_Transmit(hi2c, VL53L0X_ADDRESS, &reg, 1, 100);
+    HAL_I2C_Master_Receive(hi2c, VL53L0X_ADDRESS, &value, 1, 100);
+    return value;
+}
+
+void Capteur_Configure(I2C_HandleTypeDef *hi2c) {
+    /* Reset matériel via XSHUT */
+    HAL_GPIO_WritePin(TOF_XSHUT_GPIO_Port, TOF_XSHUT_Pin, GPIO_PIN_RESET);
+    HAL_Delay(10);
+    HAL_GPIO_WritePin(TOF_XSHUT_GPIO_Port, TOF_XSHUT_Pin, GPIO_PIN_SET);
+    HAL_Delay(10);
+
+    /* Vérification présence sur le bus I2C */
+    if (HAL_I2C_IsDeviceReady(hi2c, VL53L0X_ADDRESS, 3, 100) != HAL_OK) {
+        return;
+    }
+
+    /* Séquence d'init complète VL53L0X */
+    writeReg(hi2c, 0x88, 0x00);
+    writeReg(hi2c, 0x80, 0x01);
+    writeReg(hi2c, 0xFF, 0x01);
+    writeReg(hi2c, 0x00, 0x00);
+    writeReg(hi2c, 0x91, 0x3C); /* stop_variable — obligatoire */
+    writeReg(hi2c, 0x00, 0x01);
+    writeReg(hi2c, 0xFF, 0x00);
+    writeReg(hi2c, 0x80, 0x00);
+
+    /* Démarrage en mode mesure continue */
+    writeReg(hi2c, 0x00, 0x02); /* 0x02 = continu, 0x01 = single-shot */
+    HAL_Delay(100);
+}
+
+uint16_t CAPTEUR_Read_Distance(I2C_HandleTypeDef *hi2c) {
+    /* Attente que la donnée soit prête, avec timeout de 500ms */
+    uint32_t t = HAL_GetTick();
+    while ((readReg(hi2c, 0x13) & 0x01) == 0) {
+        if (HAL_GetTick() - t > 500) {
+            return 9999; /* timeout */
+        }
+    }
+
+    /* Lecture des 2 octets de distance aux registres 0x1E / 0x1F */
+    uint8_t reg = 0x1E;
+    uint8_t data[2] = {0, 0};
+
+    if (HAL_I2C_Master_Transmit(hi2c, VL53L0X_ADDRESS, &reg, 1, 100) == HAL_OK) {
+        if (HAL_I2C_Master_Receive(hi2c, VL53L0X_ADDRESS, data, 2, 100) == HAL_OK) {
+            uint16_t distance = ((uint16_t)data[0] << 8) | data[1];
+
+            /* Clear interrupt pour la prochaine mesure */
+            writeReg(hi2c, 0x0B, 0x01);
+
+            /* Filtrage hors portée (>2m) */
+            if (distance > 2000) {
+                return 2001;
+            }
+
+            return distance; /* distance en mm */
+        }
+    }
+
+    return 9999; /* erreur I2C */
+}
