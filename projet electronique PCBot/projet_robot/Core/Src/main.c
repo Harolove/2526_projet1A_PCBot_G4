@@ -4,20 +4,9 @@
   * @file           : main.c
   * @brief          : Main program body
   ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2026 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
   */
 /* USER CODE END Header */
 
-/* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
@@ -29,21 +18,8 @@
 #include "zone.h"
 /* USER CODE END Includes */
 
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-/* USER CODE END PM */
-
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
-
 TIM_HandleTypeDef htim1;
 
 /* USER CODE BEGIN PV */
@@ -51,6 +27,8 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 TIM_HandleTypeDef htim6;
+volatile uint16_t raw = 0;
+volatile float distance_cm = 0;
 /* USER CODE END PV */
 
 UART_HandleTypeDef huart2;
@@ -59,9 +37,12 @@ UART_HandleTypeDef huart2;
 RobotPose maPosition;
 Moteur mot_gauche, mot_droit;
 
+#define SPEED_NORMAL         20
+#define SPEED_RECUL          15
+#define SPEED_PIVOT          18
 #define OBSTACLE_DISTANCE_CM 20.0f
-#define BACKUP_TIME_MS       500
-#define TURN_TIME_MS         400
+#define BACKUP_TIME_MS       600
+#define TURN_TIME_MS         500
 #define CONTROL_LOOP_MS      50
 
 MapGrid  global_map;
@@ -88,17 +69,16 @@ static void MX_TIM4_Init(void);
 static void MX_TIM6_Init(void);
 /* USER CODE END PFP */
 
-/* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
 static void Robot_Stop(void) {
     MOTEUR_SetVitesse(&mot_gauche, 0);
-    MOTEUR_SetVitesse(&mot_droit, 0);
+    MOTEUR_SetVitesse(&mot_droit,  0);
 }
 
 static void Robot_SetSpeeds(int32_t left, int32_t right) {
     MOTEUR_SetVitesse(&mot_gauche, left);
-    MOTEUR_SetVitesse(&mot_droit, right);
+    MOTEUR_SetVitesse(&mot_droit,  right);
 }
 
 static int32_t Robot_ClampSpeed(int32_t speed) {
@@ -108,47 +88,43 @@ static int32_t Robot_ClampSpeed(int32_t speed) {
 }
 
 static void Robot_AvoidObstacle(void) {
+    /* 1. Stop net */
     Robot_Stop();
-    HAL_Delay(50);
+    HAL_Delay(100);
 
-    /* Recul */
-    Robot_SetSpeeds(-40, -40);
+    /* 2. Recul lent */
+    Robot_SetSpeeds(-SPEED_RECUL, -SPEED_RECUL);
     HAL_Delay(BACKUP_TIME_MS);
+    Robot_Stop();
+    HAL_Delay(100);
 
-    /* Rotation */
-    Robot_SetSpeeds(40, -40);
+    /* 3. Pivot lent sur place (tourne à gauche) */
+    Robot_SetSpeeds(-SPEED_PIVOT, SPEED_PIVOT);
     HAL_Delay(TURN_TIME_MS);
-
     Robot_Stop();
 }
+
 
 static void Robot_RunStep(void) {
     int32_t left_speed;
     int32_t right_speed;
-
     ODOM_Update(&maPosition, &htim2, &htim3);
+    raw = CAPTEUR_Read_Distance(&hi2c1);
+    distance_cm = (float)raw / 10.0f;
+    if (raw != 9999 && raw != 2001 && distance_cm < 150.0f) {
+        float obs_x = maPosition.x + (distance_cm / 100.0f) * cosf(maPosition.theta);
+        float obs_y = maPosition.y + (distance_cm / 100.0f) * sinf(maPosition.theta);
+        MAP_AddObstacle(&global_map, obs_x, obs_y);
+    }
 
-    /* Lecture ToF en mm, conversion en cm */
-    uint16_t raw = CAPTEUR_Read_Distance(&hi2c1);
-    float distance_cm = (float)raw / 10.0f;
-
-    MAP_AddObstacle(&global_map, maPosition.x, maPosition.y);
-
-    /* 9999 = timeout/erreur I2C
-     * 2001 = hors portée (>2m)
-     * Dans ces deux cas : pas d'obstacle détecté, on continue normalement */
-    if (raw == 9999 || raw == 2001) {
-        left_speed  = 60;
-        right_speed = 60;
-        ZONE_AdjustMovement(&my_zone, &left_speed, &right_speed, &maPosition);
-        Robot_SetSpeeds(Robot_ClampSpeed(left_speed), Robot_ClampSpeed(right_speed));
+    if (raw == 9999) { //test I2C
+        Robot_Stop();
+    } else if (raw == 2001) {
+        Robot_SetSpeeds(SPEED_NORMAL, SPEED_NORMAL);
     } else if (distance_cm <= OBSTACLE_DISTANCE_CM) {
         Robot_AvoidObstacle();
     } else {
-        left_speed  = 60;
-        right_speed = 60;
-        ZONE_AdjustMovement(&my_zone, &left_speed, &right_speed, &maPosition);
-        Robot_SetSpeeds(Robot_ClampSpeed(left_speed), Robot_ClampSpeed(right_speed));
+        Robot_SetSpeeds(SPEED_NORMAL, SPEED_NORMAL);
     }
 
     COMM_SendToBase(&maPosition, distance_cm);
@@ -157,24 +133,10 @@ static void Robot_RunStep(void) {
 
 /* USER CODE END 0 */
 
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
 int main(void)
 {
-    /* USER CODE BEGIN 1 */
-    /* USER CODE END 1 */
-
     HAL_Init();
-
-    /* USER CODE BEGIN Init */
-    /* USER CODE END Init */
-
     SystemClock_Config();
-
-    /* USER CODE BEGIN SysInit */
-    /* USER CODE END SysInit */
 
     MX_GPIO_Init();
     MX_I2C1_Init();
@@ -187,48 +149,53 @@ int main(void)
     MX_TIM4_Init();
     MX_TIM6_Init();
 
-    /* Initialisation odométrie */
+    //Initialisation odométrie
     ODOM_Init(&maPosition);
-    maPosition.id = 1; /* ID unique du robot — modifier pour chaque robot */
+    maPosition.id = 1;
 
-    /* Démarrage des encodeurs */
+    //Démarrage des encodeurs
     HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
     HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
 
-    /* Initialisation des modules */
+    // Initialisation des modules
     MAP_Init(&global_map);
     ZONE_AssignFromID(maPosition.id, &my_zone);
     COMM_Init(&huart2);
 
-    /* Configuration moteur gauche */
-    mot_gauche.htim    = &htim4;
+    // Configuration moteur gauche — TIM1 CH1 (PA8) et CH1N (PA11)
+    mot_gauche.htim    = &htim1;
     mot_gauche.channel = TIM_CHANNEL_1;
     MOTEUR_Init(&mot_gauche);
 
-    /* Configuration moteur droit */
-    mot_droit.htim    = &htim4;
+    // Configuration moteur droit — TIM1 CH2 (PA9) et CH2N (PA12)
+    mot_droit.htim    = &htim1;
     mot_droit.channel = TIM_CHANNEL_2;
     MOTEUR_Init(&mot_droit);
 
-    /* Configuration et réveil du capteur ToF VL53L0X */
-    Capteur_Configure(&hi2c1);
+
+
+    //Démarrage PWM TIM1
+    HAL_TIM_PWM_Start(&htim1,   TIM_CHANNEL_1);
+    HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_1);
+    HAL_TIM_PWM_Start(&htim1,   TIM_CHANNEL_2);
+    HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
 
     /* USER CODE END 2 */
-
-    /* Infinite loop */
-    /* USER CODE BEGIN WHILE */
     while (1)
     {
-        Robot_RunStep();
-        /* USER CODE END WHILE */
-        /* USER CODE BEGIN 3 */
+    	uint8_t imu_id = IMU_Check(&hi2c1);
+    	if (imu_id == 0x6C) {
+    	    //si entre ici, imu détecté
+    	    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 1);
+    	} else {
+    	    // Si imu_id vaut 0, le bus est toujours bloqué ou l'adresse est 0x6B
+    	}
+// Robot_RunStep ();
     }
-    /* USER CODE END 3 */
 }
 
 /**
   * @brief System Clock Configuration
-  * @retval None
   */
 void SystemClock_Config(void)
 {
@@ -241,9 +208,7 @@ void SystemClock_Config(void)
     RCC_OscInitStruct.HSIState            = RCC_HSI_ON;
     RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
     RCC_OscInitStruct.PLL.PLLState        = RCC_PLL_NONE;
-    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) Error_Handler();
 
     RCC_ClkInitStruct.ClockType      = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK
                                      | RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
@@ -251,14 +216,9 @@ void SystemClock_Config(void)
     RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;
     RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
     RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
-    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK) Error_Handler();
 }
 
-/**
-  * @brief I2C1 Initialization Function
-  */
 static void MX_I2C1_Init(void)
 {
     hi2c1.Instance              = I2C1;
@@ -270,25 +230,16 @@ static void MX_I2C1_Init(void)
     hi2c1.Init.OwnAddress2Masks = I2C_OA2_NOMASK;
     hi2c1.Init.GeneralCallMode  = I2C_GENERALCALL_DISABLE;
     hi2c1.Init.NoStretchMode    = I2C_NOSTRETCH_DISABLE;
-    if (HAL_I2C_Init(&hi2c1) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_I2C_Init(&hi2c1) != HAL_OK) Error_Handler();
+    if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK) Error_Handler();
+    if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK) Error_Handler();
 }
 
-/**
-  * @brief TIM1 Initialization Function
-  */
 static void MX_TIM1_Init(void)
 {
-    TIM_ClockConfigTypeDef       sClockSourceConfig  = {0};
-    TIM_MasterConfigTypeDef      sMasterConfig       = {0};
-    TIM_OC_InitTypeDef           sConfigOC           = {0};
+    TIM_ClockConfigTypeDef         sClockSourceConfig   = {0};
+    TIM_MasterConfigTypeDef        sMasterConfig        = {0};
+    TIM_OC_InitTypeDef             sConfigOC            = {0};
     TIM_BreakDeadTimeConfigTypeDef sBreakDeadTimeConfig = {0};
 
     htim1.Instance               = TIM1;
@@ -298,27 +249,16 @@ static void MX_TIM1_Init(void)
     htim1.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
     htim1.Init.RepetitionCounter = 0;
     htim1.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-    if (HAL_TIM_Base_Init(&htim1) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIM_Base_Init(&htim1) != HAL_OK) Error_Handler();
 
     sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-    if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_TIM_PWM_Init(&htim1) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_TIM_OC_Init(&htim1) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIM_ConfigClockSource(&htim1, &sClockSourceConfig) != HAL_OK) Error_Handler();
+    if (HAL_TIM_PWM_Init(&htim1) != HAL_OK) Error_Handler();
 
     sMasterConfig.MasterOutputTrigger  = TIM_TRGO_RESET;
     sMasterConfig.MasterOutputTrigger2 = TIM_TRGO2_RESET;
     sMasterConfig.MasterSlaveMode      = TIM_MASTERSLAVEMODE_DISABLE;
-    if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIMEx_MasterConfigSynchronization(&htim1, &sMasterConfig) != HAL_OK) Error_Handler();
 
     sConfigOC.OCMode       = TIM_OCMODE_PWM1;
     sConfigOC.Pulse        = 0;
@@ -327,14 +267,8 @@ static void MX_TIM1_Init(void)
     sConfigOC.OCFastMode   = TIM_OCFAST_DISABLE;
     sConfigOC.OCIdleState  = TIM_OCIDLESTATE_RESET;
     sConfigOC.OCNIdleState = TIM_OCNIDLESTATE_RESET;
-    if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK) {
-        Error_Handler();
-    }
-
-    sConfigOC.OCMode = TIM_OCMODE_TIMING;
-    if (HAL_TIM_OC_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_1) != HAL_OK) Error_Handler();
+    if (HAL_TIM_PWM_ConfigChannel(&htim1, &sConfigOC, TIM_CHANNEL_2) != HAL_OK) Error_Handler();
 
     sBreakDeadTimeConfig.OffStateRunMode  = TIM_OSSR_DISABLE;
     sBreakDeadTimeConfig.OffStateIDLEMode = TIM_OSSI_DISABLE;
@@ -349,16 +283,11 @@ static void MX_TIM1_Init(void)
     sBreakDeadTimeConfig.Break2Filter     = 0;
     sBreakDeadTimeConfig.Break2AFMode     = TIM_BREAK_AFMODE_INPUT;
     sBreakDeadTimeConfig.AutomaticOutput  = TIM_AUTOMATICOUTPUT_DISABLE;
-    if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIMEx_ConfigBreakDeadTime(&htim1, &sBreakDeadTimeConfig) != HAL_OK) Error_Handler();
 
     HAL_TIM_MspPostInit(&htim1);
 }
 
-/**
-  * @brief USART2 Initialization Function
-  */
 static void MX_USART2_UART_Init(void)
 {
     huart2.Instance                    = USART2;
@@ -372,23 +301,12 @@ static void MX_USART2_UART_Init(void)
     huart2.Init.OneBitSampling         = UART_ONE_BIT_SAMPLE_DISABLE;
     huart2.Init.ClockPrescaler         = UART_PRESCALER_DIV1;
     huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-    if (HAL_UART_Init(&huart2) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_UARTEx_SetTxFifoThreshold(&huart2, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_UARTEx_SetRxFifoThreshold(&huart2, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_UARTEx_DisableFifoMode(&huart2) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_UART_Init(&huart2) != HAL_OK) Error_Handler();
+    if (HAL_UARTEx_SetTxFifoThreshold(&huart2, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK) Error_Handler();
+    if (HAL_UARTEx_SetRxFifoThreshold(&huart2, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK) Error_Handler();
+    if (HAL_UARTEx_DisableFifoMode(&huart2) != HAL_OK) Error_Handler();
 }
 
-/**
-  * @brief GPIO Initialization Function
-  */
 static void MX_GPIO_Init(void)
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -396,7 +314,6 @@ static void MX_GPIO_Init(void)
     __HAL_RCC_GPIOA_CLK_ENABLE();
     __HAL_RCC_GPIOB_CLK_ENABLE();
 
-    /* Niveaux de sortie initiaux */
     HAL_GPIO_WritePin(TOF_XSHUT_GPIO_Port, TOF_XSHUT_Pin, GPIO_PIN_SET);
     HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0 | GPIO_PIN_1, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
@@ -408,7 +325,7 @@ static void MX_GPIO_Init(void)
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init(TOF_XSHUT_GPIO_Port, &GPIO_InitStruct);
 
-    /* Broches moteurs — PB0, PB1 */
+    /* Broches direction moteurs — PB0, PB1 */
     GPIO_InitStruct.Pin   = GPIO_PIN_0 | GPIO_PIN_1;
     GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull  = GPIO_NOPULL;
@@ -455,15 +372,11 @@ static void MX_TIM2_Init(void)
     sConfig.IC2Prescaler  = TIM_ICPSC_DIV1;
     sConfig.IC2Filter     = 0;
 
-    if (HAL_TIM_Encoder_Init(&htim2, &sConfig) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIM_Encoder_Init(&htim2, &sConfig) != HAL_OK) Error_Handler();
 
     sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
     sMasterConfig.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
-    if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK) Error_Handler();
 }
 
 static void MX_TIM3_Init(void)
@@ -490,15 +403,11 @@ static void MX_TIM3_Init(void)
     sConfig.IC2Prescaler  = TIM_ICPSC_DIV1;
     sConfig.IC2Filter     = 0;
 
-    if (HAL_TIM_Encoder_Init(&htim3, &sConfig) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIM_Encoder_Init(&htim3, &sConfig) != HAL_OK) Error_Handler();
 
     sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
     sMasterConfig.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
-    if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK) Error_Handler();
 }
 
 static void MX_TIM4_Init(void)
@@ -515,27 +424,19 @@ static void MX_TIM4_Init(void)
     htim4.Init.ClockDivision     = TIM_CLOCKDIVISION_DIV1;
     htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
-    if (HAL_TIM_PWM_Init(&htim4) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIM_PWM_Init(&htim4) != HAL_OK) Error_Handler();
 
     sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
     sMasterConfig.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
-    if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIMEx_MasterConfigSynchronization(&htim4, &sMasterConfig) != HAL_OK) Error_Handler();
 
     sConfigOC.OCMode     = TIM_OCMODE_PWM1;
     sConfigOC.Pulse      = 0;
     sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
     sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
 
-    if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_1) != HAL_OK) {
-        Error_Handler();
-    }
-    if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_2) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_1) != HAL_OK) Error_Handler();
+    if (HAL_TIM_PWM_ConfigChannel(&htim4, &sConfigOC, TIM_CHANNEL_2) != HAL_OK) Error_Handler();
 }
 
 static void MX_TIM6_Init(void)
@@ -550,35 +451,21 @@ static void MX_TIM6_Init(void)
     htim6.Init.Period            = 65535;
     htim6.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
 
-    if (HAL_TIM_Base_Init(&htim6) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIM_Base_Init(&htim6) != HAL_OK) Error_Handler();
 
     sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
     sMasterConfig.MasterSlaveMode     = TIM_MASTERSLAVEMODE_DISABLE;
-    if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK) {
-        Error_Handler();
-    }
+    if (HAL_TIMEx_MasterConfigSynchronization(&htim6, &sMasterConfig) != HAL_OK) Error_Handler();
 }
 
 /* USER CODE END 4 */
 
-/**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
-  */
 void Error_Handler(void)
 {
-    /* USER CODE BEGIN Error_Handler_Debug */
     __disable_irq();
     while (1) {}
-    /* USER CODE END Error_Handler_Debug */
 }
 
 #ifdef USE_FULL_ASSERT
-void assert_failed(uint8_t *file, uint32_t line)
-{
-    /* USER CODE BEGIN 6 */
-    /* USER CODE END 6 */
-}
-#endif /* USE_FULL_ASSERT */
+void assert_failed(uint8_t *file, uint32_t line) {}
+#endif
