@@ -74,3 +74,21 @@ CubeIDE : Modification du code et ajout de code test (car nous n'avons pas encor
 ### 09/04/2026
 CubeIDE :
 - Correction d'erreurs
+
+
+
+Intro : Le PCBot connaît sa position exacte dans l'espace et se déplace. Il permet de cartographier une portion de l'espace autour de lui en calculant la distance qui le sépare de l'obstacle, et en communiquant avec d'autres PCBot, ils peuvent reconstruire la cartographie d'un environnement.
+Choix des composants : 
+- On a choisi la STM32G431KBT6 car
+- On a choisi un BMS BQ25896RTWR, qui permet de charger la batterie car elle possède une large place de tension d'entrée (3.9V à 14V), permettant l'utilisation d'adaptateurs standards(5V) ou haute tension (9V/12V) avec une efficacité de plus de 90% à 3A.
+- On a choisi un driver pour le moteur DRV8411APWPR pour la compacité du boîtier et sa simplicité, avec une large plage de fonctionnement de 1.65V à 11V.
+- On a choisi la centrale inertielle LSM6DSOX pour repérer le robot, qui possède un accéléromètre et un gyroscope (que l'on n'utilisera pas dans le projet) qui a une haute résistance aux chocs mécaniques
+- On a choisi les moteurs DFR1224 à courant continu car
+- On a choisi le capteur TOF VL53LOCXVODH1 qui mesure la distance entre l'obstacle et le robot pour sa haute performance même en journée, 
+- On a choisi le nRF24 pour la communication entre les robots sans fil
+
+Ce qui nous a le plus surpris lors du projet ce sont le soudage du BMS, le fonctionnement du capteur TOF.
+
+
+
+Conclusion : 
