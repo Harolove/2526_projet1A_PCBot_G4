@@ -1,0 +1,3 @@
+../Core/Src/IMU.c:3:9:LSM6D_Init	40	static
+../Core/Src/IMU.c:14:9:LSM6D_Read_Accel_X	40	static
+../Core/Src/IMU.c:23:9:LSM6D_Read_Accel_Y	40	static

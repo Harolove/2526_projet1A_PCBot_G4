@@ -1,0 +1,11 @@
+../Core/Src/nRF24.c:6:6:NRF24_CSN_RESET	1
+../Core/Src/nRF24.c:10:6:NRF24_CSN_SET	1
+../Core/Src/nRF24.c:14:6:NRF24_CE_Enable	1
+../Core/Src/nRF24.c:18:6:NRF24_CE_Disable	1
+../Core/Src/nRF24.c:22:6:NRF24_WriteReg	1
+../Core/Src/nRF24.c:31:9:NRF24_ReadReg	1
+../Core/Src/nRF24.c:44:6:NRF24_Init	1
+../Core/Src/nRF24.c:76:6:NRF24_Send	1
+../Core/Src/nRF24.c:103:9:NRF24_DataReady	2
+../Core/Src/nRF24.c:109:6:NRF24_Receive	1
+../Core/Src/nRF24.c:120:6:NRF24_StartListening	1
