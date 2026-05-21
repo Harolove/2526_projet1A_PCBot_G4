@@ -139,4 +139,13 @@ Plus généralement, on a choisi ces composants pour l'écologie, l'optimisation
 Ce qui nous a le plus surpris lors du projet ce sont le soudage en général où nous avons échoué une première fois car lorsqu'on a mis au four, les composants ont bougé et nous devions recommencer, et également lors du soudage du BMS qui est assez complexe, et le fonctionnement du capteur TOF qui ne fonctionnait pas au début car on a oublié de mettre XSHUNT à 1 dans notre code.
 
 
-Conclusion : À la fin du projet, nous avons réussi à faire communiquer deux nRF24 entre eux; à faire fonctionner les 2 moteurs de roue, donc le robot peut se déplacer mais il ne peut pas encore s'arrêter librement ni changer de vitesse; les 2 LEDs fonctionnent, D1 est allumé pour indiqué que le PCB est alimenté et D2 clignote et indique qu'il y a une erreur au niveau de la batterie (qui n'est pas connecté).
+
+Dans le readme : pas forcément tout mettre. il vaut mieux être précis et aller en profondeur, plutôt qu'essayer de tout mettre mais de façon superficielle. on peut mettre un bout du kicad/routage si par exemple on cherche à montrer quelque chose en particulier (condensateurs de découplage proches du composant principal?)
+convertir nos vidéos en gif pour les ajouter dans le readme.
+
+L'erreur de renvoyée par l'IMU sur la position est justifiée par le fait qu'on intègre 2 fois l'erreur, vu qu'on intègre l'accélération puis la position.
+Dire aussi pourquoi on a choisi un TOF à la place d'un lidar.
+
+
+Conclusion
+À la fin du projet, nous avons réussi à faire communiquer deux nRF24 entre eux; à faire fonctionner les 2 moteurs de roue, donc le robot peut se déplacer mais il ne peut pas encore s'arrêter librement ni changer de vitesse; les 2 LEDs fonctionnent, D1 est allumé pour indiqué que le PCB est alimenté et D2 clignote et indique qu'il y a une erreur au niveau de la batterie (qui n'est pas connecté).
