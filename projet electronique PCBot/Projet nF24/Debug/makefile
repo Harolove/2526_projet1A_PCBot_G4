@@ -60,8 +60,8 @@ all: main-build
 main-build: Projet\ nRF24.elf secondary-outputs
 
 # Tool invocations
-Projet\ nRF24.elf Projet\ nRF24.map: $(OBJS) $(USER_OBJS) C:\Users\flore\STM32CubeIDE\workspace_1.19.0\Projet\ nF24\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Projet nRF24.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\flore\STM32CubeIDE\workspace_1.19.0\Projet nF24\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet nRF24.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Projet\ nRF24.elf Projet\ nRF24.map: $(OBJS) $(USER_OBJS) D:\Documents\2526_projet1A_PCBot_G4\projet\ electronique\ PCBot\Projet\ nF24\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Projet nRF24.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"D:\Documents\2526_projet1A_PCBot_G4\projet electronique PCBot\Projet nF24\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Projet nRF24.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
