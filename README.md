@@ -52,6 +52,7 @@ Début du projet: Le professeur nous présente différents projets, on a choisi 
 ### 12/02/2026
 Draw.io :
 - Schéma architectural
+
 Kicad : 
 - Début de schematic
 - Modification des symboles déjà existant sur Kicad pour avoir des composants qui se rapprochent de la réalité
