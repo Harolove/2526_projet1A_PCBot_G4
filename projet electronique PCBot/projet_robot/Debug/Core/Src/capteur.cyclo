@@ -1,4 +1,0 @@
-../Core/Src/capteur.c:4:26:writeReg	1
-../Core/Src/capteur.c:9:16:readReg	1
-../Core/Src/capteur.c:16:6:Capteur_Configure	3
-../Core/Src/capteur.c:60:10:CAPTEUR_Read_Distance	6

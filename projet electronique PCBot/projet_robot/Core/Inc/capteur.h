@@ -1,15 +1,16 @@
-#ifndef INC_CAPTEUR_H_
-#define INC_CAPTEUR_H_
+#ifndef __CAPTEUR_H
+#define __CAPTEUR_H
 
 #include "stm32g4xx_hal.h"
 
-#define VL53L0X_ADDRESS 0x52
 
 typedef struct {
-    TIM_HandleTypeDef *htim;
+    uint8_t address;
+    uint16_t last_distance;
 } CAPTEUR_t;
 
-void Capteur_Configure(I2C_HandleTypeDef *hi2c);
-uint16_t CAPTEUR_Read_Distance(I2C_HandleTypeDef *hi2c);
+void Capteur_SetAddress(I2C_HandleTypeDef *hi2c, uint8_t old_addr_7bit, uint8_t new_addr_7bit);
+void Capteur_Init_Single(I2C_HandleTypeDef *hi2c, uint8_t addr_7bit);
+uint16_t CAPTEUR_Read_Distance(I2C_HandleTypeDef *hi2c, uint8_t devAddr_7bit);
 
-#endif /* INC_CAPTEUR_H_ */
+#endif

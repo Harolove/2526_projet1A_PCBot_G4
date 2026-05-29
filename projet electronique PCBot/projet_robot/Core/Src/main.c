@@ -14,8 +14,11 @@
 #include "moteur.h"
 #include "capteur.h"
 #include "comm.h"
+#include "imu.h"
 #include "map.h"
 #include "zone.h"
+#include <stdint.h>
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -37,6 +40,7 @@ UART_HandleTypeDef huart2;
 RobotPose maPosition;
 Moteur mot_gauche, mot_droit;
 
+#define SPEED_SLOW           20
 #define SPEED_NORMAL         20
 #define SPEED_RECUL          15
 #define SPEED_PIVOT          18
@@ -70,19 +74,19 @@ static void MX_TIM6_Init(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+static void Robot_SetSpeeds(int32_t left, int32_t right) {
+    MOTEUR_SetVitesse(&mot_gauche, left);
+    MOTEUR_SetVitesse(&mot_droit,  right);
+}
 
 static void Robot_Stop(void) {
     MOTEUR_SetVitesse(&mot_gauche, 0);
     MOTEUR_SetVitesse(&mot_droit,  0);
 }
 
-static void Robot_SetSpeeds(int32_t left, int32_t right) {
-    MOTEUR_SetVitesse(&mot_gauche, left);
-    MOTEUR_SetVitesse(&mot_droit,  right);
-}
 
 static int32_t Robot_ClampSpeed(int32_t speed) {
-    if (speed >  100) return  100;
+    if (speed > 100) return 100;
     if (speed < -100) return -100;
     return speed;
 }
@@ -92,7 +96,7 @@ static void Robot_AvoidObstacle(void) {
     Robot_Stop();
     HAL_Delay(100);
 
-    /* 2. Recul lent */
+    /* 2. Recule lent */
     Robot_SetSpeeds(-SPEED_RECUL, -SPEED_RECUL);
     HAL_Delay(BACKUP_TIME_MS);
     Robot_Stop();
@@ -109,7 +113,7 @@ static void Robot_RunStep(void) {
     int32_t left_speed;
     int32_t right_speed;
     ODOM_Update(&maPosition, &htim2, &htim3);
-    raw = CAPTEUR_Read_Distance(&hi2c1);
+    raw = CAPTEUR_Read_Distance(&hi2c1,0x2A);
     distance_cm = (float)raw / 10.0f;
     if (raw != 9999 && raw != 2001 && distance_cm < 150.0f) {
         float obs_x = maPosition.x + (distance_cm / 100.0f) * cosf(maPosition.theta);
@@ -143,11 +147,32 @@ int main(void)
     MX_TIM1_Init();
     MX_USART2_UART_Init();
 
-    /* USER CODE BEGIN 2 */
+    /* USER CODE BEGIN 2
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2, GPIO_PIN_RESET);
+    HAL_Delay(10);
+
+   // TOF 1 ùmilieu
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0, GPIO_PIN_SET); // Allume TOF1
+    HAL_Delay(2);
+    Capteur_SetAddress(&hi2c1, 0x29, 0x2A); // Change 0x29 (adresse 7-bit par défaut) vers 0x2A
+
+    // TOF 2 centre
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET); // Allume TOF2
+    HAL_Delay(2);
+    Capteur_SetAddress(&hi2c1, 0x29, 0x2B); // Change 0x29 vers 0x2B
+
+    // TOF 3 droite
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_SET); // Allume TOF3
+    HAL_Delay(2);
+
+    Capteur_SetAddress(&hi2c1, 0x29, 0x2C);
+    */
+
     MX_TIM2_Init();
     MX_TIM3_Init();
     MX_TIM4_Init();
     MX_TIM6_Init();
+
 
     //Initialisation odométrie
     ODOM_Init(&maPosition);
@@ -180,16 +205,35 @@ int main(void)
     HAL_TIM_PWM_Start(&htim1,   TIM_CHANNEL_2);
     HAL_TIMEx_PWMN_Start(&htim1, TIM_CHANNEL_2);
 
+
     /* USER CODE END 2 */
     while (1)
     {
+        Robot_SetSpeeds(20, 20);
+        /*HAL_Delay(5000); // 5 secondes*/
+
+        // Phase 2 10 cm/s pendant 5 secondes
+        Robot_SetSpeeds(10, 10);
+        /*HAL_Delay(5000);*/
+
+        // 3. Phase 3 arret
+        Robot_Stop();
+        /*HAL_Delay(5000);*/
+/*
     	uint8_t imu_id = IMU_Check(&hi2c1);
     	if (imu_id == 0x6C) {
     	    //si entre ici, imu détecté
     	    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, 1);
     	} else {
-    	    // Si imu_id vaut 0, le bus est toujours bloqué ou l'adresse est 0x6B
+    	    // Si imu_id vaut 0, le bus est toujours bloqué ou l'adresse est 0x6B!
     	}
+    	raw = CAPTEUR_Read_Distance(&hi2c1, 0x2A);// capteur milieu
+    	    if (raw < 2000) {
+    	      // si entre ici ça marche
+    	    }
+
+    	    HAL_Delay(50);
+    	   */
 // Robot_RunStep ();
     }
 }
@@ -314,38 +358,35 @@ static void MX_GPIO_Init(void)
     __HAL_RCC_GPIOA_CLK_ENABLE();
     __HAL_RCC_GPIOB_CLK_ENABLE();
 
-    HAL_GPIO_WritePin(TOF_XSHUT_GPIO_Port, TOF_XSHUT_Pin, GPIO_PIN_SET);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0 | GPIO_PIN_1, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
 
-    /* XSHUT ToF — PA4 */
-    GPIO_InitStruct.Pin   = TOF_XSHUT_Pin;
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_5, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0 | GPIO_PIN_1, GPIO_PIN_RESET);
+
+    GPIO_InitStruct.Pin   = GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2;
     GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull  = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(TOF_XSHUT_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    /* Broches direction moteurs — PB0, PB1 */
+    GPIO_InitStruct.Pin   = GPIO_PIN_5;
+    GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull  = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+
     GPIO_InitStruct.Pin   = GPIO_PIN_0 | GPIO_PIN_1;
     GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull  = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-    /* PA1 — sortie moteur */
-    GPIO_InitStruct.Pin   = GPIO_PIN_1;
+    GPIO_InitStruct.Pin   = TOF_XSHUT_Pin;
     GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull  = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-
-    /* PA2 — entrée */
-    GPIO_InitStruct.Pin  = GPIO_PIN_2;
-    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    HAL_GPIO_Init(TOF_XSHUT_GPIO_Port, &GPIO_InitStruct);
 }
-
 /* USER CODE BEGIN 4 */
 
 static void MX_TIM2_Init(void)

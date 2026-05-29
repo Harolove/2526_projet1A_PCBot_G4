@@ -1,69 +1,61 @@
 #include "capteur.h"
-#include "main.h"
+#include <stdint.h>
 
-static HAL_StatusTypeDef writeReg(I2C_HandleTypeDef *hi2c, uint8_t reg, uint8_t value) {
+// On définit l'adresse par défaut du VL53L0X (7 bits)
+#define VL53L0X_DEFAULT_ADDR 0x29
+
+static HAL_StatusTypeDef writeReg(I2C_HandleTypeDef *hi2c, uint8_t addr8bit, uint8_t reg, uint8_t value) {
     uint8_t data[2] = {reg, value};
-    return HAL_I2C_Master_Transmit(hi2c, VL53L0X_ADDRESS, data, 2, 100);
+    return HAL_I2C_Master_Transmit(hi2c, addr8bit, data, 2, 100);
 }
 
-static uint8_t readReg(I2C_HandleTypeDef *hi2c, uint8_t reg) {
+static uint8_t readReg(I2C_HandleTypeDef *hi2c, uint8_t addr8bit, uint8_t reg) {
     uint8_t value = 0;
-    HAL_I2C_Master_Transmit(hi2c, VL53L0X_ADDRESS, &reg, 1, 100);
-    HAL_I2C_Master_Receive(hi2c, VL53L0X_ADDRESS, &value, 1, 100);
+    if (HAL_I2C_Master_Transmit(hi2c, addr8bit, &reg, 1, 100) == HAL_OK) {
+        HAL_I2C_Master_Receive(hi2c, addr8bit, &value, 1, 100);
+    }
     return value;
 }
 
-void Capteur_Configure(I2C_HandleTypeDef *hi2c) {
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET); // Capteur 1
-        // HAL_GPIO_WritePin(GPIOB, GPIO_PIN_X, GPIO_PIN_RESET); // Capteur 2
-        // HAL_GPIO_WritePin(GPIOC, GPIO_PIN_Y, GPIO_PIN_RESET); // Capteur 3
-        HAL_Delay(100);
-
-        // Permet d'allumé que celui qui est branché
-        HAL_GPIO_WritePin(TOF_XSHUT_GPIO_Port, TOF_XSHUT_Pin, GPIO_PIN_SET);
-        HAL_Delay(100);
-
-        hi2c->Instance->CR1 &= ~(I2C_CR1_PE);
-        HAL_Delay(10);
-        hi2c->Instance->CR1 |= I2C_CR1_PE;
-
-        HAL_GPIO_WritePin(TOF_XSHUT_GPIO_Port, TOF_XSHUT_Pin, GPIO_PIN_SET);
-        HAL_Delay(50);
-
-    uint8_t sensor_id = readReg(hi2c, 0xC0);
-
-    // Vérification présence sur le bus I2C
-    if (HAL_I2C_IsDeviceReady(hi2c, VL53L0X_ADDRESS, 3, 100) != HAL_OK) {
-        return;
-    }
-
-    writeReg(hi2c, 0x00, 0x02);
-    HAL_Delay(100);
+void Capteur_SetAddress(I2C_HandleTypeDef *hi2c, uint8_t old_addr_7bit, uint8_t new_addr_7bit) {
+    uint8_t data = new_addr_7bit & 0x7F;
+    // Registre 0x8A pour changer l'adresse I2C
+    HAL_I2C_Mem_Write(hi2c, old_addr_7bit << 1, 0x8A, I2C_MEMADD_SIZE_8BIT, &data, 1, 100);
 }
 
-uint16_t CAPTEUR_Read_Distance(I2C_HandleTypeDef *hi2c) {
+void Capteur_Init_Single(I2C_HandleTypeDef *hi2c, uint8_t addr_7bit) {
+    uint8_t addr8bit = addr_7bit << 1;
+
+    // Initialisation minimale pour activer le capteur
+    // On met le capteur en mode "2V8" si nécessaire (selon ton hardware)
+    writeReg(hi2c, addr8bit, 0x89, readReg(hi2c, addr8bit, 0x89) | 0x01);
+    writeReg(hi2c, addr8bit, 0x00, 0x01); // Start VL53L0X
+}
+
+uint16_t CAPTEUR_Read_Distance(I2C_HandleTypeDef *hi2c, uint8_t devAddr_7bit) {
     uint32_t t = HAL_GetTick();
-    while ((readReg(hi2c, 0x13) & 0x01) == 0) {
-        if (HAL_GetTick() - t > 500) {
-            return 9999; /* timeout */
-        }
+    uint8_t addr8bit = devAddr_7bit << 1;
+
+    // 1. Attendre que la mesure soit prête
+    while ((readReg(hi2c, addr8bit, 0x13) & 0x01) == 0) {
+        if (HAL_GetTick() - t > 100) return 9999; // Timeout
     }
 
-    // Lecture des 2 octets de distance aux registres 0x1E / 0x1F
+    // 2. Lecture du registre de distance (0x1E)
     uint8_t reg = 0x1E;
     uint8_t data[2] = {0, 0};
 
-    if (HAL_I2C_Master_Transmit(hi2c, VL53L0X_ADDRESS, &reg, 1, 100) == HAL_OK) {
-        if (HAL_I2C_Master_Receive(hi2c, VL53L0X_ADDRESS, data, 2, 100) == HAL_OK) {
+    if (HAL_I2C_Master_Transmit(hi2c, addr8bit, &reg, 1, 100) == HAL_OK) {
+        if (HAL_I2C_Master_Receive(hi2c, addr8bit, data, 2, 100) == HAL_OK) {
             uint16_t distance = ((uint16_t)data[0] << 8) | data[1];
-            writeReg(hi2c, 0x0B, 0x01);
-            if (distance > 2000) {
-                return 2001;
-            }
 
-            return distance; //distance en mm
+            // 3. Clear l'interruption pour la mesure suivante
+            writeReg(hi2c, addr8bit, 0x0B, 0x01);
+
+            if (distance > 2000) return 2001;
+            return distance;
         }
     }
 
-    return 9999; //erreur I2C
+    return 9999; // Erreur I2C
 }

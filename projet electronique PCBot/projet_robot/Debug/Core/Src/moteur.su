@@ -1,2 +1,0 @@
-../Core/Src/moteur.c:6:6:MOTEUR_Init	16	static
-../Core/Src/moteur.c:26:6:MOTEUR_SetVitesse	32	static

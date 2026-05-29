@@ -1,2 +1,0 @@
-../Core/Src/map.c:4:6:MAP_Init	16	static
-../Core/Src/map.c:8:6:MAP_AddObstacle	32	static

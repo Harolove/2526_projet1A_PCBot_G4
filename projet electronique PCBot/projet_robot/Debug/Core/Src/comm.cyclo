@@ -1,2 +1,0 @@
-../Core/Src/comm.c:12:6:COMM_Init	1
-../Core/Src/comm.c:16:6:COMM_SendToBase	3
