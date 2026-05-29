@@ -26,7 +26,7 @@ void NRF24_WriteReg(uint8_t reg, uint8_t data) {//reg: adresse du registre dans 
     NRF24_CSN_RESET();//pin CSN à 0V pour transmettre données
     HAL_SPI_Transmit(&hspi2, buf, 2, 100);//On utilise le port SPI numéro 2, n envoie le contenu de notre tableau (instruction + donnée), envoie 2 octets.
     NRF24_CSN_SET(); //CSN à 3.3V pour fin de transmission de données pour qu'il la traite
-
+}
 uint8_t NRF24_ReadReg(uint8_t reg) {// lit ce qu'il a dans le registre reg. Prend en entrée l'adresse du registre reg et renvoie un octet (uint8_t) qui est la valeur lue.
     uint8_t command = reg & 0x1F;
     uint8_t status;
