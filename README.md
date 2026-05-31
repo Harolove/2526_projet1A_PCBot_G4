@@ -177,6 +177,7 @@ Le registre CTRL1_XL d’adresse 0x10 est le registre de configuration principal
 
 <img width="1089" height="490" alt="image" src="https://github.com/user-attachments/assets/a2acea0e-d3e6-43cb-aea7-86aeb264e0d1" />
 
+<img width="977" height="802" alt="image" src="https://github.com/user-attachments/assets/e4c148ab-1a77-4ef1-ae2e-4d718531ce21" />
 
 Pour nos tests nous avons choisi d’envoyer 0x40 à ce registre qui correspond en binaire à 0100 0000, on a donc :
 - 0100 pour ODR_XL qui correspond à 104 Hz dans le tableau pour un mode normal
@@ -184,22 +185,22 @@ Pour nos tests nous avons choisi d’envoyer 0x40 à ce registre qui correspond 
 - 00 pour le reste: filtre désactivé
 
 On fixe la fréquence d'échantillonnage du capteur à 104 Hz, ce qui signifie qu'il prend 104 mesures par seconde, ce qui est largement suffisant pour nos tests, puisque dt = 0.02s correspond à une fréquence de 50 Hz dans le code. Le capteur mesure donc deux fois plus vite que notre boucle de calcul.
-On fixe la plage à ±2g qui est adaptée pour nos tests car nos déplacements sont lent et à faible accélération
+On fixe la plage à ±2g qui est adaptée pour nos tests car nos déplacements sont lent et à faible accélération.
+
 L'approche que nous avons opté pour le code est d’implanter plusieurs variables volatile:
 measurement_active: cette variable vaut 1 si la mesure est active et 0 sinon.
 pos_x: la position de x actuelle.
 x_pos_max: la position maximale de pox_x pendant une mesure, elle a été introduite car pos_x varie en continu et ne permet pas de lire directement une valeur stable.
 Une mesure est lancée dès que l’on appuie sur le bouton poussoir PC13 et s’arrête lorsqu’on réappuie dessus pour nous donner la valeur de x_pos_max au cours de cette mesure. 
 
-L'estimation de la position repose sur une double intégration temporelle. Cependant, cette intégration pose un problème de précision, de petites erreurs s'accumulent à chaque intégration et fausse le calcul de la position même quand le robot est immobile. Ainsi, pour limiter cette erreurs nous avons mis en place 3 corrections:  
-Conversion en m/s² : les valeurs brutes sorties par le capteur sont des entiers sur 16 bits, pas directement des m/s². On les convertit en vraies unités physiques selon la plage de mesure choisie (±2g).
-Zone morte : quand l'accélération mesurée est très faible (en dessous de 0,25 m/s²), on considère que c'est du bruit et on l'ignore. Ça évite que le robot "se déplace" alors qu'il est à l'arrêt.
-Friction numérique : même avec la zone morte, de petites erreurs font que la vitesse calculée ne revient jamais exactement à zéro. En multipliant la vitesse par 0,92 à chaque pas de temps sans accélération, on la force à diminuer progressivement jusqu'à zéro, comme si une friction la freinait.
-En résumé, ces trois filtres servent à compenser le fait que le capteur n'est pas parfait et que les erreurs s'accumulent vite sans correction.
+L'estimation de la position repose sur une double intégration temporelle. Cependant, cette intégration pose un problème de précision, de petites erreurs s'accumulent à chaque intégration et fausse le calcul de la position même quand le robot est immobile. Ainsi, pour limiter ces erreurs, nous avons mis en place 3 corrections:
+- Les valeurs brutes du capteur sont converties en m/s² selon la plage de mesure ±2g.
+- Si l'accélération est inférieure à 0,20 m/s², on la considère comme du bruit et on l'ignore.
+- On applique un coefficient de 0,95 à la vitesse quand l'accélération est nulle, pour éviter qu'elle s'accumule indéfiniment à cause des petites erreurs.
+  
 Après implémentation de ce code, nous avons lancé le débogueur et regardé les valeurs de pos_x, x_pos_max et measurement_active dans Live Expressions de l'IDE, permettant d'observer en temps réel ces variables. 
 Pour vérifier si notre code fonctionne, nous avons choisi de faire déplacer le capteur de 10 cm, après plusieurs essais, nous obtenons des résultats entre 9.1 et 10.5 cm, ce qui est plutôt satisfaisant.
 
-Concernant la précision des résultats sur la position, l'erreur s'accumule car on effectue deux intégrations successives : une première fois pour passer de l'accélération à la vitesse, puis une seconde fois pour passer de la vitesse à la position.
 Voici ce qu'on observe :
 
 ![Mon super GIF](IMU.gif)
