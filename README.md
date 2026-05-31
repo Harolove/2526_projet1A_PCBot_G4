@@ -169,7 +169,9 @@ Pour nos tests nous avons choisi d’envoyer 0x40 à ce registre qui correspond 
 
 L'erreur renvoyée par l'IMU sur la position est justifiée par le fait qu'on intègre deux fois l'erreur, vu qu'on intègre l'accélération puis la position.
 Voici ce qu'on observe :
+
 ![Mon super GIF](IMU.gif)
+
 <img width="1158" height="143" alt="image" src="https://github.com/user-attachments/assets/fc468cd4-0573-44ab-8d27-a484df2a6872" />
 
 
