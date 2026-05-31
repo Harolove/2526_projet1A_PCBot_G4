@@ -193,10 +193,10 @@ pos_x: la position de x actuelle.
 x_pos_max: la position maximale de pox_x pendant une mesure, elle a été introduite car pos_x varie en continu et ne permet pas de lire directement une valeur stable.
 Une mesure est lancée dès que l’on appuie sur le bouton poussoir PC13 et s’arrête lorsqu’on réappuie dessus pour nous donner la valeur de x_pos_max au cours de cette mesure. 
 
-L'estimation de la position repose sur une double intégration temporelle. Cependant, cette intégration pose un problème de précision, de petites erreurs s'accumulent à chaque intégration et fausse le calcul de la position même quand le robot est immobile. Ainsi, pour limiter ces erreurs, nous avons mis en place 3 corrections:
+L'estimation de la position repose sur une double intégration temporelle. Cependant, cette intégration pose un problème de précision, de petites erreurs s'accumulent à chaque intégration et fausse le calcul de la position même quand le robot est immobile. Ainsi, pour limiter ces erreurs, nous avons mis en place 2 corrections:
 - Les valeurs brutes du capteur sont converties en m/s² selon la plage de mesure ±2g.
 - Si l'accélération est inférieure à 0,20 m/s², on la considère comme du bruit et on l'ignore.
-- On applique un coefficient de 0,95 à la vitesse quand l'accélération est nulle, pour éviter qu'elle s'accumule indéfiniment à cause des petites erreurs.
+
   
 Après implémentation de ce code, nous avons lancé le débogueur et regardé les valeurs de pos_x, x_pos_max et measurement_active dans Live Expressions de l'IDE, permettant d'observer en temps réel ces variables. 
 Pour vérifier si notre code fonctionne, nous avons choisi de faire déplacer le capteur de 10 cm, après plusieurs essais, nous obtenons des résultats entre 9.1 et 10.5 cm, ce qui est plutôt satisfaisant.
