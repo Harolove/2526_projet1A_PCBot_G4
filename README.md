@@ -144,11 +144,13 @@ Exemple:
 
 ### Difficultés rencontrées:
 Le soudage des composants a été l'étape la plus délicate du projet, marquée par plusieurs tentatives avant d'obtenir un résultat satisfaisant. Notre premier PCB a été un échec, car après le passage au four, nous avons remarqué que nous n’avons pas retiré la pâte à braser au niveau des trous du connecteur USB-C, rendant ainsi la carte inutilisable. Lors du deuxième essai, de la pâte à braser s’est retirée par inadvertance à certains endroits, compromettant là encore la qualité des soudures.
-Sur notre PCB final, le passage au four a provoqué le déplacement de notre BMS et de certains condensateurs. De plus, une patte de la stm s’est pliée rompant ainsi le contact électrique avec plusieurs broches du microcontrôleur. Pour corriger ces problèmes, nous avons dû dessouder les composants concernés et les ressouder manuellement à l'air chaud avec du flux. Malgré ces difficultés, cette expérience nous a appris énormément sur les contraintes du soudage en production et sur les techniques de reprise manuelle. 
+Sur notre PCB final, le passage au four a provoqué le déplacement de notre BMS et de certains condensateurs. De plus, une patte de la STM32 s’est pliée rompant ainsi le contact électrique avec plusieurs broches du microcontrôleur. Pour corriger ces problèmes, nous avons dû dessouder les composants concernés et les ressouder manuellement à l'air chaud avec du flux un liquide qui permet à l'étain de couler jusqu'aux pattes lors du chauffage à l'air chaud. Malgré ces difficultés, cette expérience nous a appris énormément sur les contraintes du soudage en production et sur les techniques de reprise manuelle. 
+
+Après le soudage, nous avons tenté d'alimenter le PCB via un chargeur USB-C, mais les tensions mesurées au multimètre ne correspondaient pas aux valeurs attendues. Nous avons découvert que deux solder jumpers, JP1 et JP2, étaient ouverts par défaut, nous avons donc dû poser de l'étain dessus pour enfin avoir des alimentations correctes. Nous avons également constaté que le PCB ne fonctionnait qu'avec un chargeur USB-A, le chargeur USB-C ne semblant pas être reconnu correctement, sans que nous ayons pu en identifier la cause précise.
 
 Du côté logiciel, nous n'avons pas réussi à établir la communication I2C avec le capteur TOF, que ce soit sur le PCB du projet ou avec notre STM32L476RG. Pourtant, la broche XSHUT a bien été mise à 1 dans le code, et l'alimentation du composant a été vérifiée avec un multimètre. 
 
-### Modélisation 3D du suuport:
+### Modélisation 3D du support:
 Nous avons conçu le support du robot sur OnShape. La principale contrainte de conception était d'assurer que les deux roues arrière et la bille aient la même hauteur pour garantir une surface de contact plane. Nous avons donc ajouté de la matière à l'avant du support afin de compenser la différence de hauteur.
 Nous avons fait différents trous pour pouvoir faire rentrer les vis des moteurs et de la bille, et nous avons aussi fait le support pour le PCB. Cependant, l'impression n'a pas été parfaite et le support ne s'est pas emboîté correctement, pour pallier le problème, nous avons cassé l'un des picots du support afin que le PCB puisse tenir en place.
 
@@ -179,7 +181,7 @@ Pour nos tests nous avons choisi d’envoyer 0x40 à ce registre qui correspond 
 - 00 pour FS_XL qui correspond à la plage ±2g (valeur par défaut)
 - 00 pour le reste: filtre désactivé
 
-L'erreur renvoyée par l'IMU sur la position est justifiée par le fait qu'on intègre deux fois l'erreur, vu qu'on intègre l'accélération puis la position.
+Concernant la précision des résultats sur la position, l'erreur s'accumule car on effectue deux intégrations successives : une première fois pour passer de l'accélération à la vitesse, puis une seconde fois pour passer de la vitesse à la position.
 Voici ce qu'on observe :
 
 ![Mon super GIF](IMU.gif)
@@ -226,4 +228,4 @@ Les tests montrent une communication stable entre les deux cartes.
 
 
 Conclusion
-À la fin du projet, nous avons réussi à faire communiquer deux nRF24 entre eux; à faire fonctionner les 2 moteurs de roue, donc le robot peut se déplacer mais il ne peut pas encore s'arrêter librement ni changer de vitesse; les 2 LEDs fonctionnent, D1 est allumé pour indiqué que le PCB est alimenté et D2 clignote pour indiquer qu'il y a une erreur au niveau de la batterie (qui n'est pas connecté).
+À la fin du projet, nous avons réussi à faire communiquer deux nRF24 entre eux, la centrale inertielle a part et à faire fonctionner les 2 moteurs de roue, donc le robot peut se déplacer mais il ne peut pas encore s'arrêter librement ni changer de vitesse; les 2 LEDs fonctionnent, si D1 celà signifie que le PCB est alimenté et si D2 clignote c'est qu'il y a une erreur au niveau de la batterie (qui n'est pas connectée).
