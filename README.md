@@ -136,6 +136,11 @@ Nous avons choisi nos composants par rapport à trois critères: l'écologie, l'
 ### Routage et conception du PCB:
 
 Pour le routage, nous avons cherché à minimiser les distances entre composants interdépendants, en plaçant notamment les condensateurs de découplage au plus près des composants qu'ils protègent. Le PCB a été optimisé pour atteindre une taille minimale de 5,9 × 6,8 cm pour l'écologie.
+Exemple: 
+
+<img width="724" height="556" alt="image" src="https://github.com/user-attachments/assets/487cfb13-d3b9-482e-baba-fe3194dac2dd" />
+
+###
 
 ### Difficultés rencontrées:
 Le soudage des composants a été l'étape la plus délicate du projet, marquée par plusieurs tentatives avant d'obtenir un résultat satisfaisant. Notre premier PCB a été un échec, car après le passage au four, nous avons remarqué que nous n’avons pas retiré la pâte à braser au niveau des trous du connecteur USB-C, rendant ainsi la carte inutilisable. Lors du deuxième essai, de la pâte à braser s’est retirée par inadvertance à certains endroits, compromettant là encore la qualité des soudures.
@@ -143,6 +148,13 @@ Sur notre PCB final, le passage au four a provoqué le déplacement de notre BMS
 
 Du côté logiciel, nous n'avons pas réussi à établir la communication I2C avec le capteur TOF, que ce soit sur le PCB du projet ou avec notre STM32L476RG. Pourtant, la broche XSHUT a bien été mise à 1 dans le code, et l'alimentation du composant a été vérifiée avec un multimètre. 
 
+### Modélisation 3D du suuport:
+Nous avons conçu le support du robot sur OnShape. La principale contrainte de conception était d'assurer que les deux roues arrière et la bille aient la même hauteur pour garantir une surface de contact plane. Nous avons donc ajouté de la matière à l'avant du support afin de compenser la différence de hauteur.
+Nous avons fait différents trous pour pouvoir faire rentrer les vis des moteurs et de la bille, et nous avons aussi fait le support pour le PCB. Cependant, l'impression n'a pas été parfaite et le support ne s'est pas emboîté correctement, pour pallier le problème, nous avons cassé l'un des picots du support afin que le PCB puisse tenir en place.
+
+<img width="1171" height="632" alt="image" src="https://github.com/user-attachments/assets/de19624b-e24d-48b1-824c-a5a5edf92b10" />
+
+<img width="835" height="423" alt="image" src="https://github.com/user-attachments/assets/8e5d28a2-4b76-4e3f-a02b-02c09023a645" />
 
 
 ### IMU
@@ -211,7 +223,6 @@ Le bouton poussoir PC13 de la carte émettrice déclenche l'envoi d'un message. 
 
 ## Résultats
 Les tests montrent une communication stable entre les deux cartes.
-
 
 
 Conclusion
