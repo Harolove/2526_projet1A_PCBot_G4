@@ -167,14 +167,16 @@ L'accélération est codée sur 16 bits au total, mais le bus I2C ne peut transf
 - OUTX_L_A (0x28) contient les 8 bits de poids faible
 - OUTX_H_A (0x29) contient les 8 bits de poids fort.
 
-*ajouter tableaux 9.34 et 9.35*
+<img width="926" height="748" alt="image" src="https://github.com/user-attachments/assets/0fe54373-1a72-4815-98f6-99039c4ac865" />
+
 
 Le registre CTRL1_XL d’adresse 0x10 est le registre de configuration principal de l'accéléromètre. Il est composé de 8 bits répartis en trois parties :
 - Les 4 bits de poids fort (ODR_XL3 à ODR_XL0) règlent la fréquence de mesure
 - Les 2 bits suivants (FS1_XL, FS0_XL) règlent la plage de mesure
 - Le bit LPF2_XL_EN active ou non un filtre passe-bas
 
-*ajouter photo CRL1_XL (10h)*
+<img width="1089" height="490" alt="image" src="https://github.com/user-attachments/assets/a2acea0e-d3e6-43cb-aea7-86aeb264e0d1" />
+
 
 Pour nos tests nous avons choisi d’envoyer 0x40 à ce registre qui correspond en binaire à 0100 0000, on a donc :
 - 0100 pour ODR_XL qui correspond à 104 Hz dans le tableau pour un mode normal
