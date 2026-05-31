@@ -127,7 +127,7 @@ Ce projet a pour objectif la conception d'un robot PCBot capable de connaître s
 ### Choix des composants:
 
 Nous avons choisi nos composants par rapport à trois critères: l'écologie, l'optimisation de l'espace et le coût.
-- Pour la gestion de l'énergie, nous avons retenu le BMS BQ25896RTWR, qui accepte une large plage de tension d'entrée (3,9V à 14V) et offre un rendement supérieur à 90% à 3A, permettant l'utilisation d'adaptateurs standards (5V) ou haute tension(9V/12V).
+- Pour la gestion de l'énergie, nous avons retenu le BMS BQ25896RTWR, qui accepte une large plage de tension d'entrée (3,9V à 14V) et offre un rendement supérieur à 90% à 3A, permettant l'utilisation d'adaptateurs standards (5V) ou haute tension (9V/12V).
 - Pour le contrôle des moteurs DFR1224 à courant continu, nous avons opté pour le driver DRV8411APWPR pour sa compacité et sa simplicité d'utilisation, avec une large plage de fonctionnement de 1.65V à 11V.
 - La localisation du robot repose sur la centrale inertielle LSM6DSOX, qui possède un accéléromètre et un gyroscope (que l'on n'utilisera pas dans le projet) dans un boîtier résistant aux chocs mécaniques.
 - Pour la mesure de distance, nous avons choisi le capteur TOF VL53L0X pour ses bonnes performances en pleine lumière dans un encombrement réduit. 
