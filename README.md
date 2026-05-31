@@ -47,15 +47,16 @@ git pull
 ```
 ## Timeline
 ### 05/02/2026
-Début du projet: Le professeur nous présente différents projets, on a choisi le PCBot car le projet nous paraît très intéressant même si c'est un gros projet. Nous avons également utiliser cette séance pour découvrir git et github. Nous avons commencé les recherches de datasheets sur les différents composants et sur le PCBot; et nous avons listé les différentes fonctionnalités du PCBot.
+Début du projet : Le professeur nous présente différents projets.
+Nous avons choisi le PCBot car le projet nous paraît très intéressant même s'il en est un gros. Nous avons également utilisé cette séance pour découvrir git et github. Nous avons commencé les recherches des datasheets des différents composants du PCBot; et nous avons listé les différentes fonctionnalités de celui-ci.
 
 ### 12/02/2026
 Draw.io :
 - Schéma architectural
 
 Kicad : 
-- Début de schematic
-- Modification des symboles déjà existant sur Kicad pour avoir des composants qui se rapprochent de la réalité
+- Début du schematic
+- Modification des symboles déjà existants sur Kicad pour avoir des composants qui se rapprochent de ceux que nous allons utiliser
 
 ### 19/02/2026
 Kicad :
@@ -87,12 +88,12 @@ CubeIDE :
 
 ### 16/04/2026
 CubeIDE :
-- Commenter les différents fichiers .c et .h
+- Commentaire des différents fichiers .c et .h
 - Recherche d'une librairie pour le capteur TOF
 
 ### 06/05/2026
 Software : 
-- Réussite à faire communiquer 2 nRF24 avec 2 nucléos
+- Réussite à faire communiquer deux nRF24 avec deux Nucléos-L476RG
 
 ### 07/05/2026
 Pratique :
@@ -102,7 +103,7 @@ Software :
 
 ### 13/05/2026
 Pratique :
-- Resoudure du PCB (car nous avons eu des problèmes pour la première fois)
+- Resoudure du PCB (car nous avons eu des problèmes la première fois)
 
 ### 15/05/2026
 Software :
@@ -120,7 +121,7 @@ Onshape :
 
 
 
-Intro
+Introduction
 Le projet sur lequel nous travaillons est la conception d'un PCBot qui connaît sa position exacte dans l'espace et se déplace. Il permet de cartographier une portion de l'espace autour de lui en calculant la distance qui le sépare de l'obstacle, et en communiquant avec d'autres PCBot, ils peuvent reconstruire la cartographie d'un environnement.
 
 Choix des composants : 
