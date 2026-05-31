@@ -185,9 +185,9 @@ Pour nos tests nous avons choisi d’envoyer 0x40 à ce registre qui correspond 
 - 00 pour le reste: filtre désactivé
 
 On fixe la fréquence d'échantillonnage du capteur à 104 Hz, ce qui signifie qu'il prend 104 mesures par seconde, ce qui est largement suffisant pour nos tests, puisque dt = 0.02s correspond à une fréquence de 50 Hz dans le code. Le capteur mesure donc deux fois plus vite que notre boucle de calcul.
-On fixe la plage à ±2g qui est adaptée pour nos tests car nos déplacements sont lent et à faible accélération.
+On fixe la plage à ±2g qui est adaptée pour nos tests car nos déplacements sont lents et à faible accélération.
 
-L'approche que nous avons opté pour le code est d’implanter plusieurs variables volatile:
+L'approche que nous avons opté pour le code est d’implanter plusieurs variables volatiles:
 measurement_active: cette variable vaut 1 si la mesure est active et 0 sinon.
 pos_x: la position de x actuelle.
 x_pos_max: la position maximale de pox_x pendant une mesure, elle a été introduite car pos_x varie en continu et ne permet pas de lire directement une valeur stable.
