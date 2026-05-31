@@ -133,7 +133,7 @@ Choix des composants :
 - On a choisi le nRF24 pour la communication entre les robots sans fil
 
 Pour le routage, nous avons choisi d'optimiser le placement en mettant à côté ceux qui doivent rester proches, et de minimiser au maximum la distance entre les composants comme les condensateurs de découplage.
-On a optimisé la taille du PCB en choisissant la taille minimum nécessaire qui est de 5,9 x 6.8cm pour l'écologie.
+On a optimisé la taille du PCB en choisissant la taille minimum nécessaire qui est de 5.9 x 6.8cm pour l'écologie.
 
 Plus généralement, on a choisi ces composants pour l'écologie, l'optimisation de l'espace et de coût financier, et/ou pour ses fonctionnalités.
 
@@ -142,10 +142,71 @@ Ce qui nous a le plus surpris lors du projet ce sont le soudage en général où
 
 
 Dans le readme : pas forcément tout mettre. il vaut mieux être précis et aller en profondeur, plutôt qu'essayer de tout mettre mais de façon superficielle. on peut mettre un bout du kicad/routage si par exemple on cherche à montrer quelque chose en particulier (condensateurs de découplage proches du composant principal?)
-convertir nos vidéos en gif pour les ajouter dans le readme.
 
-L'erreur de renvoyée par l'IMU sur la position est justifiée par le fait qu'on intègre 2 fois l'erreur, vu qu'on intègre l'accélération puis la position.
-Dire aussi pourquoi on a choisi un TOF à la place d'un lidar.
+
+### IMU
+Dans le cadre du projet, nous avons réalisé quelques tests avec le composant LSM6DSOX (Adafruit 4438), notre objectif était de pouvoir obtenir la distance parcourue par le composant à partir des données accélérométriques (par double intégration). Nous avons relié les lignes SDA et SCL de l’imu sur les broches PB6 et PB7 du microcontrôleur STM32L476RG.
+Avant de faire ces tests, nous avons utilisé le registre WHO_AM_I du composant d’adresse 0x0F et qui contient 0x6C (108). Après lecture du contenu à cette adresse nous avons obtenu cette valeur, cela montre que le capteur est bien connecté.
+Les registres OUTX et OUTY permettent de mesurer l'accélération selon l’axe x et l’axe y, cependant, dans le cadre de ces tests, nous allons plutôt nous concentrer sur un seul axe.
+L'accélération est codée sur 16 bits au total, mais le bus I2C ne peut transférer que 8 bits à la fois. Donc le capteur découpe la valeur en deux morceaux de 8 bits et les range dans deux registres séparés :
+- OUTX_L_A (0x28) contient les 8 bits de poids faible
+- OUTX_H_A (0x29) contient les 8 bits de poids fort.
+
+*ajouter tableaux 9.34 et 9.35*
+
+Le registre CTRL1_XL d’adresse 0x10 est le registre de configuration principal de l'accéléromètre. Il est composé de 8 bits répartis en trois parties :
+- Les 4 bits de poids fort (ODR_XL3 à ODR_XL0) règlent la fréquence de mesure
+- Les 2 bits suivants (FS1_XL, FS0_XL) règlent la plage de mesure
+- Le bit LPF2_XL_EN active ou non un filtre passe-bas
+
+*ajouter photo CRL1_XL (10h)*
+
+Pour nos tests nous avons choisi d’envoyer 0x40 à ce registre qui correspond en binaire à 0100 0000, on a donc :
+- 0100 pour ODR_XL qui correspond à 104 Hz dans le tableau pour un mode normal
+- 00 pour FS_XL qui correspond à la plage ±2g (valeur par défaut)
+- 00 pour le reste: filtre désactivé
+
+L'erreur renvoyée par l'IMU sur la position est justifiée par le fait qu'on intègre deux fois l'erreur, vu qu'on intègre l'accélération puis la position.
+Voici ce qu'on observe :
+![Mon super GIF](IMU.gif)
+
+
+### nRF24
+Pour ce projet, nous avons besoin de faire communiquer deux robots distants.
+Les capteurs LiDAR permettent une mesure précise, mais leur coût élevé et leur complexité de mise en œuvre (drivers, protocoles temps réel) dépassent les contraintes du projet. Nous avons donc opté pour une communication radio bas-coût avec le module nRF24L01+, qui offre une liaison sans fil simple à intégrer via SPI et suffisamment fiable pour nos besoins.
+Nous avons relié deux modules nRF24L01+ à deux cartes Nucleo-L476RG et vérifié que les deux microcontrôleurs pouvaient s'échanger des messages de manière bidirectionnelle :
+![Mon super GIF](nRF24.gif)
+
+## Connexion matérielle
+Le nRF24L01+ communique via le bus SPI. Voici le câblage utilisé sur le STM32L476RG :
+-	CE → PA8 (contrôle émission/réception)
+-	CSN → PB6 (Chip Select SPI)
+-	SCK → PA5 (SPI1_SCK)
+-	MOSI → PA7 (SPI1_MOSI)
+-	MISO → PA6 (SPI1_MISO)
+-	VCC → 3.3 V  |  GND → GND
+
+## Configuration du module
+Les principaux paramètres configurés dans nos tests :
+-	Canal RF : canal 76, libre des perturbations Wi-Fi les plus courantes.
+-	Débit : 1 Mbps — bon compromis portée/fiabilité pour notre usage.
+-	Puissance d'émission : 0 dBm (niveau max), pour assurer la fiabilité en intérieur.
+-	Taille de payload : 32 octets (mode statique).
+-	Adresses : une adresse TX et une adresse RX configurées de façon symétrique sur les deux cartes.
+
+La validation de la connexion SPI a été réalisée en lisant le registre CONFIG (adresse 0x00) : si la valeur retournée est cohérente (typiquement 0x08 après reset), le module est bien connecté et répond correctement.
+
+## Approche logicielle
+Nous avons distingué deux rôles : un émetteur (TX) et un récepteur (RX), chacun configuré sur une Nucleo. Les fonctions principales sont :
+-	nrf24_init() : initialise le SPI et configure les registres (canal, débit, adresses, taille payload).
+-	nrf24_send(data, len) : place le module en mode TX, envoie le payload, attend l'acquittement (Auto-ACK).
+-	nrf24_receive(buf) : place le module en mode RX, poll le registre STATUS pour détecter une donnée disponible, puis lit le FIFO.
+
+Le bouton poussoir PC13 de la carte émettrice déclenche l'envoi d'un message. La carte réceptrice allume une LED (PA5) à chaque réception confirmée, permettant une vérification visuelle sans débogueur.
+
+## Résultats
+Les tests montrent une communication stable entre les deux cartes.
+
 
 
 Conclusion
