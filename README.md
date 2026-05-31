@@ -188,9 +188,11 @@ On fixe la fréquence d'échantillonnage du capteur à 104 Hz, ce qui signifie q
 On fixe la plage à ±2g qui est adaptée pour nos tests car nos déplacements sont lents et à faible accélération.
 
 L'approche que nous avons opté pour le code est d’implanter plusieurs variables volatiles:
-measurement_active: cette variable vaut 1 si la mesure est active et 0 sinon.
-pos_x: la position de x actuelle.
-x_pos_max: la position maximale de pox_x pendant une mesure, elle a été introduite car pos_x varie en continu et ne permet pas de lire directement une valeur stable.
+
+- measurement_active: cette variable vaut 1 si la mesure est active et 0 sinon.
+- pos_x: la position de x actuelle.
+- x_pos_max: la position maximale de pox_x pendant une mesure, elle a été introduite car pos_x varie en continu et ne permet pas de lire directement une valeur stable.
+- 
 Une mesure est lancée dès que l’on appuie sur le bouton poussoir PC13 et s’arrête lorsqu’on réappuie dessus pour nous donner la valeur de x_pos_max au cours de cette mesure. 
 
 L'estimation de la position repose sur une double intégration temporelle. Cependant, cette intégration pose un problème de précision, de petites erreurs s'accumulent à chaque intégration et fausse le calcul de la position même quand le robot est immobile. Ainsi, pour limiter ces erreurs, nous avons mis en place 2 corrections:
