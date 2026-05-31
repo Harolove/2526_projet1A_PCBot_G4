@@ -21,6 +21,8 @@ _autosave-*
 fp-info-cache
 ~*.lck
 \#auto_saved_files#
+# KiCad project history
+**/.history/
 
 # Netlist files (exported from Eeschema)
 *.net
