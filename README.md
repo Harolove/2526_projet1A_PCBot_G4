@@ -211,14 +211,15 @@ Voici ce qu'on observe :
 
 
 
-### nRF24
+### nRF24:
+
 Pour ce projet, nous avons besoin de faire communiquer deux robots distants.
 Les capteurs LiDAR permettent une mesure précise, mais leur coût élevé et leur complexité de mise en œuvre (drivers, protocoles temps réel) dépassent les contraintes du projet. Nous avons donc opté pour une communication radio bas-coût avec le module nRF24L01+, qui offre une liaison sans fil simple à intégrer via SPI et suffisamment fiable pour nos besoins.
 Nous avons relié deux modules nRF24L01+ à deux cartes Nucleo-L476RG et vérifié que les deux microcontrôleurs pouvaient s'échanger des messages de manière bidirectionnelle :
 
 ![Mon super GIF](nRF24.gif)
 
-## Connexion matérielle
+## Connexion matérielle:
 Le nRF24L01+ communique via le bus SPI. Voici le câblage utilisé sur le STM32L476RG :
 -	CE → PA8 (contrôle émission/réception)
 -	CSN → PB6 (Chip Select SPI)
@@ -227,7 +228,7 @@ Le nRF24L01+ communique via le bus SPI. Voici le câblage utilisé sur le STM32L
 -	MISO → PA6 (SPI1_MISO)
 -	VCC → 3.3 V  |  GND → GND
 
-## Configuration du module
+## Configuration du module:
 Les principaux paramètres configurés dans nos tests :
 -	Canal RF : canal 76, libre des perturbations Wi-Fi les plus courantes.
 -	Débit : 1 Mbps — bon compromis portée/fiabilité pour notre usage.
@@ -237,7 +238,7 @@ Les principaux paramètres configurés dans nos tests :
 
 La validation de la connexion SPI a été réalisée en lisant le registre CONFIG (adresse 0x00) : si la valeur retournée est cohérente (typiquement 0x08 après reset), le module est bien connecté et répond correctement.
 
-## Approche logicielle
+## Approche logicielle:
 Nous avons distingué deux rôles : un émetteur (TX) et un récepteur (RX), chacun configuré sur une Nucleo. Les fonctions principales sont :
 -	nrf24_init() : initialise le SPI et configure les registres (canal, débit, adresses, taille payload).
 -	nrf24_send(data, len) : place le module en mode TX, envoie le payload, attend l'acquittement (Auto-ACK).
@@ -245,9 +246,9 @@ Nous avons distingué deux rôles : un émetteur (TX) et un récepteur (RX), cha
 
 Le bouton poussoir PC13 de la carte émettrice déclenche l'envoi d'un message. La carte réceptrice allume une LED (PA5) à chaque réception confirmée, permettant une vérification visuelle sans débogueur.
 
-## Résultats
+## Résultats:
 Les tests montrent une communication stable entre les deux cartes.
 
 
-Conclusion
+### Conclusion:
 À la fin du projet, nous avons réussi à faire communiquer deux nRF24 entre eux, la centrale inertielle a part et à faire fonctionner les 2 moteurs de roue, donc le robot peut se déplacer mais il ne peut pas encore s'arrêter librement ni changer de vitesse; les 2 LEDs fonctionnent, si D1 celà signifie que le PCB est alimenté et si D2 clignote c'est qu'il y a une erreur au niveau de la batterie (qui n'est pas connectée).
