@@ -120,28 +120,27 @@ Onshape :
 - Impression et assemblage du support
 
 
-
 Introduction
-Le projet sur lequel nous travaillons est la conception d'un PCBot qui connaît sa position exacte dans l'espace et se déplace. Il permet de cartographier une portion de l'espace autour de lui en calculant la distance qui le sépare de l'obstacle, et en communiquant avec d'autres PCBot, ils peuvent reconstruire la cartographie d'un environnement.
+Ce projet a pour objectif la conception d'un robot PCBot capable de connaître sa position dans l'espace et de se déplacer de manière autonome. Ce robot doit pouvoir cartographier un environnement en mesurant la distance qui le sépare des obstacles, et en communiquant avec d'autres PCBot, il peut reconstruire la carte d'un environnement beaucoup plus large.
 
-Choix des composants : 
-- On a choisi un BMS BQ25896RTWR, qui permet de charger la batterie car elle possède une large place de tension d'entrée (3.9V à 14V), permettant l'utilisation d'adaptateurs standards(5V) ou haute tension (9V/12V) avec une efficacité de plus de 90% à 3A.
-- On a choisi un driver pour le moteur DRV8411APWPR pour la compacité du boîtier et sa simplicité, avec une large plage de fonctionnement de 1.65V à 11V.
-- On a choisi la centrale inertielle LSM6DSOX pour repérer le robot, qui possède un accéléromètre et un gyroscope (que l'on n'utilisera pas dans le projet) qui a une haute résistance aux chocs mécaniques
-- On a choisi les moteurs DFR1224 à courant continu pour les roues
-- On a choisi le capteur TOF VL53LOCXVODH1 qui mesure la distance entre l'obstacle et le robot pour sa haute performance même en journée, 
-- On a choisi le nRF24 pour la communication entre les robots sans fil
+Choix des composants:
+Nous avons choisi nos composants par rapport à trois critères: l'écologie, l'optimisation de l'espace et le coût.
+- Pour la gestion de l'énergie, nous avons retenu le BMS BQ25896RTWR, qui accepte une large plage de tension d'entrée (3,9V à 14V) et offre un rendement supérieur à 90% à 3A, permettant l'utilisation d'adaptateurs standards (5V) ou haute tension(9V/12V).
+- Pour le contrôle des moteurs DFR1224 à courant continu, nous avons opté pour le driver DRV8411APWPR pour sa compacité et sa simplicité d'utilisation, avec une large plage de fonctionnement de 1.65V à 11V.
+- La localisation du robot repose sur la centrale inertielle LSM6DSOX, qui possède un accéléromètre et un gyroscope (que l'on n'utilisera pas dans le projet) dans un boîtier résistant aux chocs mécaniques.
+- Pour la mesure de distance, nous avons choisi le capteur TOF VL53L0X pour ses bonnes performances en pleine lumière dans un encombrement réduit. 
+- La communication sans fil entre robots est assurée par le module nRF24.
 
-Pour le routage, nous avons choisi d'optimiser le placement en mettant à côté ceux qui doivent rester proches, et de minimiser au maximum la distance entre les composants comme les condensateurs de découplage.
-On a optimisé la taille du PCB en choisissant la taille minimum nécessaire qui est de 5.9 x 6.8cm pour l'écologie.
-
-Plus généralement, on a choisi ces composants pour l'écologie, l'optimisation de l'espace et de coût financier, et/ou pour ses fonctionnalités.
-
-Ce qui nous a le plus surpris lors du projet ce sont le soudage en général où nous avons échoué une première fois car lorsqu'on a mis au four, les composants ont bougé et nous devions recommencer, et également lors du soudage du BMS qui est assez complexe, et le fonctionnement du capteur TOF qui ne fonctionnait pas au début car on a oublié de mettre XSHUNT à 1 dans notre code.
+Routage et conception du PCB:
+Pour le routage, nous avons cherché à minimiser les distances entre composants interdépendants, en plaçant notamment les condensateurs de découplage au plus près des composants qu'ils protègent. Le PCB a été optimisé pour atteindre une taille minimale de 5,9 × 6,8 cm pour l'écologie.
 
 
+Difficultés rencontrées:
+Le soudage des composants a été l'étape la plus délicate du projet, marquée par plusieurs tentatives avant d'obtenir un résultat satisfaisant. Notre premier PCB a été un échec, car après le passage au four, nous avons remarqué que nous n’avons pas retiré la pâte à braser au niveau des trous du connecteur USB-C, rendant ainsi la carte inutilisable. Lors du deuxième essai, de la pâte à braser s’est retirée par inadvertance à certains endroits, compromettant là encore la qualité des soudures.
+Sur notre PCB final, le passage au four a provoqué le déplacement de notre BMS et de certains condensateurs. De plus, une patte de la stm s’est pliée rompant ainsi le contact électrique avec plusieurs broches du microcontrôleur. Pour corriger ces problèmes, nous avons dû dessouder les composants concernés et les ressouder manuellement à l'air chaud avec du flux. Malgré ces difficultés, cette expérience nous a appris énormément sur les contraintes du soudage en production et sur les techniques de reprise manuelle. 
 
-Dans le readme : pas forcément tout mettre. il vaut mieux être précis et aller en profondeur, plutôt qu'essayer de tout mettre mais de façon superficielle. on peut mettre un bout du kicad/routage si par exemple on cherche à montrer quelque chose en particulier (condensateurs de découplage proches du composant principal?)
+Du côté logiciel, nous n'avons pas réussi à établir la communication I2C avec le capteur TOF, que ce soit sur le PCB du projet ou avec notre STM32L476RG. Pourtant, la broche XSHUT a bien été mise à 1 dans le code, et l'alimentation du composant a été vérifiée avec un multimètre. 
+
 
 
 ### IMU
@@ -210,4 +209,4 @@ Les tests montrent une communication stable entre les deux cartes.
 
 
 Conclusion
-À la fin du projet, nous avons réussi à faire communiquer deux nRF24 entre eux; à faire fonctionner les 2 moteurs de roue, donc le robot peut se déplacer mais il ne peut pas encore s'arrêter librement ni changer de vitesse; les 2 LEDs fonctionnent, D1 est allumé pour indiqué que le PCB est alimenté et D2 clignote et indique qu'il y a une erreur au niveau de la batterie (qui n'est pas connecté).
+À la fin du projet, nous avons réussi à faire communiquer deux nRF24 entre eux; à faire fonctionner les 2 moteurs de roue, donc le robot peut se déplacer mais il ne peut pas encore s'arrêter librement ni changer de vitesse; les 2 LEDs fonctionnent, D1 est allumé pour indiqué que le PCB est alimenté et D2 clignote pour indiquer qu'il y a une erreur au niveau de la batterie (qui n'est pas connecté).
