@@ -194,6 +194,7 @@ Voici ce qu'on observe :
 Pour ce projet, nous avons besoin de faire communiquer deux robots distants.
 Les capteurs LiDAR permettent une mesure précise, mais leur coût élevé et leur complexité de mise en œuvre (drivers, protocoles temps réel) dépassent les contraintes du projet. Nous avons donc opté pour une communication radio bas-coût avec le module nRF24L01+, qui offre une liaison sans fil simple à intégrer via SPI et suffisamment fiable pour nos besoins.
 Nous avons relié deux modules nRF24L01+ à deux cartes Nucleo-L476RG et vérifié que les deux microcontrôleurs pouvaient s'échanger des messages de manière bidirectionnelle :
+
 ![Mon super GIF](nRF24.gif)
 
 ## Connexion matérielle
