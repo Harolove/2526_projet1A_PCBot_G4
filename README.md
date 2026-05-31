@@ -120,10 +120,12 @@ Onshape :
 - Impression et assemblage du support
 
 
-Introduction
+### Introduction:
+
 Ce projet a pour objectif la conception d'un robot PCBot capable de connaître sa position dans l'espace et de se déplacer de manière autonome. Ce robot doit pouvoir cartographier un environnement en mesurant la distance qui le sépare des obstacles, et en communiquant avec d'autres PCBot, il peut reconstruire la carte d'un environnement beaucoup plus large.
 
-Choix des composants:
+### Choix des composants:
+
 Nous avons choisi nos composants par rapport à trois critères: l'écologie, l'optimisation de l'espace et le coût.
 - Pour la gestion de l'énergie, nous avons retenu le BMS BQ25896RTWR, qui accepte une large plage de tension d'entrée (3,9V à 14V) et offre un rendement supérieur à 90% à 3A, permettant l'utilisation d'adaptateurs standards (5V) ou haute tension(9V/12V).
 - Pour le contrôle des moteurs DFR1224 à courant continu, nous avons opté pour le driver DRV8411APWPR pour sa compacité et sa simplicité d'utilisation, avec une large plage de fonctionnement de 1.65V à 11V.
@@ -131,11 +133,11 @@ Nous avons choisi nos composants par rapport à trois critères: l'écologie, l'
 - Pour la mesure de distance, nous avons choisi le capteur TOF VL53L0X pour ses bonnes performances en pleine lumière dans un encombrement réduit. 
 - La communication sans fil entre robots est assurée par le module nRF24.
 
-Routage et conception du PCB:
+### Routage et conception du PCB:
+
 Pour le routage, nous avons cherché à minimiser les distances entre composants interdépendants, en plaçant notamment les condensateurs de découplage au plus près des composants qu'ils protègent. Le PCB a été optimisé pour atteindre une taille minimale de 5,9 × 6,8 cm pour l'écologie.
 
-
-Difficultés rencontrées:
+### Difficultés rencontrées:
 Le soudage des composants a été l'étape la plus délicate du projet, marquée par plusieurs tentatives avant d'obtenir un résultat satisfaisant. Notre premier PCB a été un échec, car après le passage au four, nous avons remarqué que nous n’avons pas retiré la pâte à braser au niveau des trous du connecteur USB-C, rendant ainsi la carte inutilisable. Lors du deuxième essai, de la pâte à braser s’est retirée par inadvertance à certains endroits, compromettant là encore la qualité des soudures.
 Sur notre PCB final, le passage au four a provoqué le déplacement de notre BMS et de certains condensateurs. De plus, une patte de la stm s’est pliée rompant ainsi le contact électrique avec plusieurs broches du microcontrôleur. Pour corriger ces problèmes, nous avons dû dessouder les composants concernés et les ressouder manuellement à l'air chaud avec du flux. Malgré ces difficultés, cette expérience nous a appris énormément sur les contraintes du soudage en production et sur les techniques de reprise manuelle. 
 
@@ -168,6 +170,8 @@ Pour nos tests nous avons choisi d’envoyer 0x40 à ce registre qui correspond 
 L'erreur renvoyée par l'IMU sur la position est justifiée par le fait qu'on intègre deux fois l'erreur, vu qu'on intègre l'accélération puis la position.
 Voici ce qu'on observe :
 ![Mon super GIF](IMU.gif)
+<img width="1158" height="143" alt="image" src="https://github.com/user-attachments/assets/fc468cd4-0573-44ab-8d27-a484df2a6872" />
+
 
 
 ### nRF24
